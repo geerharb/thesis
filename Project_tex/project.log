@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.25)  18 MAY 2016 14:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.25)  18 MAY 2016 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -702,57 +702,32 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Chapter 1.
-(./chapters/chapter01.tex
-! Missing $ inserted.
-<inserted text> 
-                $
-l.9 ...a sealed box we are enforcing the Pressure_
-                                                  liquid=Pressure_vapor, and...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.10 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (129.48035pt too wide) in paragraph at lines 9--10
-\OML/cmm/m/it/12 Pressure[]apor; andbyallowingtheatomstomovebetweenliquidandvap
-orstateweareenforcingthatMu[]iquid \OT1/cmr/m/n/12 =
- []
-
-[5
+(./chapters/chapter01.tex [5
 
 ]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 27.18335pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [6]) [7]
 Chapter 2.
-(./chapters/chapter02.tex) [8
+(./chapters/chapter02.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--10
+
+ []
+
+) [8
 
 ]
 Chapter 3.
-(./chapters/chapter03.tex
-
-LaTeX Warning: Citation 'Forte2011' on page 9 undefined on input line 5.
-
-
-LaTeX Warning: Citation 'Forte2013' on page 9 undefined on input line 7.
-
-) [9
+(./chapters/chapter03.tex) [9
 
 ]
 Chapter 4.
 (./chapters/chapter04.tex
-<images/liqVapCo_Tvsff.pdf, id=39, 578.16pt x 433.62pt>
+<images/liqVapCo_Tvsff.pdf, id=41, 578.16pt x 433.62pt>
 File: images/liqVapCo_Tvsff.pdf Graphic file (type pdf)
 
 <use images/liqVapCo_Tvsff.pdf>
@@ -779,38 +754,32 @@ Chapter 5.
 
 ] (./project.aux)
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
-
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                project
-(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'project.run.xml'.
 \openout1 = `project.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 8350 strings out of 494957
- 135965 string characters out of 6180028
- 298893 words of memory out of 5000000
- 11482 multiletter control sequences out of 15000+600000
+ 8355 strings out of 494957
+ 136059 string characters out of 6180028
+ 299103 words of memory out of 5000000
+ 11487 multiletter control sequences out of 15000+600000
  9406 words of font info for 33 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,10n,43p,933b,664s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,43p,933b,689s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on project.pdf (11 pages, 107321 bytes).
+fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy8.pfb>
+Output written on project.pdf (11 pages, 122078 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,9 +4,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Introduction}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}SnAFT Theory}{8}
+\contentsline {chapter}{\numberline {2}Methods}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}SnAFT Theory}{8}
+\contentsline {section}{\numberline {2.1}SAFT}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Monte Carlo}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Maximum Entropy}{8}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}GRG Theory}{9}
 \defcounter {refsection}{0}\relax 

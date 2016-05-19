@@ -1,51 +1,88 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: project.aux
-I couldn't open style file biblatex.bst
----line 3 of file project.aux
- : \bibstyle{biblatex
- :                   }
-I'm skipping whatever remains of this command
-I found no style file---while reading file project.aux
+The style file: biblatex.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: project-blx.bib
+Database file #2: references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 25 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 26 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 27 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 28 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 29 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 30 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 31 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 32 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 33 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 34 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 35 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 36 of file references.bib
+Warning--I'm ignoring Forte2013's extra "keywords" field
+--line 37 of file references.bib
+Biblatex version: 3.0
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 You've used 3 entries,
-            0 wiz_defined-function locations,
-            91 strings with 569 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
+            6047 wiz_defined-function locations,
+            1165 strings with 11076 characters,
+and the built_in function-call counts, 9386 in all, are:
+= -- 334
+> -- 422
+< -- 77
++ -- 185
+- -- 199
+* -- 820
+:= -- 822
 add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+call.type$ -- 3
+change.case$ -- 29
+chr.to.int$ -- 36
+cite$ -- 4
+duplicate$ -- 858
+empty$ -- 831
+format.name$ -- 231
+if$ -- 2077
 int.to.chr$ -- 0
-int.to.str$ -- 0
+int.to.str$ -- 5
 missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+newline$ -- 106
+num.names$ -- 93
+pop$ -- 688
+preamble$ -- 1
+purify$ -- 47
 quote$ -- 0
-skip$ -- 0
+skip$ -- 545
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 274
+swap$ -- 322
+text.length$ -- 87
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
+top$ -- 1
+type$ -- 102
 warning$ -- 0
-while$ -- 0
+while$ -- 85
 width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+write$ -- 102
+(There were 13 warnings)
