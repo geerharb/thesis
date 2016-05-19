@@ -10,16 +10,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Monte Carlo}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Maximum Entropy}{8}
+\contentsline {subsection}{\numberline {2.2.1}$S_{exc.\infty }$}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}GRG Theory}{9}
+\contentsline {subsection}{\numberline {2.2.2}Normalized Free Energy}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}GRG Theory}{9}
+\contentsline {chapter}{\numberline {3}GRG Theory}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Data}{10}
+\contentsline {section}{\numberline {3.1}GRG Theory}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Computation}{10}
+\contentsline {chapter}{\numberline {4}Data}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusion}{11}
+\contentsline {section}{\numberline {4.1}Computation}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Conclusion}{11}
+\contentsline {chapter}{\numberline {5}Conclusion}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Conclusion}{12}
