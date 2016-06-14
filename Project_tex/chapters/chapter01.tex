@@ -1,20 +1,26 @@
 \section{Introduction}
-
 Outline:
 Introduction to liquid vapor coexistence
 Demonstrate the problem
 Fix the problem
-arbitrary L+outline rest of paper
+what I did
 
-The liquid-vapor phase coexistence can be found by just depositing some liquid into a sealed container. Some of the liquid will evaporate into the jar creating a vapor pressure. Provided there is enough liquid to create the necessary vapor pressure, the system will now contain both a liquid and vapor at the same time. A typical thermodynamics problem will first find the free energy of the liquid by itself, then find the free energy of the vapor by itself, and finally minimize the total free energy while keeping the total number of atoms between the liquid and solid at a constant N. By keeping the atoms in a sealed box we are enforcing the $Pressure_{liquid}=Pressure_{vapor}$, and by allowing the atoms to move between liquid and vapor state we are enforcing that $Mu_{liquid}=Mu_{vapor}$.
+The liquid-vapor phase coexistence can be found by just depositing some liquid into a sealed container. Some of the liquid will evaporate into the jar creating a vapor pressure. Provided there is enough liquid to create the necessary vapor pressure, the system will now contain both a liquid and a vapor at the same time. By sealing the liquid into a jar, we have forced the pressure of the liquid to be the same as the pressure of the gas. By allowing the atoms in the liquid to evaporate into a gas, we have also allowed the chemical potential of the liquid to be the same as the chemical potential of the gas.
 
-The typical thermodynamic analysis of treating each phase as a separate entity is usually fine under normal conditions, but a problem occurs as the liquid approaches the critical point. The critical point occurs as the temperature of the liquid is raised; this causes thermal vibrations in the liquid to reduce the liquid density, and it also causes a denser vapor as the atoms are able to escape the surface of the liquid easier. Basically this causes the density of the liquid to approach the density of the gas as the system reaches the critical point.
+Although we can find the phase coexistence by physically sealing a liquid in a jar, another method is to model the liquid using an experimentally derived model. The benefit to this method is a few observations can be used to find the parameters, and the parameters can then be used in simulations to find the rest of the coexistence curve.
 
-*expand using 2d liquid and vapor graphs near critical point*
+To find the coexistence curve computationally, the liquid phase is usually considered to be separate from the vapor phase. This is a perfectly reasonable assumption since the surface tension normally keeps the liquid phase separate from the vapor phase. Unfortunately as the liquid approaches the critical point, the density of the liquid approaches the density of liquid. This means the surface tension decreases towards zero as the liquid approaches the critical point. This is unfortunate since the classical behavior of liquid separate from the vapor is no longer valid (see figure 1).
 
-Near the critical point the liquid and vapor states start to mix, which means the typical thermodynamic analysis of treating each phase separately no longer works. One method to get around this problem is called renormalization group theory (RGT). RGT recognizes that oscillations in the density occur at all temperatures rather than just at the critical point. These oscillations should naturally have an energy associated with them, so RGT starts with the first approximation of treating a liquid/vapor as a single phase, but then applies thermodynamics to the oscillations. **ADD MORE**
+\includegraphics[width=15cm]{"mc2d9999"}
 
-Within RGT, the oscillations are found by starting at a particular box size called L. The oscillations within a box of length L can't have oscillations longer than the size L simply because of the periodic boundary conditions. The calculations usually start at a small box of length L to find the short wavelenth oscillations, then double the box size to find even longer wave length oscillations. The problem is this box length L is usually an arbitrary parameter that needs to be fit to either the experimental data or to large Monte-Carlo simulations. An alternative approach is to realize the base theory that RGT revolves around already contains the smallest scale oscillations. The alternative approach exploits this by trying to fit Monte-Carlo simulations to SAFT. To do this the box size is varied until the Monte-Carlo simulations can recreate the thermodynamics of SAFT. *add more*
+Although figure 1 shows an extreme example of liquid completely mixing with vapor, even under normal circumstances there exist natural fluctuations in the density of either phase. The most basic theory will deal with interactions at the shortest wavelength simply because fluctuations happen at the shortest wavelength first. The problem is that as we approach the critical point, the fluctuations grow in length scale. Fortunately there exists a method called renormalization group theory to deal with interactions on the longer length scale.
+
+Renormalization group theory deals with the variations in density by finding the energy associated with each wavelength and each amplitude. The idea is the partition function will now sum over wavelengths and amplitudes. Forte et al. simplify the sum, but the problem is RGT contains an arbitrary initial wavelength. This initial wavelength is usually fit to the observables, but this introduces yet another free parameter since we can already change the potential used to characterize the fluid. 
+
+This project explores if it is possible fix this initial wavelength by comparing theory to Monte Carlo simulations. A Monte Carlo simulation involves putting atoms within a box and finding the density of states. The idea is that a Monte Carlo simulation at a small box size only incorporates interactions at the shortest wavelength, yet a simulation with a large box size will incorporate interactions at both short wavelengths and long wavelengths. This corresponds with how the most basic theory incorporates only short wavelength interactions, while renormalization group theory incorporates both short and long wavelength interactions. By changing the size of the box in a Monte Carlo simulation, we should be able to transition from SAFT to renormalization group theory; it is this transition that should represent the arbitrary parameter L within renormalization group theory.
+
+
+
 
 \newpage
 
