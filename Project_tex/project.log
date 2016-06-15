@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.23)  13 JUN 2016 18:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.23)  15 JUN 2016 14:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -425,6 +425,16 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \f@ncyO@olf=\skip50
 \f@ncyO@orf=\skip51
 )
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen120
+)
+\pmbraise@=\dimen121
+)
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2016/03/03 v3.3 programmable bibliographies (PK/JW/AB)
 
@@ -645,31 +655,31 @@ LaTeX Warning: Label `sub@fig:cap01' multiply defined.
 )
 \openout1 = `project.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count278
-\scratchdimen=\dimen120
+\scratchdimen=\dimen122
 \scratchbox=\box26
 \nofMPsegments=\count279
 \nofMParguments=\count280
-\everyMPshowfont=\toks18
+\everyMPshowfont=\toks19
 \MPscratchCnt=\count281
-\MPscratchDim=\dimen121
+\MPscratchDim=\dimen123
 \MPnumerator=\count282
 \makeMPintoPDFobject=\count283
-\everyMPtoPDFconversion=\toks19
+\everyMPtoPDFconversion=\toks20
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -766,8 +776,8 @@ Package biblatex Warning: File 'project.bbl' created by wrong version.
 
 Package biblatex Info: ... file 'project.bbl' found.
 (./project.bbl)
-Package biblatex Info: Reference section=0 on input line 35.
-Package biblatex Info: Reference segment=0 on input line 35.
+Package biblatex Info: Reference section=0 on input line 37.
+Package biblatex Info: Reference segment=0 on input line 37.
  (./titlepage.tex
 <images/osu2.png, id=1, 174.6525pt x 54.2025pt>
 File: images/osu2.png Graphic file (type png)
@@ -825,20 +835,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--10
 
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 14.
-[8
 
-]) [9]
+Underfull \hbox (badness 10000) in paragraph at lines 11--23
+
+ []
+
+
+Underfull \vbox (badness 7814) has occurred while \output is active []
+
+ [8
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 28.
+)
+[9]
 Chapter 3.
 (./chapters/chapter03.tex) [10
 
 ]
 Chapter 4.
 (./chapters/chapter04.tex
-<images/liqVapCo_Tvsff.pdf, id=47, 578.16pt x 433.62pt>
+<images/liqVapCo_Tvsff.pdf, id=56, 578.16pt x 433.62pt>
 File: images/liqVapCo_Tvsff.pdf Graphic file (type pdf)
 
 <use images/liqVapCo_Tvsff.pdf>
@@ -871,28 +891,37 @@ Package logreq Info: Writing requests to 'project.run.xml'.
 \openout1 = `project.run.xml'.
 
  )
-(\end occurred when \iftrue on line 35 was incomplete) 
+(\end occurred when \iftrue on line 37 was incomplete) 
 Here is how much of TeX's memory you used:
- 8427 strings out of 494910
- 136172 string characters out of 6179836
- 285875 words of memory out of 5000000
- 11608 multiletter control sequences out of 15000+600000
- 10021 words of font info for 35 fonts, out of 8000000 for 9000
+ 8488 strings out of 494910
+ 136954 string characters out of 6179836
+ 288655 words of memory out of 5000000
+ 11654 multiletter control sequences out of 15000+600000
+ 12483 words of font info for 43 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,10n,43p,1033b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,43p,923b,689s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on project.pdf (12 pages, 988109 bytes).
+-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb>
+Output written on project.pdf (12 pages, 1063330 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 156 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

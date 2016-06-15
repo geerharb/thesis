@@ -6,13 +6,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Methods}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}SAFT}{8}
+\contentsline {section}{\numberline {2.1}Free energy seperation}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Monte Carlo}{8}
+\contentsline {section}{\numberline {2.2}SAFT}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}$S_{exc.\infty }$}{8}
+\contentsline {section}{\numberline {2.3}Monte Carlo}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Normalized Free Energy}{9}
+\contentsline {subsection}{\numberline {2.3.1}$S_{exc.\infty }$}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Normalized Free Energy}{9}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}GRG Theory}{10}
 \defcounter {refsection}{0}\relax 

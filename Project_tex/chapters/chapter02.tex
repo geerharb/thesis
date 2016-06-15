@@ -7,20 +7,27 @@ Outline:
 SAFT\newline
 liquid-vapor+run-absolute\newline
 How comparisons were made\newline
+\section{Free energy seperation}
+The Monte Carlo simulations can be partitioned into high and low temperature regimes. At low temperature the interactions dominate, while at high temperatures the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three partitions:
+$\newline Z=\frac{1}{N!}\sum_i e^{-\beta\cdot E_i}
+\newline Z=\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [\{P_{1}^2/{2m}+P_{2}^2/{2m}+...\}+V(\vec{R_1},\vec{R_2},...)]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\cdot d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
+The momentum integrals are independent of the position integrals, so we seperate the momentum integrals which we then incorporate into an ideal gas term by multiplying by $V^N/V^N$.
+$\newline Z=\boldsymbol{Z_{ideal} \cdot \frac{1}{V^N}}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
+where $Z_{ideal}=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\newline$
+The remaining potential energy term is seperated into the low temperature and high temperature regime. At high temperatures, the atom energies are much higher than the potential well; this means the finite potential well can be considered zero. However; even at infinite temperature the atoms are assumed to be a hard sphere. This hard sphere behavior is incorporated into the partition function by multiplying by $Z_{HS}/Z_{HS}$.
+$\newline Z=Z_{ideal}\cdot \boldsymbol{Z_{HS}\cdot \frac{1}{Z_{HS}}}\cdot \frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
+where $Z_{HS}=\int\cdot\cdot\cdot\int e^{-\beta\cdot V_{HS}(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
+The remaining terms are grouped under the dispersion term.
+$\newline Z=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{Z_{disp}}\newline$
+where $Z_{disp}= \frac{1}{Z_{HS}}\cdot \frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
+
+\section{Free Energy via Monte Carlo Simulations}
 \section{SAFT}
 SW.fid+SW.fdisp+SW.fhs Explain.
-\section{Monte Carlo}
-Just use similar terms as SAFT, the Monte Carlo simulations are partitioned into two regimes: the excess entropy $S_{exc.\infty}$ as temperature approaches $\infty$, and the normalized excess free energy $F_{exc}+T\cdot S_{exc.\infty}$.
+
 \subsection{$S_{exc.\infty}$}
-The excess entropy as temperature approaches $\infty$ can be found by the observation that the square-well fluid is basically the same as a hard sphere model when the temperature is $\infty$. Which means at infinite temperature, the excess entropy of the hard sphere model should be the same as the excess entropy for the square-well fluid. 
 
-To find the excess free entropy of the hard sphere, we can make another observation that a hard sphere model at extremely low densities is basically the same as an ideal gas. The entropy of an ideal gas is well known, so we start with N atoms in an infinitely large box that also happens to be at infinite temperature. The box and all atom positions within the box are scaled to a smaller size. If the physical size of each atom were zero, then this squeezing process would be 100\% successful; now the ideal gas entropy is already taken into account, so such a system would actually have no change in excess entropy. On the other hand, if there is a physical size to each atom, then such a scaling of the box would sometimes lead to failure. This failure can be thought of as being due to the reduced volume that each atom can explore, so such a scaling actually decreases the entropy relative to the ideal gas entropy. Basically the higher the failure rate, the lower the change in entropy.
-
-The exact details regarding the process can be... **MORE**
 \subsection{Normalized Free Energy}
-To define the normalized free energy, we first start with the definition for free energy: \newline$F=U-T\cdot S$ 
-\newline now add zero: $F=U-T\cdot S+T\cdot S_{exc.\infty}-T\cdot S_{exc.\infty}$
-\newline rearrange: $U-T\cdot (S-S_{exc.\infty})-T\cdot S_{exc.\infty}$
-\newline to find $S-S_{exc.\infty}$ note that: $S=-\big(\frac{\partial F}{\partial T}\big)_{V,N} $
+
 
 %\pagestyle{fancy}   % Reset all pages after this file to fnacy headers
