@@ -25,6 +25,16 @@ and $Z_{disp}= \frac{Z_{interaction}}{Z_{HS}}\newline$
 \section{Free Energy via Monte Carlo Simulations}
 Given the separated partition function, the free energies are just the sum of the free energies due to the ideal term, the hard sphere term, and the dispersive term. The ideal term is ignored because it stays the same between theory and the Monte Carlo simulations. Two different methods are used to find the hard sphere free energy and the dispersive free energy.
 \subsection{hard sphere free energy}
+The hard sphere partition function can be found by calculating the excess entropy at $T\to\infty$. This can be seen as follows:
+$$Z_{exc}=Z_{HS}\cdot Z_{disp}\Rightarrow$$
+$$\newline F_{exc}=-k\cdot T\cdot ln(Z_{exc})=-k\cdot T\cdot ln(Z_{HS})-k\cdot T\cdot ln(Z_{disp})\Rightarrow $$
+$$\newline S_{exc.\infty}=\lim_{T\to\infty}-\left ( \frac{\partial F_{exc}}{\partial T} \right ) _{V,N} \text{ but }\lim_{T\to\infty}Z_{exc}=\text{constant}\Rightarrow$$
+$$\newline S_{exc.\infty}=-k\cdot ln(Z_{HS.\infty})-k\cdot ln(Z_{disp.\infty})$$
+$$\newline \text{but }Z_{HS}\text{ is constant and }Z_{disp.\infty}=Z_{interaction.\infty}/Z_{HS}=Z_{HS}/Z_{HS}=1 \Rightarrow$$
+$$S_{exc.\infty}=-k\cdot ln(Z_{HS})-k\cdot ln(1)=-k\cdot ln(Z_{HS}) \Rightarrow$$
+$$\newline Z_{HS}=e^{-S_{exc.\infty}/k}$$
+
+To find the hard sphere partition function, we need to find the maximum excess entropy as $T\to\infty$. The method used to find the maximum excess entroy starts by considering N atoms in an extremely large box. The hard sphere component in 
 \subsection{dispersive free energy}
 The dispersive term is found by estimating the density of states using a * method. The main problem is the density of states is found by sampling the energy levels, but the relative distribution of energy levels is not unique to a single density of states. In other words, the partition function can be changed by an arbitrary factor without actually changing the total energy. This can be seen as follows:
 
