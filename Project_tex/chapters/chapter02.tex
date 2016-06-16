@@ -7,21 +7,44 @@ Outline:
 SAFT\newline
 liquid-vapor+run-absolute\newline
 How comparisons were made\newline
-\section{Free energy seperation}
+\section{Partition function seperation}
 The Monte Carlo simulations can be partitioned into high and low temperature regimes. At low temperature the interactions dominate, while at high temperatures the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three partitions:
-$\newline Z=\frac{1}{N!}\sum_i e^{-\beta\cdot E_i}
-\newline Z=\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [\{P_{1}^2/{2m}+P_{2}^2/{2m}+...\}+V(\vec{R_1},\vec{R_2},...)]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\cdot d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
+$$\newline Z=\frac{1}{N!}\sum_i e^{-\beta\cdot E_i}
+\newline Z=\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [\{P_{1}^2/{2m}+P_{2}^2/{2m}+...\}+V(\vec{R_1},\vec{R_2},...)]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\cdot d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$$
 The momentum integrals are independent of the position integrals, so we seperate the momentum integrals which we then incorporate into an ideal gas term by multiplying by $V^N/V^N$.
-$\newline Z=\boldsymbol{Z_{ideal} \cdot \frac{1}{V^N}}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
-where $Z_{ideal}=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\newline$
+$$\newline Z=\boldsymbol{Z_{ideal} \cdot \frac{1}{V^N}}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$$
+where $$Z_{ideal}=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\newline$$
 The remaining potential energy term is seperated into the low temperature and high temperature regime. At high temperatures, the atom energies are much higher than the potential well; this means the finite potential well can be considered zero. However; even at infinite temperature the atoms are assumed to be a hard sphere. This hard sphere behavior is incorporated into the partition function by multiplying by $Z_{HS}/Z_{HS}$.
 $\newline Z=Z_{ideal}\cdot \boldsymbol{Z_{HS}\cdot \frac{1}{Z_{HS}}}\cdot \frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
-where $Z_{HS}=\int\cdot\cdot\cdot\int e^{-\beta\cdot V_{HS}(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
-The remaining terms are grouped under the dispersion term.
-$\newline Z=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{Z_{disp}}\newline$
-where $Z_{disp}= \frac{1}{Z_{HS}}\cdot \frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
+where $Z_{HS}=\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V_{HS}(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
+The last part is just the ratio between the interaction and the hard sphere partition function; we call this the dispersive term.
+$\newline Z=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{\frac{Z_{interaction}}{Z_{HS}}}=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{Z_{disp}}\newline$
+where $Z_{interaction}=\frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
+and $Z_{disp}= \frac{Z_{interaction}}{Z_{HS}}\newline$
 
 \section{Free Energy via Monte Carlo Simulations}
+Given the separated partition function, the free energies are just the sum of the free energies due to the ideal term, the hard sphere term, and the dispersive term. The ideal term is ignored because it stays the same between theory and the Monte Carlo simulations. Two different methods are used to find the hard sphere free energy and the dispersive free energy.
+\subsection{hard sphere free energy}
+\subsection{dispersive free energy}
+The dispersive term is found by estimating the density of states using a * method. The main problem is the density of states is found by sampling the energy levels, but the relative distribution of energy levels is not unique to a single density of states. In other words, the partition function can be changed by an arbitrary factor without actually changing the total energy. This can be seen as follows:
+
+Suppose $$Z=\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}$$
+
+then $$U=\sum_i E_i\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/Z\newline$$
+
+Now suppose we let $$D_2(E_i)=\alpha\cdot D(E_i)$$
+
+then $$Z_2=\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}=\alpha\cdot Z\Rightarrow\newline$$
+$$U_2=\sum_i E_i\cdot D_2(E_i)\cdot e^{-\beta\cdot E_i}/Z_2$$
+$$\newline U_2=\sum_i E_i\cdot \boldsymbol{\alpha}\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/(\boldsymbol{\alpha}\cdot Z)$$
+$$\newline U_2=\sum_i E_i\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/Z$$
+$$\newline U_2=U\newline$$
+Basically the partition function will define the total energy at all temperatures, but knowing the total energy at all temperatures will not define a unique partition function. Specifically, the partition function up to some arbitrary factor will give the same total energy. This is a bit problematic considering the method to find the density of states makes observations of the total energy to estimate the density of states, which then results in a density of states that is only defined up to some unknown factor.
+
+To get around this problem of an unknown factor in the density of states, note that the dispersive partition function will go towards one as T approaches infinity. This happens because $Z_{disp}$ is the ratio of the interaction term to the hard sphere term, and the interaction term approaches the hard sphere term as the temperature increases. Essentially we can leave the unkown $\alpha$ term alone, and it will show up in both the interaction and hard sphere partition function.
+
+That is: $$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}$$
+
 \section{SAFT}
 SW.fid+SW.fdisp+SW.fhs Explain.
 

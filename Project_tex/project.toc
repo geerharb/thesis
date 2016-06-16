@@ -6,24 +6,28 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Methods}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Free energy seperation}{8}
+\contentsline {section}{\numberline {2.1}Partition function seperation}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}SAFT}{9}
+\contentsline {section}{\numberline {2.2}Free Energy via Monte Carlo Simulations}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Monte Carlo}{9}
+\contentsline {subsection}{\numberline {2.2.1}hard sphere free energy}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}$S_{exc.\infty }$}{9}
+\contentsline {subsection}{\numberline {2.2.2}dispersive free energy}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Normalized Free Energy}{9}
+\contentsline {section}{\numberline {2.3}SAFT}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}GRG Theory}{10}
+\contentsline {subsection}{\numberline {2.3.1}$S_{exc.\infty }$}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}GRG Theory}{10}
+\contentsline {subsection}{\numberline {2.3.2}Normalized Free Energy}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Data}{11}
+\contentsline {chapter}{\numberline {3}GRG Theory}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Computation}{11}
+\contentsline {section}{\numberline {3.1}GRG Theory}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusion}{12}
+\contentsline {chapter}{\numberline {4}Data}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Conclusion}{12}
+\contentsline {section}{\numberline {4.1}Computation}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Conclusion}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Conclusion}{13}
