@@ -27,11 +27,13 @@ Given the separated partition function, the free energies are just the sum of th
 \subsection{ideal gas free energy}
 To find the ideal gas free energy we can use previous results based on knowing the entropy of the system which we can then use to find $F_{ideal}=U_{ideal}-T\cdot S_{ideal}$.
 $$U_{ideal}=3/2\cdot N\cdot k\cdot T$$
-$$S_{ideal^*}\approx k\cdot N \left ( ln\left [ \frac{V}{N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2} \right)^{3/2}\cdot \frac{U}{N} \right]+\frac{5}{2}\right )$$
+$$S_{ideal^*}\approx k\cdot N \left ( ln\left [ \frac{V}{N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot \frac{U}{N} \right)^{3/2} \right]+\frac{5}{2}\right )$$
 
 The Sackur-Tetrode equation with the Stirling approximation actually does not make physical sense as the entropy per particle at constant temperature only depends on density. A simple example can show why this doesn't make sense. Consider two atoms in boxes seperated by a partition, and compare the entropy per particle to when the partition in the box has been removed. Once the partition has been removed, the two atoms can explore many more configurations than previously, which means the entropy should have increased once the two atoms were allowed to mix. Unfortunately the Sackur-Tetrode equation with Stirlings approximation would predict the entropy per particle with or without the partition should be the same. This is a bit of a problem since every box in a Monte Carlo simulation will contain exactly N particles, which means the entropy is actually lower than a real ideal gas.
 
 The entropy problem can be fixed by using the Sackur-Tetrode equation without Stirling's approximation. Essentially use a constant density and compare the entropy per particle of a small box to the entropy per particle of a large box. The difference in entropy shows how the ideal gas entropy within a box will deviate from the expected ideal gas entropy.
+
+$$S_{ideal}=k\cdot N \left ( ln\left [ V\cdot N!^{-1/N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot\frac{U}{N} \right)^{3/2}  \right]+\frac{3}{2}\right )$$
 
 It would be natural to think we can just incorporate this deviation in entropy for the Monte Carlo simulations, unfortunately the simulations contain an intractable problem involving the periodic nature of the simulations. The atoms in the box are repeated in a periodic way to represent the atoms in the entire fluid, however by forcing a periodic boundary condition the entire state of a fluid is now defined by only the atoms within the small box. It is very unlikely that 100 atoms can fully define a system containing an Advogadro's number of atoms, so the entropy should be much less than a realistic system. Rather than incorporate such a change in entropy, we instead must recognize that these Monte Carlo simulations are defining the boundary conditions relative to the smaller sub system; this is basically the equivalent of mean field theory where the boundary is defined by the smaller sub system. 
 
@@ -73,7 +75,6 @@ SW.fid+SW.fdisp+SW.fhs Explain.
 
 \subsection{$S_{exc.\infty}$}
 
-\subsection{Normalized Free Energy}
 
 
 %\pagestyle{fancy}   % Reset all pages after this file to fnacy headers
