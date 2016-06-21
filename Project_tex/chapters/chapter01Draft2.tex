@@ -1,0 +1,27 @@
+\section{Introduction}
+Outline:
+Introduction to liquid vapor coexistence
+Demonstrate the problem
+Fix the problem
+what I did
+
+The liquid-vapor phase coexistence can be found by just depositing some liquid into a sealed container. Some of the liquid will evaporate into the jar creating a vapor pressure. Provided there is enough liquid to create the necessary vapor pressure, the system will now contain both a liquid and a vapor at the same time. By sealing the liquid into a jar, we have forced the pressure of the liquid to be the same as the pressure of the gas. By allowing the atoms in the liquid to evaporate into a gas, we have also allowed the chemical potential of the liquid to be the same as the chemical potential of the gas.
+
+Although we can find the phase coexistence by physically sealing a liquid in a jar, another method is to model the liquid using an experimentally derived model. The benefit to this method is a few observations can be used to find the parameters, and the parameters can then be used in simulations to find the rest of the coexistence curve.
+
+To find the coexistence curve computationally, the liquid phase is usually considered to be separate from the vapor phase. This is a perfectly reasonable assumption since the surface tension normally keeps the liquid phase separate from the vapor phase. Unfortunately as the liquid approaches the critical point, the density of the liquid approaches the density of liquid. This means the surface tension decreases towards zero as the liquid approaches the critical point. This is unfortunate since the classical behavior of liquid separate from the vapor is no longer valid (see figure 1).
+
+\includegraphics[width=15cm]{"mc2d9999"}
+
+Although figure 1 shows an extreme example of liquid completely mixing with vapor, even under normal circumstances there exist natural fluctuations in the density of either phase. The most basic theory will deal with interactions at the shortest wavelength simply because fluctuations happen at the shortest wavelength first. The problem is that as we approach the critical point, the fluctuations grow in length scale. Fortunately there exists a method called renormalization group theory to deal with interactions on the longer length scale.
+
+Renormalization group theory deals with the variations in density by finding the energy associated with each wavelength and each amplitude. The idea is the partition function will now sum over wavelengths and amplitudes. Forte et al. simplify the sum, but the problem is RGT contains an arbitrary initial wavelength. This initial wavelength is usually fit to the observables, but this introduces yet another free parameter since we can already change the potential used to characterize the fluid. 
+
+This project explores if it is possible fix this initial wavelength by comparing theory to Monte Carlo simulations. A Monte Carlo simulation involves putting atoms within a box and finding the density of states. The idea is that a Monte Carlo simulation at a small box size only incorporates interactions at the shortest wavelength, yet a simulation with a large box size will incorporate interactions at both short wavelengths and long wavelengths. This corresponds with how the most basic theory incorporates only short wavelength interactions, while renormalization group theory incorporates both short and long wavelength interactions. By changing the size of the box in a Monte Carlo simulation, we should be able to transition from SAFT to renormalization group theory; it is this transition that should represent the arbitrary parameter L within renormalization group theory.
+
+
+
+
+\newpage
+
+Test of fancyhdr page.
