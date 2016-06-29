@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.23)  21 JUN 2016 13:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.23)  28 JUN 2016 21:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -857,10 +857,10 @@ Chapter 1.
 File: images/"mc2d9999".png Graphic file (type png)
 
 <use images/"mc2d9999".png>
-Package pdftex.def Info: images/"mc2d9999".png used on input line 18.
+Package pdftex.def Info: images/"mc2d9999".png used on input line 19.
 (pdftex.def)             Requested size: 426.79134pt x 149.3752pt.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 18--19
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 19--20
 [][] 
  []
 
@@ -870,7 +870,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6 <./images/mc2d9999.png>]) [7]
+[6 <./images/mc2d9999.png>] [7]) [8]
 Chapter 2.
 (./chapters/chapter02.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--10
@@ -891,16 +891,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--24
 
  []
 
-[8
+[9
 
-] [9] [10]) [11]
+] [10] [11]) [12]
 Chapter 3.
-(./chapters/chapter03.tex) [12
+(./chapters/chapter03.tex) [13
 
 ]
 Chapter 4.
 (./chapters/chapter04.tex
-<images/liqVapCo_Tvsff.pdf, id=63, 578.16pt x 433.62pt>
+<images/liqVapCo_Tvsff.pdf, id=67, 578.16pt x 433.62pt>
 File: images/liqVapCo_Tvsff.pdf Graphic file (type pdf)
 
 <use images/liqVapCo_Tvsff.pdf>
@@ -919,11 +919,11 @@ File: images/liqVapCo_Tvsff.pdf Graphic file (type pdf)
  <use images/liqVapCo_Tvsff.pdf>
 Package pdftex.def Info: images/liqVapCo_Tvsff.pdf used on input line 32.
 (pdftex.def)             Requested size: 128.0387pt x 96.02525pt.
-) [13
+) [14
 
  <./images/liqVapCo_Tvsff.pdf>]
 Chapter 5.
-(./chapters/chapter05.tex) [14
+(./chapters/chapter05.tex) [15
 
 ] (./project.aux)
 
@@ -961,10 +961,10 @@ onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb>
-Output written on project.pdf (14 pages, 1091397 bytes).
+Output written on project.pdf (15 pages, 1093943 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
+ 170 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

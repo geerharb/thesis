@@ -7,7 +7,8 @@ what I did
 
 The liquid-vapor phase coexistence can be found by just placing some liquid into a sealed container. Some of the liquid will evaporate into the jar creating a vapor pressure. Provided we placed enough liquid into the jar, the system will now contain both a liquid and a vapor at the same time. By sealing the liquid into a jar, we have forced the pressure of the liquid to be the as the pressure of the gas. By allowing the atoms to swap between the liquid and gas phase, we have also allowed the chemical potential of the liquid to be the same as that of the gas.
 
-Although we can find the phase coexistence by physically sealing a liquid in a jar, an equivalent computational method is to use an empirically determined fluid model which we can use to run simulations that also equalize the pressure and chemical potential. The problem with the computational method is the empirical model requires fitting a few parameters to data, data which probably already includes points on the phase coexistence curve. The main benefit to the computational approach is that once the empirical parameters are found, we can then create the phase coexistence of a mixture of fluids using the previously determined parameters.
+Although we can find the phase coexistence by physically sealing a liquid in a jar, an equivalent computational method is to use an empirically determined fluid model which we can use to run simulations that also equalize the pressur
+e and chemical potential. The problem with the computational method is the empirical model requires fitting a few parameters to data, data which probably already includes points on the phase coexistence curve. The main benefit to the computational approach is that once the empirical parameters are found, we can then create the phase coexistence of a mixture of fluids using the previously determined parameters.
 
 One of the difficulties with the computer simulations is computation time. A simulation with a handful of atoms can be finished within 20 minutes, yet a simulation with a 100 atoms can take as long as 4 days. To recreate the phase coexistence graph requires setting the pressure and chemical potential of both phases equal to each other, but this is equivalent to plotting the free energy as a function of density and searching for a common cotangent. For even a simulation that uses a small box, the problem is plotting free energy as a function of density requires many simulations at various densities; some simulations containing only a handful of atoms while other simulations containing as much as a couple hundred atoms. Total computation time for 10 computer cores to create the free energy as a function of density graph can take as long as three weeks.
 
@@ -17,7 +18,13 @@ Normally increasing the simulation size is just fine, but there is a regime wher
 
 \includegraphics[width=15cm]{"mc2d9999"}
 
-To get around this fluctuation problem, renormalization group theory(RGT) is usually applied. 
+Renormalization group theory(RGT) can be applied to get around this large fluctuation problem. Simply put, RGT is a method in which fine details are omitted from calculations while still maintaining accuracy. This is done by transforming the original partition funciton into a smaller partition function, but the smaller system is renormalized to the original parition function. [add details...]
+
+In particular, RGT is applied through an interaction wave length. The zeroth order is just the ideal gas term in which all atoms only interact with the walls of the enclosure. The next order is applied via SAFT-VR in which a mean interaction and an approximate wavelength interaction is applied. Longer wavelength interactions can then be applied using RGT via a iterative method that steadily increases the size of the box.
+
+The main problem this project addresses is the transition from SAFT-VR to the application of RGT. Within RGT there is an arbitrary base wavelength L which is usually fit to the data. However; this arbitrary wavelength shouldn't really be an arbitrary parameter as SAFT-VR already includes interactions at some unknown wavelength. This project attempts to find the base wavelength that SAFT-VR implements, and tests how the results of RGT change when using this base wavelength.
+
+The base wavelength is found by using Monte Carlo Markov Chain (MCMC) simulations at various box sizes. The idea is that a MCMC simulation using a fixed box size of $L_0$ will incorporate interactions at this box size. The box size is then varied until the results from the MCMC simulations fit the results from SAFT-VR. Once the optimal box size is found, RGT is implemented using this optimal box size and the results are compared to previous results.
 
 
 
