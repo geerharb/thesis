@@ -8,14 +8,7 @@ SAFT\newline
 liquid-vapor+run-absolute\newline
 How comparisons were made\newline
 \section{Partition function seperation}
-$$Z=Z_{ideal}\cdot Z_{exc}=Z_{ideal}\cdot Z_{HS}\cdot Z_{disp}$$
-$$Z_{ideal}=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\newline$$
-$$Z_{HS}=\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V_{HS}(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}$$
-$$Z_{disp}= \frac{Z_{interaction}}{Z_{HS}}$$
-$$Z_{interaction}=\frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$$
-
-
-The partition function can be partitioned into high and low temperature regimes. At low temperature the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three partitions:
+The Monte Carlo simulations can be partitioned into high and low temperature regimes. At low temperature the interactions dominate, while at high temperatures the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three partitions:
 $$\newline Z=\frac{1}{N!}\sum_i e^{-\beta\cdot E_i}
 \newline Z=\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [\{P_{1}^2/{2m}+P_{2}^2/{2m}+...\}+V(\vec{R_1},\vec{R_2},...)]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\cdot d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$$
 The momentum integrals are independent of the position integrals, so we seperate the momentum integrals which we then incorporate into an ideal gas term by multiplying by $V^N/V^N$.
@@ -79,6 +72,8 @@ That is: $$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_
 
 \section{SAFT}
 SW.fid+SW.fdisp+SW.fhs Explain.
+
+\subsection{$S_{exc.\infty}$}
 
 
 
