@@ -14,20 +14,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}hard sphere free energy}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}dispersive free energy}{11}
+\contentsline {subsection}{\numberline {2.2.3}dispersive free energy}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}SAFT}{12}
+\contentsline {section}{\numberline {2.3}SAFT}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}$S_{exc.\infty }$}{12}
+\contentsline {chapter}{\numberline {3}GRG Theory}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}GRG Theory}{13}
+\contentsline {section}{\numberline {3.1}GRG Theory}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}GRG Theory}{13}
+\contentsline {chapter}{\numberline {4}Data}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Data}{14}
+\contentsline {section}{\numberline {4.1}Computation}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Computation}{14}
+\contentsline {chapter}{\numberline {5}Conclusion}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusion}{15}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Conclusion}{15}
+\contentsline {section}{\numberline {5.1}Conclusion}{16}

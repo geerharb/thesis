@@ -56,7 +56,27 @@ $$\newline \text{but }Z_{HS}\text{ is constant and }Z_{disp.\infty}=Z_{interacti
 $$S_{exc.\infty}=-k\cdot ln(Z_{HS})-k\cdot ln(1)=-k\cdot ln(Z_{HS}) \Rightarrow$$
 $$\newline Z_{HS}=e^{-S_{exc.\infty}/k}$$
 
-To find the hard sphere partition function, we need to find the maximum excess entropy as $T\to\infty$. The method used to find the maximum excess entroy starts by considering N atoms in an extremely large box. The hard sphere component in 
+To find the hard sphere partition function, we need to find the maximum excess entropy as $T\to\infty$. The method used to find the maximum excess entroy starts by considering N atoms in an extremely large box at a very large temperature. The atoms in the large box should behave like an ideal gas, so the entropy of this large box is a known starting point. Then all atom positions are scaled relative to a corner as the origin. Although each individual atom can now exist within a smaller box, it is not guaranteed an atom will not overlap with another atom after the positions are scaled down.
+
+What we can observe is the probability that a particular scaling fails, and from this probability the change in entropy from the bigger box down to the smaller box can be calculated. The details are as follows:
+$$\newline F=U-T\cdot S \Rightarrow  S=(U-F)/T\approx -F/T=k\cdot ln(Z)$$
+$$\text{let }Z_{small}=\text{partition function of the smaller box}\newline$$
+$$\text{let }Z_{big}=\text{partition function of the bigger box}\newline$$
+$$\Delta S=S_{small}-S_{big}=k\cdot ln(Z_{small})-k\cdot ln(Z_{big})=k\cdot ln(Z_{small}/Z_{big})\newline$$
+From here note that although every configuration in the bigger box is not guaranteed to scale down into the smaller box, it is guaranteed that the smaller box can be expanded into the bigger box. This means there is a mapping from the partition function in the smaller box to the bigger box; as such we can break $Z_{big}$ into valid and invalid configurations where the valid configurations are guaranteed to shrink down into the smaller box and the invalid configurations are not. The $\Delta S$ can then be simplified by making a connection between $Z_{small}$ and $Z_{valid}$.
+$$\newline \text{let }Z_{big}=Z_{valid}+Z_{invalid}\newline$$
+$$\text{but }Z_{small}\text{ maps into }Z_{valid} \Rightarrow Z_{small}=\alpha\cdot z_{valid}\text{ for some constant } \alpha\newline$$
+This constant $\alpha$ can be found directly by looking at the partition function of both the big and small box. Keeping all but one atom fixed, the final atom can explore a region $R$ in the big box. It should be clear that in the smaller box this atom can only explore a region $R\cdot \frac{V_{small}}{V_{big}}$. This causes each atom to change the partition function by $\frac{V_{small}}{V_{big}} \Rightarrow$
+$$\newline \alpha=\frac{V_{small}^N}{V_{big}^N} \Rightarrow\newline$$
+$$\Delta S=k\cdot ln(Z_{small}/Z_{big})=k\cdot ln(\alpha\cdot Z_{valid}/Z_{big})\newline$$
+$$\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot Z_{valid}/Z_{big})\newline$$
+$$\text{but }Z_{valid}/Z_{big}=\text{probability of success when scaling}=P_{success}\Rightarrow\newline$$
+$$\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success}
+)\newline$$
+At this point this $\Delta S$ represents the total change in entropy from squeezing the box. However; only the change in excess free entropy was wanted. To compensate, simpy subrtract the change in entropy due to the ideal gas using constant temperature and constant number of atoms.
+
+
+
 \subsection{dispersive free energy}
 The dispersive term is found by estimating the density of states using a * method. The main problem is the density of states is found by sampling the energy levels, but the relative distribution of energy levels is not unique to a single density of states. In other words, the partition function can be changed by an arbitrary factor without actually changing the total energy. This can be seen as follows:
 
