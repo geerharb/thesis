@@ -7,32 +7,29 @@ Outline:
 SAFT\newline
 liquid-vapor+run-absolute\newline
 How comparisons were made\newline
-\section{Equation Summary}
-\subsection{SAFT}
-\subsection{Monte Carlo Simulations}
-$$Z=Z_{ideal}\cdot Z_{HS}\cdot Z_{disp}$$
-$$Z_{ideal}=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}$$
-$$Z_{HS}=e^{-S_{exc.\infty}/k}$$
-$$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}$$
-where $S_{exc.\infty}=k\cdot ln(P_{success})$ and $P_{success}$ is the probability of a successful attempt to scale an infinite box down to the size of the actual box of the simulation without hard sphere collisions; this shrinking can be done in small steps and the net sum in the change in entropy is then $S_{exc.\infty}$.
+\section{Partition function seperation}
+$$Z=Z_{ideal}\cdot Z_{exc}=Z_{ideal}\cdot Z_{HS}\cdot Z_{disp}$$
+$$Z_{ideal}=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\newline$$
+$$Z_{HS}=\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V_{HS}(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}$$
+$$Z_{disp}= \frac{Z_{interaction}}{Z_{HS}}$$
+$$Z_{interaction}=\frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$$
 
-\section{Partition Function Seperation}
-The partition function can be partitioned into high and low temperature regimes. At low temperatures the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three partitions:
+
+The partition function can be partitioned into high and low temperature regimes. At low temperature the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three partitions:
 $$\newline Z=\frac{1}{N!}\sum_i e^{-\beta\cdot E_i}
 \newline Z=\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [\{P_{1}^2/{2m}+P_{2}^2/{2m}+...\}+V(\vec{R_1},\vec{R_2},...)]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\cdot d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$$
 The momentum integrals are independent of the position integrals, so we seperate the momentum integrals which we then incorporate into an ideal gas term by multiplying by $V^N/V^N$.
 $$\newline Z=\boldsymbol{Z_{ideal} \cdot \frac{1}{V^N}}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$$
 where $$Z_{ideal}=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\newline$$
-After taking into account the ideal gas term, the remaining potential energy term is seperated into the low temperature and high temperature regime. At high temperatures, the atom energies are much higher than the potential well; this means the finite potential well can be considered zero. However; even at infinite temperature the atoms are assumed to be a hard sphere. This hard sphere behavior is incorporated into the partition function by multiplying by $Z_{HS}/Z_{HS}$.
+The remaining potential energy term is seperated into the low temperature and high temperature regime. At high temperatures, the atom energies are much higher than the potential well; this means the finite potential well can be considered zero. However; even at infinite temperature the atoms are assumed to be a hard sphere. This hard sphere behavior is incorporated into the partition function by multiplying by $Z_{HS}/Z_{HS}$.
 $\newline Z=Z_{ideal}\cdot \boldsymbol{Z_{HS}\cdot \frac{1}{Z_{HS}}}\cdot \frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
 where $Z_{HS}=\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V_{HS}(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
-After taking into account the high temperature hard sphere behavior, the last part is just the ratio between the interaction and the hard sphere partition function; we call this the dispersive term.
+The last part is just the ratio between the interaction and the hard sphere partition function; we call this the dispersive term.
 $\newline Z=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{\frac{Z_{interaction}}{Z_{HS}}}=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{Z_{disp}}\newline$
 where $Z_{interaction}=\frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
 and $Z_{disp}= \frac{Z_{interaction}}{Z_{HS}}\newline$
 
-\subsection{Free Energy via Monte Carlo Simulations}
-[FIX INTRO]
+\section{Free Energy via Monte Carlo Simulations}
 Given the separated partition function, the free energies are just the sum of the free energies due to the ideal term, the hard sphere term, and the dispersive term. The ideal term is ignored because it stays the same between theory and the Monte Carlo simulations. Due to the finite nature of the Monte Carlo simulations, the hard sphere term in the simulations aren't exactly the hard sphere terms in theory. Although we can make some corrections due to the finite nature, ultimately we have to enforce the boundary condition that at high temperature the atoms behave like hard spheres. Given this boundary condition, we are then able to define what the dispersion term should be based on estimation of the density of states.
 \subsection{ideal gas free energy}
 To find the ideal gas free energy we can use previous results based on knowing the entropy of the system which we can then use to find $F_{ideal}=U_{ideal}-T\cdot S_{ideal}$.
@@ -45,9 +42,9 @@ The entropy problem can be fixed by using the Sackur-Tetrode equation without St
 
 $$S_{ideal}=k\cdot N \left ( ln\left [ V\cdot N!^{-1/N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot\frac{U}{N} \right)^{3/2}  \right]+\frac{3}{2}\right )$$
 
-It would be natural to think we can just incorporate this deviation in entropy for the Monte Carlo simulations, unfortunately the simulations contain an intractable problem involving the periodic nature of the simulations. The atoms in the box are repeated in a periodic way to represent the atoms in the entire fluid, however by forcing a periodic boundary condition the entire state of a fluid is now defined by only the atoms within the small box. It is very unlikely that 100 atoms can fully define a system containing an Advogadro's number of atoms, so the entropy should be much less than a realistic system. Rather than incorporate such a change in entropy, we must instead recognize that bulk properties shouldn't dependend on the boundary conditions. By applying periodic boundary conditions we are considering the small box to be the bulk. 
+It would be natural to think we can just incorporate this deviation in entropy for the Monte Carlo simulations, unfortunately the simulations contain an intractable problem involving the periodic nature of the simulations. The atoms in the box are repeated in a periodic way to represent the atoms in the entire fluid, however by forcing a periodic boundary condition the entire state of a fluid is now defined by only the atoms within the small box. It is very unlikely that 100 atoms can fully define a system containing an Advogadro's number of atoms, so the entropy should be much less than a realistic system. Rather than incorporate such a change in entropy, we instead must recognize that these Monte Carlo simulations are defining the boundary conditions relative to the smaller sub system; this is basically the equivalent of mean field theory where the boundary is defined by the smaller sub system. 
 
-Although the small box does not represent the bulk, SAFT also contains the problem of using the small system to represent the bulk. Yet SAFT also enforces the boundary conditions that at high temperatures the fluid should behave like a hard sphere fluid. As such the Monte Carlo simulations are also assumed to behave like a hard sphere fluid at high temperatures, which includes both the ideal term and the hard sphere term.
+Recognizing that Monte Carlo simulations are a variation of mean field theory, the loss in entropy due to reduced configurations is ignored. Instead the boundary conditions are enforced. At any temperature we expect the kinetic energies to behave like an ideal gas. At high temperatures we expect the system to behave like a hard sphere system.
 
 \subsection{hard sphere free energy}
 The hard sphere partition function can be found by calculating the excess entropy at $T\to\infty$. This can be seen as follows:
@@ -77,10 +74,7 @@ $$\text{but }Z_{valid}/Z_{big}=\text{probability of success when scaling}=P_{suc
 $$\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success}
 )\newline$$
 At this point this $\Delta S$ represents the total change in entropy from squeezing the box. However; only the change in excess free entropy was wanted. To compensate, simpy subrtract the change in entropy due to the ideal gas using constant temperature and constant number of atoms.
-$$\Delta S_{exc.\infty}=\Delta S_{\infty}-\Delta S_{ideal.\infty}$$
-$$\text{but }\Delta S_{ideal.\infty}=k\cdot N\cdot ln(V_{small}/V_{big})\Rightarrow$$
-$$\Delta S_{exc.\infty}=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success})-k\cdot N\cdot ln(V_{small}/V_{big})$$
-$$\Delta S_{exc.\infty}=k\cdot ln(P_{success})$$
+
 
 
 \subsection{dispersive free energy}
