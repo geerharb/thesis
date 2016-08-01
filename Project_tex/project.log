@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  14 JUL 2016 21:46
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  1 AUG 2016 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -524,7 +524,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--33
 
  []
 
-[10] [11] [12] [13]) [14]
+[10] [11]
+Overfull \hbox (70.18088pt too wide) detected at line 77
+[] \OML/cmm/m/it/12 Z[] \OMS/cmsy/m/n/12 / [] [] ^^A ^^A ^^A [] \OML/cmm/m/it/1
+2 e[]d[] \OMS/cmsy/m/n/12 ^^A [][] ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^
+A [][] ^^A ^^A ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^A [][] ^^A []
+ []
+
+[12] [13]) [14]
 Chapter 3.
 (./chapters/chapter03.tex) [15
 
@@ -556,11 +563,11 @@ Package logreq Info: Writing requests to 'project.run.xml'.
  )
 (\end occurred when \iftrue on line 38 was incomplete) 
 Here is how much of TeX's memory you used:
- 8066 strings out of 495536
- 129743 string characters out of 6186181
+ 8070 strings out of 495536
+ 129808 string characters out of 6186181
  292304 words of memory out of 5000000
- 11245 multiletter control sequences out of 15000+600000
- 12542 words of font info for 44 fonts, out of 8000000 for 9000
+ 11249 multiletter control sequences out of 15000+600000
+ 13608 words of font info for 48 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,11n,43p,1282b,689s stack positions out of 5000i,500n,10000p,200000b,80000s
 

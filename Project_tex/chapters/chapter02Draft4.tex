@@ -69,15 +69,8 @@ $$\Delta S=S_{small}-S_{big}=k\cdot ln(Z_{small})-k\cdot ln(Z_{big})=k\cdot ln(Z
 From here note that although every configuration in the bigger box is not guaranteed to scale down into the smaller box, it is guaranteed that the smaller box can be expanded into the bigger box. This means there is a mapping from the partition function in the smaller box to the bigger box; as such we can break $Z_{big}$ into valid and invalid configurations where the valid configurations are guaranteed to shrink down into the smaller box and the invalid configurations are not. The $\Delta S$ can then be simplified by making a connection between $Z_{small}$ and $Z_{valid}$.
 $$\newline \text{let }Z_{big}=Z_{valid}+Z_{invalid}\newline$$
 $$\text{but }Z_{small}\text{ maps into }Z_{valid} \Rightarrow Z_{small}=\alpha\cdot z_{valid}\text{ for some constant } \alpha\newline$$
-This constant $\alpha$ can be found directly by looking at the partition function of both the big and small box. All configurations in the small box can be mapped into the valid regions of the large box which means to find $\alpha$ all we have to do is rewrite $Z_{small}$ in terms of $Z_{big}$.
-$$\newline Z_{small}=\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [\{P_{1}^2/{2m}+P_{2}^2/{2m}+...\}+V(\vec{R_1},\vec{R_2},...)]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\cdot d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}$$
-The momentum integrals are assumed independent of the spatial integrals, so we can leave them out of the comparison.
-$$\newline Z_{small}\propto\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [V(\vec{R_1},\vec{R_2},...)]} d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}$$
-From here make the change of variables for each spatial coordinate to remap the integral from the small partition funciton into the big partition function, and in the process the scaling term $\alpha$ is found.
-$$\newline Z_{small}\propto\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [V(\vec{R_1},\vec{R_2},...)]} d\vec{R_1}\cdot \left(\frac{L_{big}}{L_{small}}\right)^3 \cdot d\vec{R_2}\cdot \left(\frac{L_{big}}{L_{small}}\right)^3 \cdot\cdot\cdot d\vec{R_N}\cdot \left(\frac{L_{big}}{L_{small}}\right)^3 \cdot \boldsymbol{\left(\frac{L_{small}}{L_{big}}\right)^{3N}}$$
-$$\newline Z_{small}=\left(\frac{L_{small}}{L_{big}}\right)^{3N}\cdot Z_{big}=\left(\frac{V_{small}}{L_{big}}\right)^N\cdot Z_{big}\doteq\alpha \Rightarrow$$
-$$\alpha=(V_{small}/L_{big})^N$$
-Now that $\alpha$ is known, we can get back to finding the entropy.
+This constant $\alpha$ can be found directly by looking at the partition function of both the big and small box. Keeping all but one atom fixed, the final atom can explore a region $R$ in the big box. It should be clear that in the smaller box this atom can only explore a region $R\cdot \frac{V_{small}}{V_{big}}$. This causes each atom to change the partition function by $\frac{V_{small}}{V_{big}} \Rightarrow$
+$$\newline \alpha=\frac{V_{small}^N}{V_{big}^N} \Rightarrow\newline$$
 $$\Delta S=k\cdot ln(Z_{small}/Z_{big})=k\cdot ln(\alpha\cdot Z_{valid}/Z_{big})\newline$$
 $$\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot Z_{valid}/Z_{big})\newline$$
 $$\text{but }Z_{valid}/Z_{big}=\text{probability of success when scaling}=P_{success}\Rightarrow\newline$$
