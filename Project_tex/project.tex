@@ -1,13 +1,16 @@
 \documentclass[12pt,twoside]{report}
+%\documentclass[12pt,preprint]{}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \graphicspath{{images/}}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[letterpaper,width=150mm,top=25mm,bottom=25mm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{amsbsy}
 \usepackage{amsmath}
+
+\usepackage[multidot]{grffile}%dots in graphics file names
 
 \pagestyle{fancy}
 \fancyhead{}
@@ -21,6 +24,46 @@
 
 \usepackage[backend=bibtex,maxnames=99,sorting=none]{biblatex}
 \addbibresource{references.bib}
+
+
+%????
+\iffalse
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\makeatletter
+% \patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
+% --- Patch \chapter
+%\patchcmd{\@makechapterhead}{50\p@}{\chapheadtopskip}{}{}% Space from top of page to CHAPTER X
+\patchcmd{\@makechapterhead}{50\p@}{\chapheadtopskip}{}{}
+
+%\patchcmd{\@makechapterhead}{20\p@}{\chapheadsep}{}{}% Space between CHAPTER X and CHAPTER TITLE
+\patchcmd{\@makechapterhead}{20\p@}{\chapheadsep}{}{}
+
+%\patchcmd{\@makechapterhead}{40\p@}{\chapheadbelowskip}{}{}% Space between CHAPTER TITLE and text
+\patchcmd{\@makechapterhead}{40\p@}{\chapheadbelowskip}{}{}
+
+% --- Patch \chapter*
+%\patchcmd{\@makeschapterhead}{50\p@}{\chapheadtopskip}{}{}% Space from top of page to CHAPTER TITLE
+\patchcmd{\@makeschapterhead}{10\p@}{\chapheadtopskip}{}{}
+
+%\patchcmd{\@makeschapterhead}{40\p@}{\chapheadbelowskip}{}{}% SPace between CHAPTER TITLE and text
+\patchcmd{\@makeschapterhead}{0\p@}{\chapheadbelowskip}{}{}
+\makeatother
+% Set new lengths
+\newlength{\chapheadtopskip}\setlength{\chapheadtopskip}{0pt}
+\newlength{\chapheadsep}\setlength{\chapheadsep}{0pt}
+\newlength{\chapheadbelowskip}\setlength{\chapheadbelowskip}{1pt}
+\fi
+% end ????
+
+%???  changes chapter headings
+\usepackage{titlesec}
+
+%\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\thechapter.}{0pt}{\huge\it}
+%\titlespacing*{\chapter}{0pt}{0pt}{1pt}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{}{-50pt}{\Huge}
+\titlespacing*{\chapter} {0pt}{-50pt}{0pt}
+%  end %%%%
 
 
 %\title{
@@ -54,7 +97,8 @@
 \chapter{Methods}
 \input{chapters/chapter02}
 
-\chapter{GRG Theory}
+\chapter{Results}
+%\renewcommand{\chaptermark}{ HI}
 \input{chapters/chapter03}
 
 \chapter{Data}

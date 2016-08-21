@@ -4,34 +4,32 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Introduction}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Methods}{9}
+\contentsline {chapter}{\numberline {2}Methods}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Equation Summary}{9}
+\contentsline {section}{\numberline {2.1}Equation Summary}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}SAFT}{9}
+\contentsline {subsection}{\numberline {2.1.1}SAFT}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Monte Carlo Simulations}{9}
+\contentsline {subsection}{\numberline {2.1.2}Monte Carlo Simulations}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Partition Function Seperation}{9}
+\contentsline {section}{\numberline {2.2}Partition Function Seperation}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Free Energy via Monte Carlo Simulations}{10}
+\contentsline {subsection}{\numberline {2.2.1}Free Energy via Monte Carlo Simulations}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}ideal gas free energy}{10}
+\contentsline {subsection}{\numberline {2.2.2}ideal gas free energy}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}hard sphere free energy}{11}
+\contentsline {subsection}{\numberline {2.2.3}hard sphere free energy}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.4}dispersive free energy}{13}
+\contentsline {subsection}{\numberline {2.2.4}dispersive free energy}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}SAFT}{14}
+\contentsline {section}{\numberline {2.3}Computation}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}GRG Theory}{15}
+\contentsline {chapter}{\numberline {3}Results}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}GRG Theory}{15}
+\contentsline {chapter}{\numberline {4}Data}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Data}{16}
+\contentsline {section}{\numberline {4.1}Computation}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Computation}{16}
+\contentsline {chapter}{\numberline {5}Conclusion}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusion}{17}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Conclusion}{17}
+\contentsline {section}{\numberline {5.1}Conclusion}{20}

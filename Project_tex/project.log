@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  1 AUG 2016 11:25
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  21 AUG 2016 04:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -180,6 +180,43 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2735.
 LaTeX Info: Redefining \] on input line 2736.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grffile.sty
+Package: grffile 2012/04/05 v1.16 Extended file name support for graphics (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+Package grffile Info: \Gread@QTm patched on input line 253.
+Package grffile Info: \Gread@eps patched on input line 303.
+Package grffile Info: Option `multidot' is set to `true'.
+Package grffile Info: Option `extendedchars' is set to `false'.
+Package grffile Info: Option `space' is set to `true'.
+Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2016/03/03 v3.3 programmable bibliographies (PK/JW/AB)
@@ -376,6 +413,18 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )))
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/15 v2.10.1 Sectioning titles
+\ttl@box=\box28
+\beforetitleunit=\skip64
+\aftertitleunit=\skip65
+\ttl@plus=\dimen129
+\ttl@minus=\dimen130
+\ttl@toksa=\toks23
+\titlewidth=\dimen131
+\titlewidthlast=\dimen132
+\titlewidthfirst=\dimen133
+)
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -401,18 +450,18 @@ LaTeX Warning: Label `sub@fig:cap01' multiply defined.
 )
 \openout1 = `project.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -420,18 +469,18 @@ Package caption Info: End \AtBeginDocument code.
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
 * driver: xetex
-* paper: a4paper
+* paper: letterpaper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(68.28659pt, 426.79134pt, 102.42995pt)
-* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
+* h-part:(L,W,R)=(75.00146pt, 426.79134pt, 112.5022pt)
+* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
 * \textwidth=426.79134pt
-* \textheight=702.78308pt
-* \oddsidemargin=-3.9834pt
-* \evensidemargin=30.15996pt
+* \textheight=652.70622pt
+* \oddsidemargin=2.73148pt
+* \evensidemargin=40.23221pt
 * \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -466,8 +515,8 @@ Package biblatex Warning: File 'project.bbl' created by wrong version.
 
 Package biblatex Info: ... file 'project.bbl' found.
 (./project.bbl)
-Package biblatex Info: Reference section=0 on input line 38.
-Package biblatex Info: Reference segment=0 on input line 38.
+Package biblatex Info: Reference section=0 on input line 81.
+Package biblatex Info: Reference segment=0 on input line 81.
  (./titlepage.tex
 File: images/osu2.png Graphic file (type QTm)
  <use  "images/osu2.png" > [1
@@ -501,7 +550,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] [7]) [8]
+[6]) [7]
 Chapter 2.
 (./chapters/chapter02.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--10
@@ -517,25 +566,69 @@ sy/m/n/12 ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^A ^^A ^^A \OML/cmm/m/it/1
 /it/12 d[] \OMS/cmsy/m/n/12 ^^A ^^A ^^A \OML/cmm/m/it/12 d[][] 
  []
 
-[9
 
-]
 Underfull \hbox (badness 10000) in paragraph at lines 25--33
 
  []
 
-[10] [11]
+[8
+
+] [9] [10]
 Overfull \hbox (70.18088pt too wide) detected at line 77
 [] \OML/cmm/m/it/12 Z[] \OMS/cmsy/m/n/12 / [] [] ^^A ^^A ^^A [] \OML/cmm/m/it/1
 2 e[]d[] \OMS/cmsy/m/n/12 ^^A [][] ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^
 A [][] ^^A ^^A ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^A [][] ^^A []
  []
 
-[12] [13]) [14]
+[11] [12]
+File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
+ <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [13] [14]
 Chapter 3.
-(./chapters/chapter03.tex) [15
+(./chapters/chapter03.tex
+File: images/UFtrends-ww1.50.pdf Graphic file (type QTm)
+ <use  "images/UFtrends-ww1.50.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 4--7
+ []|  [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15
 
 ]
+File: images/STCvtrends-ww1.50.pdf Graphic file (type QTm)
+
+<use  "images/STCvtrends-ww1.50.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 17--20
+ []|  [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+File: images/Cost-ww1.50.pdf Graphic file (type QTm)
+
+<use  "images/Cost-ww1.50.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 28--31
+ []|  [] 
+ []
+
+File: images/coexistence-ww1.50.pdf Graphic file (type QTm)
+<use  "images/coexistence-ww1.50.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 37--40
+ []|  [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [17] [18]
 Chapter 4.
 (./chapters/chapter04.tex
 File: images/liqVapCo_Tvsff.pdf Graphic file (type QTm)
@@ -547,11 +640,11 @@ File: images/liqVapCo_Tvsff.pdf Graphic file (type QTm)
  <use  "images/liqVapCo_Tvsff.pdf" >
 File: images/liqVapCo_Tvsff.pdf Graphic file (type QTm)
 
-<use  "images/liqVapCo_Tvsff.pdf" >) [16
+<use  "images/liqVapCo_Tvsff.pdf" >) [19
 
 ]
 Chapter 5.
-(./chapters/chapter05.tex) [17
+(./chapters/chapter05.tex) [20
 
 ] (./project.aux)
 
@@ -561,14 +654,14 @@ Package logreq Info: Writing requests to 'project.run.xml'.
 \openout1 = `project.run.xml'.
 
  )
-(\end occurred when \iftrue on line 38 was incomplete) 
+(\end occurred when \iftrue on line 81 was incomplete) 
 Here is how much of TeX's memory you used:
- 8070 strings out of 495536
- 129808 string characters out of 6186181
- 292304 words of memory out of 5000000
- 11249 multiletter control sequences out of 15000+600000
+ 8559 strings out of 495536
+ 137245 string characters out of 6186181
+ 305463 words of memory out of 5000000
+ 11711 multiletter control sequences out of 15000+600000
  13608 words of font info for 48 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,11n,43p,1282b,689s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,43p,1282b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (17 pages).
+Output written on project.pdf (20 pages).
