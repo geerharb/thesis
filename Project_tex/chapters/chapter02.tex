@@ -75,8 +75,8 @@ The momentum integrals are assumed independent of the spatial integrals, so we c
 $$\newline Z_{small}\propto\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [V(\vec{R_1},\vec{R_2},...)]} d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}$$
 From here make the change of variables for each spatial coordinate to remap the integral from the small partition funciton into the big partition function, and in the process the scaling term $\alpha$ is found.
 $$\newline Z_{small}\propto\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [V(\vec{R_1},\vec{R_2},...)]} d\vec{R_1}\cdot \left(\frac{L_{big}}{L_{small}}\right)^3 \cdot d\vec{R_2}\cdot \left(\frac{L_{big}}{L_{small}}\right)^3 \cdot\cdot\cdot d\vec{R_N}\cdot \left(\frac{L_{big}}{L_{small}}\right)^3 \cdot \boldsymbol{\left(\frac{L_{small}}{L_{big}}\right)^{3N}}$$
-$$\newline Z_{small}=\left(\frac{L_{small}}{L_{big}}\right)^{3N}\cdot Z_{big}=\left(\frac{V_{small}}{L_{big}}\right)^N\cdot Z_{big}\doteq\alpha \Rightarrow$$
-$$\alpha=(V_{small}/L_{big})^N$$
+$$\newline Z_{small}=\left(\frac{L_{small}}{L_{big}}\right)^{3N}\cdot Z_{big}=\left(\frac{V_{small}}{V_{big}}\right)^N\cdot Z_{big}\doteq\alpha\cdot Z_{big} \Rightarrow$$
+$$\alpha=(V_{small}/V_{big})^N$$
 Now that $\alpha$ is known, we can get back to finding the entropy.
 $$\Delta S=k\cdot ln(Z_{small}/Z_{big})=k\cdot ln(\alpha\cdot Z_{valid}/Z_{big})\newline$$
 $$\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot Z_{valid}/Z_{big})\newline$$
@@ -109,7 +109,8 @@ Basically the partition function will define the total energy at all temperature
 To get around this problem of an unknown factor in the density of states, note that the dispersive partition function will go towards one as T approaches infinity. This happens because $Z_{disp}$ is the ratio of the interaction term to the hard sphere term, and the interaction term approaches the hard sphere term as the temperature increases. Essentially we can leave the unkown $\alpha$ term alone, and it will show up in both the interaction and hard sphere partition function.
 
 That is: $$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}$$
-
+%\pagebreak
+\newpage
 \section{Computation}
 \begin{figure}[h]
 \vspace*{-7mm}

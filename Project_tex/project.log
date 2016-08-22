@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  21 AUG 2016 04:00
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  21 AUG 2016 15:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -469,18 +469,18 @@ Package caption Info: End \AtBeginDocument code.
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
 * driver: xetex
-* paper: letterpaper
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(75.00146pt, 426.79134pt, 112.5022pt)
-* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
+* h-part:(L,W,R)=(68.28659pt, 426.79134pt, 102.42995pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
 * \textwidth=426.79134pt
-* \textheight=652.70622pt
-* \oddsidemargin=2.73148pt
-* \evensidemargin=40.23221pt
+* \textheight=702.78308pt
+* \oddsidemargin=-3.9834pt
+* \evensidemargin=30.15996pt
 * \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -527,7 +527,15 @@ File: images/osu2.png Graphic file (type QTm)
 
  [3
 
-] (./project.lof)
+] (./project.lof
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 15.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 15.
+)
 \tf@lof=\write5
 \openout5 = `project.lof'.
 
@@ -580,18 +588,15 @@ Overfull \hbox (70.18088pt too wide) detected at line 77
 A [][] ^^A ^^A ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^A [][] ^^A []
  []
 
-[11] [12]
+[11] [12] [13]
 File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
- <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [13] [14]
+ <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >)
+[14]
 Chapter 3.
 (./chapters/chapter03.tex
 File: images/UFtrends-ww1.50.pdf Graphic file (type QTm)
  <use  "images/UFtrends-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 4--7
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 4--10
  []|  [] 
  []
 
@@ -604,31 +609,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/STCvtrends-ww1.50.pdf Graphic file (type QTm)
 
 <use  "images/STCvtrends-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 17--20
- []|  [] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
-File: images/Cost-ww1.50.pdf Graphic file (type QTm)
-
-<use  "images/Cost-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 28--31
- []|  [] 
- []
-
-File: images/coexistence-ww1.50.pdf Graphic file (type QTm)
-<use  "images/coexistence-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 37--40
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 20--24
  []|  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [17] [18]
+File: images/Costsmall-ww1.50.pdf Graphic file (type QTm)
+<use  "images/Costsmall-ww1.50.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 32--36
+ []|  [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: images/coexistence-ww1.50.pdf Graphic file (type QTm)
+<use  "images/coexistence-ww1.50.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 41--45
+ []|  [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [16] [17]
 Chapter 4.
 (./chapters/chapter04.tex
 File: images/liqVapCo_Tvsff.pdf Graphic file (type QTm)
@@ -640,11 +646,11 @@ File: images/liqVapCo_Tvsff.pdf Graphic file (type QTm)
  <use  "images/liqVapCo_Tvsff.pdf" >
 File: images/liqVapCo_Tvsff.pdf Graphic file (type QTm)
 
-<use  "images/liqVapCo_Tvsff.pdf" >) [19
+<use  "images/liqVapCo_Tvsff.pdf" >) [18
 
 ]
 Chapter 5.
-(./chapters/chapter05.tex) [20
+(./chapters/chapter05.tex) [19
 
 ] (./project.aux)
 
@@ -656,12 +662,12 @@ Package logreq Info: Writing requests to 'project.run.xml'.
  )
 (\end occurred when \iftrue on line 81 was incomplete) 
 Here is how much of TeX's memory you used:
- 8559 strings out of 495536
- 137245 string characters out of 6186181
- 305463 words of memory out of 5000000
- 11711 multiletter control sequences out of 15000+600000
+ 8575 strings out of 495536
+ 137528 string characters out of 6186181
+ 305458 words of memory out of 5000000
+ 11724 multiletter control sequences out of 15000+600000
  13608 words of font info for 48 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,11n,43p,1282b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (20 pages).
+Output written on project.pdf (19 pages).
