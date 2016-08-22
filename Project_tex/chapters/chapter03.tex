@@ -1,5 +1,6 @@
-\stepcounter{subsection}
-\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}<Monte Carlo Energy trends>}
+%\stepcounter{subsection}
+%\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}<Monte Carlo Energy trends>}
+\section{Trends in U,F}
 \begin{figure}[h]
 \vspace*{-10mm}
 \hspace*{-6mm}
@@ -16,20 +17,22 @@
 
 
 \pagebreak
+\section{Trends in S,Cv}
 \begin{figure}[h]
-\vspace*{-7mm}
+\vspace*{-40mm}
 \hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{STCvtrends-ww1.50.pdf}
 	\caption{\scriptsize
-	These graphs show the Monte Carlo simulations results in terms of dispersive entropy and heat capacity per particle relative to SAFT at three different box sizes. It is interesting to see the entropy trends are nearly the inverse of the heat capacity trends. Both entropy and heat capacity require a derivative to find, it is just that entropy is the negative derivative of Free energy while heat capacity is the positive derivative of internal energy. Given fig. \ref{fig:UFtrends} showed the internal energy had the same trend as the free energy, it isn't surprising entropy and heat capacity have inverse trends. Regarding the trend itself, the entropy of a small box will have more entropy than SAFT, while a large box will have a lower entropy than SAFT. This trend can be explained by the particles binding together in ways that SAFT could not take into account, and this extra binding will decrease the entropy simply because some states are now favored over other states.}
+	These graphs show the Monte Carlo simulations results in terms of dispersive entropy and heat capacity per particle relative to SAFT at three different box sizes. It is interesting to see the entropy trends are nearly the inverse of the heat capacity trends. Both entropy and heat capacity require a derivative to find, it is just that entropy is the negative derivative of Free energy while heat capacity is the positive derivative of internal energy. Given fig. \ref{fig:UFtrends} showed the internal energy had the same trend as the free energy, it isn't surprising entropy and heat capacity have inverse trends. Regarding the trend itself, the graphs suggest entropy of a small box will have more entropy than SAFT, while a large box will have a lower entropy than SAFT. This trend can be explained by the particles binding together in ways that SAFT could not take into account, and this extra binding will decrease the entropy simply because some states are now favored over other states.}
 	\label{fig:STCvtrends}
 \end{figure}
 
 
 \pagebreak
+\section{Using Cost to Estimate Best Box Size}
 \begin{figure}[h]
-\vspace*{-7mm}
+\vspace*{-10mm}
 \hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{Costsmall-ww1.50.pdf}
@@ -37,8 +40,10 @@
 	These graphs show the cost function as a function of the box size for the dispersive free energy, internal energy, entropy, and heat capacity. The cost function is defiend as the mean square difference between the Monte Carlo simultions and SAFT evaulated at a filling fraction of [0.15,0.25,0.35,0.45] and evaluated for 0.6\textless T\textless 1.5. The dispersive free energy and internal energy show a minimum near L=7.6, while any box size less than L=8.0 seems to be just fine for the dispersive entropy and heat capacity.}
 	\label{fig:Cost}
 \end{figure}
+%\vspace*{-10mm}
+\section{Coexistence: T vs Density}
 \begin{figure}[h]
-\vspace*{-7mm}
+\vspace*{-10mm}
 \hspace*{-6mm}
 	\centering
 	\includegraphics[scale=0.9]{coexistence-ww1.50.pdf}

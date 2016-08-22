@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  21 AUG 2016 15:43
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  22 AUG 2016 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,16 +436,7 @@ File: english.lbx 2016/03/03 v3.3 biblatex localization (PK/JW/AB)
 
 (./project.aux
 
-LaTeX Warning: Label `fig:cap01' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:cap01' multiply defined.
-
-
-LaTeX Warning: Label `fig:cap01' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:cap01' multiply defined.
+LaTeX Warning: Label `fig:FdispVsff' multiply defined.
 
 )
 \openout1 = `project.aux'.
@@ -528,13 +519,13 @@ File: images/osu2.png Graphic file (type QTm)
  [3
 
 ] (./project.lof
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 15.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 15.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 17.
 )
 \tf@lof=\write5
 \openout5 = `project.lof'.
@@ -543,22 +534,23 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
 
 ]
 Chapter 1.
-(./chapters/chapter01.tex [5
-
-]
+(./chapters/chapter01.tex
 File: images/"mc2d9999".png Graphic file (type QTm)
  <use  "images/"mc2d9999".png" >
 Overfull \hbox (17.62482pt too wide) in paragraph at lines 19--20
 [][] 
  []
 
+[5
+
+])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 27.18335pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6]) [7]
+[6]
 Chapter 2.
 (./chapters/chapter02.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--10
@@ -579,24 +571,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--33
 
  []
 
-[8
+[7
 
-] [9] [10]
+] [8] [9]
 Overfull \hbox (70.18088pt too wide) detected at line 77
 [] \OML/cmm/m/it/12 Z[] \OMS/cmsy/m/n/12 / [] [] ^^A ^^A ^^A [] \OML/cmm/m/it/1
 2 e[]d[] \OMS/cmsy/m/n/12 ^^A [][] ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^
 A [][] ^^A ^^A ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^A [][] ^^A []
  []
 
-[11] [12] [13]
+[10] [11] [12]
 File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
- <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >)
-[14]
+ <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
+File: images/commonTangent.pdf Graphic file (type QTm)
+
+<use  "images/commonTangent.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 126--129
+ []|  [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [13] [14]
 Chapter 3.
 (./chapters/chapter03.tex
 File: images/UFtrends-ww1.50.pdf Graphic file (type QTm)
  <use  "images/UFtrends-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 4--10
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 6--12
  []|  [] 
  []
 
@@ -609,48 +611,30 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/STCvtrends-ww1.50.pdf Graphic file (type QTm)
 
 <use  "images/STCvtrends-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 20--24
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 23--27
  []|  [] 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [16]
 File: images/Costsmall-ww1.50.pdf Graphic file (type QTm)
+
 <use  "images/Costsmall-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 32--36
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 36--40
  []|  [] 
  []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: images/coexistence-ww1.50.pdf Graphic file (type QTm)
 <use  "images/coexistence-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 41--45
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 47--51
  []|  [] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [16] [17]
+) [17]
 Chapter 4.
-(./chapters/chapter04.tex
-File: images/liqVapCo_Tvsff.pdf Graphic file (type QTm)
- <use  "images/liqVapCo_Tvsff.pdf" >
-File: images/liqVapCo_Tvsff.pdf Graphic file (type QTm)
-
-<use  "images/liqVapCo_Tvsff.pdf" >
-File: images/liqVapCo_Tvsff.pdf Graphic file (type QTm)
- <use  "images/liqVapCo_Tvsff.pdf" >
-File: images/liqVapCo_Tvsff.pdf Graphic file (type QTm)
-
-<use  "images/liqVapCo_Tvsff.pdf" >) [18
-
-]
-Chapter 5.
-(./chapters/chapter05.tex) [19
+(./chapters/chapter05.tex) [18
 
 ] (./project.aux)
 
@@ -662,12 +646,12 @@ Package logreq Info: Writing requests to 'project.run.xml'.
  )
 (\end occurred when \iftrue on line 81 was incomplete) 
 Here is how much of TeX's memory you used:
- 8575 strings out of 495536
- 137528 string characters out of 6186181
- 305458 words of memory out of 5000000
- 11724 multiletter control sequences out of 15000+600000
- 13608 words of font info for 48 fonts, out of 8000000 for 9000
+ 8561 strings out of 495536
+ 137279 string characters out of 6186181
+ 305461 words of memory out of 5000000
+ 11713 multiletter control sequences out of 15000+600000
+ 13308 words of font info for 47 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,11n,43p,1282b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (19 pages).
+Output written on project.pdf (18 pages).
