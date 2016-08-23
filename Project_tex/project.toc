@@ -4,15 +4,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Methods}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Equation Summary}{8}
+\contentsline {section}{\numberline {2.1}Equation Summary}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}SAFT}{8}
+\contentsline {subsection}{\numberline {2.1.1}SAFT-VR EOS with square-well fluids}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Monte Carlo Simulations}{8}
+\contentsline {subsection}{\numberline {2.1.2}Monte Carlo Simulations}{7}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Partition Function Seperation}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Free Energy via Monte Carlo Simulations}{9}
+\contentsline {subsection}{\numberline {2.2.1}Free Energy via Monte Carlo Simulations}{8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}ideal gas free energy}{9}
 \defcounter {refsection}{0}\relax 
@@ -20,7 +20,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.4}dispersive free energy}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Computation}{14}
+\contentsline {section}{\numberline {2.3}Computation}{13}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Results}{16}
 \defcounter {refsection}{0}\relax 

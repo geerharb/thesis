@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  23 AUG 2016 02:44
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  23 AUG 2016 14:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -218,6 +218,55 @@ Package grffile Info: Option `extendedchars' is set to `false'.
 Package grffile Info: Option `space' is set to `true'.
 Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
+\c@tracingmulticols=\count106
+\mult@box=\box28
+\multicol@leftmargin=\dimen129
+\c@unbalance=\count107
+\c@collectmore=\count108
+\doublecol@number=\count109
+\multicoltolerance=\count110
+\multicolpretolerance=\count111
+\full@width=\dimen130
+\page@free=\dimen131
+\premulticols=\dimen132
+\postmulticols=\dimen133
+\multicolsep=\skip55
+\multicolbaselineskip=\skip56
+\partial@page=\box29
+\last@line=\box30
+\maxbalancingoverflow=\dimen134
+\mult@rightbox=\box31
+\mult@grightbox=\box32
+\mult@gfirstbox=\box33
+\mult@firstbox=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\c@columnbadness=\count112
+\c@finalcolumnbadness=\count113
+\last@try=\dimen135
+\multicolovershoot=\dimen136
+\multicolundershoot=\dimen137
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+\mc@col@check@num=\count114
+)
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2016/03/03 v3.3 programmable bibliographies (PK/JW/AB)
 
@@ -227,11 +276,11 @@ PK/JW/AB)
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count106
+\etb@tempcnta=\count115
 )
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count107
+\lrq@indent=\count116
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -243,121 +292,121 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count108
-\c@listtotal=\count109
-\c@listcount=\count110
-\c@liststart=\count111
-\c@liststop=\count112
-\c@citecount=\count113
-\c@citetotal=\count114
-\c@multicitecount=\count115
-\c@multicitetotal=\count116
-\c@instcount=\count117
-\c@maxnames=\count118
-\c@minnames=\count119
-\c@maxitems=\count120
-\c@minitems=\count121
-\c@citecounter=\count122
-\c@savedcitecounter=\count123
-\c@uniquelist=\count124
-\c@uniquename=\count125
-\c@refsection=\count126
-\c@refsegment=\count127
-\c@maxextrayear=\count128
-\c@maxextraalpha=\count129
-\c@abbrvpenalty=\count130
-\c@highnamepenalty=\count131
-\c@lownamepenalty=\count132
-\c@maxparens=\count133
-\c@parenlevel=\count134
-\blx@tempcnta=\count135
-\blx@tempcntb=\count136
-\blx@tempcntc=\count137
-\blx@maxsection=\count138
-\blx@maxsegment=\count139
-\blx@notetype=\count140
-\blx@parenlevel@text=\count141
-\blx@parenlevel@foot=\count142
-\labelnumberwidth=\skip55
-\labelalphawidth=\skip56
-\shorthandwidth=\skip57
-\biblabelsep=\skip58
-\bibitemsep=\skip59
-\bibnamesep=\skip60
-\bibinitsep=\skip61
-\bibparsep=\skip62
-\bibhang=\skip63
+\c@tabx@nest=\count117
+\c@listtotal=\count118
+\c@listcount=\count119
+\c@liststart=\count120
+\c@liststop=\count121
+\c@citecount=\count122
+\c@citetotal=\count123
+\c@multicitecount=\count124
+\c@multicitetotal=\count125
+\c@instcount=\count126
+\c@maxnames=\count127
+\c@minnames=\count128
+\c@maxitems=\count129
+\c@minitems=\count130
+\c@citecounter=\count131
+\c@savedcitecounter=\count132
+\c@uniquelist=\count133
+\c@uniquename=\count134
+\c@refsection=\count135
+\c@refsegment=\count136
+\c@maxextrayear=\count137
+\c@maxextraalpha=\count138
+\c@abbrvpenalty=\count139
+\c@highnamepenalty=\count140
+\c@lownamepenalty=\count141
+\c@maxparens=\count142
+\c@parenlevel=\count143
+\blx@tempcnta=\count144
+\blx@tempcntb=\count145
+\blx@tempcntc=\count146
+\blx@maxsection=\count147
+\blx@maxsegment=\count148
+\blx@notetype=\count149
+\blx@parenlevel@text=\count150
+\blx@parenlevel@foot=\count151
+\labelnumberwidth=\skip57
+\labelalphawidth=\skip58
+\shorthandwidth=\skip59
+\biblabelsep=\skip60
+\bibitemsep=\skip61
+\bibnamesep=\skip62
+\bibinitsep=\skip63
+\bibparsep=\skip64
+\bibhang=\skip65
 \blx@auxin=\read1
 \blx@auxout=\write3
-\c@mincomprange=\count143
-\c@maxcomprange=\count144
-\c@mincompwidth=\count145
-\c@labelname=\count146
-\c@savedlabelname=\count147
-\c@author=\count148
-\c@savedauthor=\count149
-\c@shortauthor=\count150
-\c@savedshortauthor=\count151
-\c@editor=\count152
-\c@savededitor=\count153
-\c@editora=\count154
-\c@savededitora=\count155
-\c@editorb=\count156
-\c@savededitorb=\count157
-\c@editorc=\count158
-\c@savededitorc=\count159
-\c@shorteditor=\count160
-\c@savedshorteditor=\count161
-\c@bookauthor=\count162
-\c@savedbookauthor=\count163
-\c@translator=\count164
-\c@savedtranslator=\count165
-\c@annotator=\count166
-\c@savedannotator=\count167
-\c@commentator=\count168
-\c@savedcommentator=\count169
-\c@introduction=\count170
-\c@savedintroduction=\count171
-\c@foreword=\count172
-\c@savedforeword=\count173
-\c@afterword=\count174
-\c@savedafterword=\count175
-\c@holder=\count176
-\c@savedholder=\count177
-\c@namea=\count178
-\c@savednamea=\count179
-\c@nameb=\count180
-\c@savednameb=\count181
-\c@namec=\count182
-\c@savednamec=\count183
-\c@institution=\count184
-\c@savedinstitution=\count185
-\c@language=\count186
-\c@savedlanguage=\count187
-\c@location=\count188
-\c@savedlocation=\count189
-\c@organization=\count190
-\c@savedorganization=\count191
-\c@origlocation=\count192
-\c@savedoriglocation=\count193
-\c@origpublisher=\count194
-\c@savedorigpublisher=\count195
-\c@pageref=\count196
-\c@savedpageref=\count197
-\c@publisher=\count198
-\c@savedpublisher=\count199
-\c@lista=\count266
-\c@savedlista=\count267
-\c@listb=\count268
-\c@savedlistb=\count269
-\c@listc=\count270
-\c@savedlistc=\count271
-\c@listd=\count272
-\c@savedlistd=\count273
-\c@liste=\count274
-\c@savedliste=\count275
-\c@listf=\count276
-\c@savedlistf=\count277
+\c@mincomprange=\count152
+\c@maxcomprange=\count153
+\c@mincompwidth=\count154
+\c@labelname=\count155
+\c@savedlabelname=\count156
+\c@author=\count157
+\c@savedauthor=\count158
+\c@shortauthor=\count159
+\c@savedshortauthor=\count160
+\c@editor=\count161
+\c@savededitor=\count162
+\c@editora=\count163
+\c@savededitora=\count164
+\c@editorb=\count165
+\c@savededitorb=\count166
+\c@editorc=\count167
+\c@savededitorc=\count168
+\c@shorteditor=\count169
+\c@savedshorteditor=\count170
+\c@bookauthor=\count171
+\c@savedbookauthor=\count172
+\c@translator=\count173
+\c@savedtranslator=\count174
+\c@annotator=\count175
+\c@savedannotator=\count176
+\c@commentator=\count177
+\c@savedcommentator=\count178
+\c@introduction=\count179
+\c@savedintroduction=\count180
+\c@foreword=\count181
+\c@savedforeword=\count182
+\c@afterword=\count183
+\c@savedafterword=\count184
+\c@holder=\count185
+\c@savedholder=\count186
+\c@namea=\count187
+\c@savednamea=\count188
+\c@nameb=\count189
+\c@savednameb=\count190
+\c@namec=\count191
+\c@savednamec=\count192
+\c@institution=\count193
+\c@savedinstitution=\count194
+\c@language=\count195
+\c@savedlanguage=\count196
+\c@location=\count197
+\c@savedlocation=\count198
+\c@organization=\count199
+\c@savedorganization=\count266
+\c@origlocation=\count267
+\c@savedoriglocation=\count268
+\c@origpublisher=\count269
+\c@savedorigpublisher=\count270
+\c@pageref=\count271
+\c@savedpageref=\count272
+\c@publisher=\count273
+\c@savedpublisher=\count274
+\c@lista=\count275
+\c@savedlista=\count276
+\c@listb=\count277
+\c@savedlistb=\count278
+\c@listc=\count279
+\c@savedlistc=\count280
+\c@listd=\count281
+\c@savedlistd=\count282
+\c@liste=\count283
+\c@savedliste=\count284
+\c@listf=\count285
+\c@savedlistf=\count286
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -369,13 +418,13 @@ Package biblatex Info: ... file 'biblatex_legacy.def' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex_legacy.def
 File: biblatex_legacy.def 
-\c@textcitecount=\count278
-\c@textcitetotal=\count279
-\c@textcitemaxnames=\count280
-\c@biburlnumpenalty=\count281
-\c@biburlucpenalty=\count282
-\c@biburllcpenalty=\count283
-\c@smartand=\count284
+\c@textcitecount=\count287
+\c@textcitetotal=\count288
+\c@textcitemaxnames=\count289
+\c@biburlnumpenalty=\count290
+\c@biburlucpenalty=\count291
+\c@biburllcpenalty=\count292
+\c@smartand=\count293
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -387,8 +436,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2016/03/03 v3.3 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count285
-\c@bbx:relatedtotal=\count286
+\c@bbx:relatedcount=\count294
+\c@bbx:relatedtotal=\count295
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -415,15 +464,15 @@ File: biblatex.cfg
 )))
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/15 v2.10.1 Sectioning titles
-\ttl@box=\box28
-\beforetitleunit=\skip64
-\aftertitleunit=\skip65
-\ttl@plus=\dimen129
-\ttl@minus=\dimen130
+\ttl@box=\box54
+\beforetitleunit=\skip66
+\aftertitleunit=\skip67
+\ttl@plus=\dimen138
+\ttl@minus=\dimen139
 \ttl@toksa=\toks23
-\titlewidth=\dimen131
-\titlewidthlast=\dimen132
-\titlewidthfirst=\dimen133
+\titlewidth=\dimen140
+\titlewidthlast=\dimen141
+\titlewidthfirst=\dimen142
 )
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -431,28 +480,46 @@ Package biblatex Info: ... file 'english.lbx' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2016/03/03 v3.3 biblatex localization (PK/JW/AB)
 )
-\@quotelevel=\count287
-\@quotereset=\count288
+\@quotelevel=\count296
+\@quotereset=\count297
 
 (./project.aux
+
+LaTeX Warning: Label `eq:saftF' multiply defined.
+
+
+LaTeX Warning: Label `eq:saftF' multiply defined.
+
+
+LaTeX Warning: Label `eq:saftF' multiply defined.
+
+
+LaTeX Warning: Label `eq:saftF' multiply defined.
+
+
+LaTeX Warning: Label `eq:saftF' multiply defined.
+
+
+LaTeX Warning: Label `eq:saftF' multiply defined.
+
 
 LaTeX Warning: Label `fig:FdispVsff' multiply defined.
 
 )
 \openout1 = `project.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -506,8 +573,8 @@ Package biblatex Warning: File 'project.bbl' created by wrong version.
 
 Package biblatex Info: ... file 'project.bbl' found.
 (./project.bbl)
-Package biblatex Info: Reference section=0 on input line 83.
-Package biblatex Info: Reference segment=0 on input line 83.
+Package biblatex Info: Reference section=0 on input line 85.
+Package biblatex Info: Reference segment=0 on input line 85.
  (./titlepage.tex
 File: images/osu2.png Graphic file (type QTm)
  <use  "images/osu2.png" > [1
@@ -553,23 +620,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [6]
 Chapter 2.
 (./chapters/chapter02.tex
-Underfull \hbox (badness 1082) in paragraph at lines 29--31
-\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T; n\OT1/cmr/m/n/12 ) = \OM
-L/cmm/m/it/12 constant \OMS/cmsy/m/n/12 )$ $\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (
-\OML/cmm/m/it/12 T; N=V\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 constant \OMS/cmsy/
-m/n/12 )$ $\OML/cmm/m/it/12 N=V \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 constant \OM
-S/cmsy/m/n/12 )$
+Overfull \hbox (23.81268pt too wide) detected at line 56
+[]\OT1/cmr/m/n/6 =[]\OMS/cmsy/m/n/6 ^^B[]
  []
 
 [7
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 47--51
-
- []
-
-
-Overfull \hbox (59.63766pt too wide) detected at line 63
+Overfull \hbox (59.63766pt too wide) detected at line 79
 [] \OML/cmm/m/it/12 Z \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 e[][] Z \OT1/cmr
 /m/n/12 = [] [] \OMS/cmsy/m/n/12 ^^A ^^A ^^A [] \OML/cmm/m/it/12 e[]d[] \OMS/cm
 sy/m/n/12 ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^A ^^A ^^A \OML/cmm/m/it/1
@@ -577,32 +635,32 @@ sy/m/n/12 ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^A ^^A ^^A \OML/cmm/m/it/1
 /it/12 d[] \OMS/cmsy/m/n/12 ^^A ^^A ^^A \OML/cmm/m/it/12 d[][] 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 66--74
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--90
 
  []
 
-[9] [10]
-Overfull \hbox (70.18088pt too wide) detected at line 118
+[8] [9] [10]
+Overfull \hbox (70.18088pt too wide) detected at line 134
 [] \OML/cmm/m/it/12 Z[] \OMS/cmsy/m/n/12 / [] [] ^^A ^^A ^^A [] \OML/cmm/m/it/1
 2 e[]d[] \OMS/cmsy/m/n/12 ^^A [][] ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^
 A [][] ^^A ^^A ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/m/n/12 ^^A [][] ^^A []
  []
 
-[11] [12] [13]
+[11] [12]
 File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
  <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
 File: images/commonTangent.pdf Graphic file (type QTm)
 
 <use  "images/commonTangent.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 167--170
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 183--186
  []|  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [14] [15]
+[13]) [14] [15]
 Chapter 3.
 (./chapters/chapter03.tex
 File: images/UFtrends-ww1.50.pdf Graphic file (type QTm)
@@ -653,14 +711,14 @@ Package logreq Info: Writing requests to 'project.run.xml'.
 \openout1 = `project.run.xml'.
 
  )
-(\end occurred when \iftrue on line 83 was incomplete) 
+(\end occurred when \iftrue on line 85 was incomplete) 
 Here is how much of TeX's memory you used:
- 8570 strings out of 495536
- 137373 string characters out of 6186181
- 305461 words of memory out of 5000000
- 11722 multiletter control sequences out of 15000+600000
- 13308 words of font info for 47 fonts, out of 8000000 for 9000
+ 8691 strings out of 495536
+ 139223 string characters out of 6186181
+ 313891 words of memory out of 5000000
+ 11839 multiletter control sequences out of 15000+600000
+ 14448 words of font info for 51 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,11n,43p,1282b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,43p,1377b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on project.pdf (19 pages).

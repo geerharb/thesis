@@ -6,7 +6,66 @@
 The methods section is partitioned into theory, which define the equations used, and the actual implementation through computational techniques. The main point of the theory is to estimate the free energy F from which any of the thermodynamic variables can be found. For example, the entropy, checmical potential, or pressure can be found by the differential $dF=-S\cdot dT -P\cdot dV+\mu\cdot dN$. Further, the internal energy can be found by $U=F+T\cdot S$. Once the free energy is found, the next goal is to fit the Monte Carlo simulations to SAFT by using a cost function that compares each thermodynamic variable from the Monte Carlo simulations to SAFT. The comparisons are constrained to a temperature range of $0.45<T/T_c<1.13$ where $T_c$ is the critical point using SAFT; the lower bound is chosen mostly to decrease the computation time of the simulations, while the upper limit is chosen to stay away from the well known hard sphere behavior. To decrease computation times even further, the comparisons are again constrained to filling fractions of [0.15,0.25,0.35,0.45]. Once the cost can be determined, a 'best' box size is chosen that decreases the overall cost. The final step is to compare this best box size to slightly larger and smaller box sizes by looking at the coexistence densities of the liquid and gas phases.
 
 \section{Equation Summary}
-\subsection{SAFT}
+\subsection{SAFT-VR EOS with square-well fluids}
+
+\begin{multicols}{2}
+
+
+%gil-villegas eq. 18
+\begin{equation}\label{eq:saftF18}
+\frac{F}{N\cdot k\cdot T}=a^{HS}+\beta\cdot a_1^{SW}+\beta^2\cdot a_2^{SW}
+\end{equation}
+
+%gil-villegas eq. 1
+\begin{equation}\label{eq:saftF1}
+a^{HS}=-ln(1-4\cdot n)
+\end{equation}
+
+%gil-villegas eq 34
+\begin{equation}\label{eq:saftF34}
+a_1^{SW}=a_1^{VDW}\cdot g^{HS}(1;n_{eff})
+\end{equation}
+
+%gil-villegas eq 35
+\begin{equation}\label{eq:saftF35}
+a_1^{VDW}=-4\cdot n\cdot \epsilon\cdot (\lambda^3-1)
+\end{equation}
+
+%gil-villegas eq 33
+\begin{equation}\label{eq:saftF33}
+g^{HS}(1;n_{eff})=\frac{1-n_{eff}/2}{(1-n_{eff})^3}
+\end{equation}
+
+%gil-villegas eq 36
+\begin{equation}\label{eq:saftF36}
+n_{eff}=c1\cdot n+c_2\cdot n^2+c_3\cdot n^3
+\end{equation}
+
+%gil-villegas eq 37
+\begin{equation}\label{eq:saftF37}
+\scriptscriptstyle
+\begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix}=
+\begin{pmatrix}
+2.25855 & -1.50349 & 0.249434 \\
+-0.669270 & 1.40049 & -0.827739 \\
+10.1576 & -15.0427 & 5.30827
+\end{pmatrix}\times
+\begin{pmatrix}
+1\\ \lambda \\ \lambda^2
+\end{pmatrix}
+\end{equation}
+
+%gil-villegas eq 38
+\begin{equation}\label{eq:saft38}
+a_2^{SW}=\frac{1}{2}\cdot \epsilon K^{HS}n\cdot \frac{\partial a_1^{SW}}{\partial n}
+\end{equation}
+
+%gil-villegas eq 22
+\begin{equation}\label{eq:saft22}
+K^{HS}=\frac{(1-n)^4}{1+4\cdot n+4\cdot n^4}
+\end{equation}
+\end{multicols}
+
 \subsection{Monte Carlo Simulations}
 $$Z=Z_{ideal}\cdot Z_{HS}\cdot Z_{disp}$$
 $$Z_{ideal}=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}$$
