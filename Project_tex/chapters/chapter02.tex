@@ -3,51 +3,8 @@
 					 %({plain} -> just page number, {empty} -> nothing)...
 					 % this will change all pages that come after this tex file...
 					 % so make sure to reset the pagestyle to {fancy} at the end of this file
-The methods section is partitioned into theory, which define the equations used, and the actual implementation through computational techniques. The main point of the theory is to estimate the free energy F from which the observables can be found. For example, $dF=-S\cdot dT -P\cdot dV+\mu\cdot dN$. At phase coexistence we want $\mu_{liquid}=\mu_{gas}$ and $P_{liquid}=P_{gas}$, so provided we know free energy we can simply find coexistence by setting the following:
+The methods section is partitioned into theory, which define the equations used, and the actual implementation through computational techniques. The main point of the theory is to estimate the free energy F from which any of the thermodynamic variables can be found. For example, the entropy, checmical potential, or pressure can be found by the differential $dF=-S\cdot dT -P\cdot dV+\mu\cdot dN$. Further, the internal energy can be found by $U=F+T\cdot S$. Once the free energy is found, the next goal is to fit the Monte Carlo simulations to SAFT by using a cost function that compares each thermodynamic variable from the Monte Carlo simulations to SAFT. The comparisons are constrained to a temperature range of $0.45<T/T_c<1.13$ where $T_c$ is the critical point using SAFT; the lower bound is chosen mostly to decrease the computation time of the simulations, while the upper limit is chosen to stay away from the well known hard sphere behavior. To decrease computation times even further, the comparisons are again constrained to filling fractions of [0.15,0.25,0.35,0.45]. Once the cost can be determined, a 'best' box size is chosen that decreases the overall cost. The final step is to compare this best box size to slightly larger and smaller box sizes by looking at the coexistence densities of the liquid and gas phases.
 
-\begin{equation}\label{eq:methodsMu}
-\mu=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigr|_{N1}=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigr|_{N2}
-\end{equation}
-
-\begin{equation}\label{eq:methodsP}
-P=\left(\frac{\partial F(T,V,N1)}{\partial V}\right)_{T,N1}\Bigr|_{V1}=\left(\frac{\partial F(T,V,N2)}{\partial V}\right)_{T,N2}\Bigr|_{V2}
-\end{equation}
-
-Notice that one set of derivatives are at constant V while the other set of derivatives are at constant N. Luckily this means we can simplify the derivatives by instead considering the free energy per volume; the reason this helps is both the free energy and volume are extensive quantities, which means the ratio F/V must be an intensive quantity which further means $F/V=f$ must only depend on intensive parameters. I.e. $F(T,N,V)/V=f(T,N/v)=f(T,n)$. First start simplifying eq.~\ref{eq:methodsMu} by:
-\begin{equation}\label{eq:methodsMu2}
-\mu=\left(\frac{\partial F(T,V,N)}{\partial N}\right)_{T,V}\cdot\frac{V}{V}=\left(\frac{\partial (F(T,V,N)/V)}{\partial (N/V)}\right)_{T,V}=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}
-\end{equation}
-At this point we know $\mu_1=\mu_2$ which combined with eq.~\ref{eq:methodsMu2} just indicates that if we plotted the free energy as a function density, then coexistence must occur when the instantaneous slope at one density matches the instantaneous slope at another density. This is useful to know, but it isn't enough to pin down a unique coexistence point. As such we must move on to simplifying eq.~\ref{eq:methodsP}:
-\begin{equation}\label{eq:methodsP2}
-P=\left(\frac{\partial F(T,V,N)\cdot V/V}{\partial V}\right)_{T,N}=\left(\frac{\partial f(T,n)\cdot V}{\partial V}\right)_{T,N}=f+V\cdot\left(\frac{\partial f(T,n)}{\partial V}\right)_{T,N}
-\end{equation}
-To simplify the last partial, use the cyclic chain rule by holding T constant throughout the process while considering the set of variables $(f,N,V)$. Proceed as follows:
-$$\left(\frac{\partial X}{\partial Y}\right)_Z\cdot \left(\frac{\partial Y}{\partial Z}\right)_X\cdot
-\left(\frac{\partial Z}{\partial X}\right)_Y=-1 \rightarrow$$
-\begin{equation}\label{eq:P3}
-\left(\frac{\partial f(T,n)}{\partial V}\right)_{N,T} \cdot\left(\frac{\partial V}{\partial N}\right)_{f(T,n),T} \cdot\left(\frac{\partial N}{\partial f(T,n)}\right)_{V,T}=-1
-\end{equation}
-\sloppy But we can simplify the last partial since from eq.~\ref{eq:methodsMu2} we already know that $\left(\frac{\partial N}{\partial f(T,n)}\right)_{V,T}=\frac{V}{\mu}$. Further, we can simplify the middle partial by noting $f(T,n)=constant\Rightarrow$ $f(T,N/V)=constant \Rightarrow$ $N/V=constant \Rightarrow$ $\left(\frac{\partial V}{\partial N}\right)_{f(T,n),T}=\frac{V}{N}=1/n$. Putting this all together into \ref{eq:P3} we get:
-\begin{equation}\label{eq:P4}
-\left(\frac{\partial f(T,n)}{\partial V}\right)_{N,T} \cdot \frac{1}{n} \cdot \frac{V}{\mu}=-1
-\end{equation}
-Finally we can use eq.~\ref{eq:P4} inside eq.~\ref{eq:methodsP2} to achieve the following:
-\begin{equation}\label{eq:P5}
-P=f+V\cdot\left( \frac{n\cdot \mu}{V} \right)=f-n\cdot\mu
-\end{equation}
-Having a simplified result for pressure, we can now apply the coexistence constrait that $P_1=P_2 \Rightarrow$ $f1+n1\cdot\mu=f2+n2\cdot\mu$. To compare this result with eq.~\ref{eq:methodsMu2}, solve for $\mu$ to get the following results:
-\begin{equation}\label{eq:mu3p}
-\mu=\frac{f2-f1}{n2-n1}
-\end{equation}
-\begin{equation}\label{eq:mu3}
-\text{from eq.~\ref{eq:methodsMu2}: }\mu= \left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V1}\Bigr|n1=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}\Bigr|n2
-\end{equation}
-The above constraints indicate that coexistence only occurs when the average slope must be equal to the instantaneous slope. This is equivalent to plotting the free energy as a function of density and finding a common tangent.
-
-Outline:
-SAFT\newline
-liquid-vapor+run-absolute\newline
-How comparisons were made\newline
 \section{Equation Summary}
 \subsection{SAFT}
 \subsection{Monte Carlo Simulations}
@@ -171,6 +128,46 @@ That is: $$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_
 	\label{fig:FdispVsff}
 \end{figure}
 
+which  At phase coexistence we want $\mu_{liquid}=\mu_{gas}$ and $P_{liquid}=P_{gas}$, so provided we know free energy we can simply find coexistence by setting the following:
+
+\begin{equation}\label{eq:methodsMu}
+\mu=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigr|_{N1}=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigr|_{N2}
+\end{equation}
+
+\begin{equation}\label{eq:methodsP}
+P=\left(\frac{\partial F(T,V,N1)}{\partial V}\right)_{T,N1}\Bigr|_{V1}=\left(\frac{\partial F(T,V,N2)}{\partial V}\right)_{T,N2}\Bigr|_{V2}
+\end{equation}
+
+Notice that one set of derivatives are at constant V while the other set of derivatives are at constant N. Luckily this means we can simplify the derivatives by instead considering the free energy per volume; the reason this helps is both the free energy and volume are extensive quantities, which means the ratio F/V must be an intensive quantity which further means $F/V=f$ must only depend on intensive parameters. I.e. $F(T,N,V)/V=f(T,N/v)=f(T,n)$. First start simplifying eq.~\ref{eq:methodsMu} by:
+\begin{equation}\label{eq:methodsMu2}
+\mu=\left(\frac{\partial F(T,V,N)}{\partial N}\right)_{T,V}\cdot\frac{V}{V}=\left(\frac{\partial (F(T,V,N)/V)}{\partial (N/V)}\right)_{T,V}=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}
+\end{equation}
+At this point we know $\mu_1=\mu_2$ which combined with eq.~\ref{eq:methodsMu2} just indicates that if we plotted the free energy as a function density, then coexistence must occur when the instantaneous slope at one density matches the instantaneous slope at another density. This is useful to know, but it isn't enough to pin down a unique coexistence point. As such we must move on to simplifying eq.~\ref{eq:methodsP}:
+\begin{equation}\label{eq:methodsP2}
+P=\left(\frac{\partial F(T,V,N)\cdot V/V}{\partial V}\right)_{T,N}=\left(\frac{\partial f(T,n)\cdot V}{\partial V}\right)_{T,N}=f+V\cdot\left(\frac{\partial f(T,n)}{\partial V}\right)_{T,N}
+\end{equation}
+To simplify the last partial, use the cyclic chain rule by holding T constant throughout the process while considering the set of variables $(f,N,V)$. Proceed as follows:
+$$\left(\frac{\partial X}{\partial Y}\right)_Z\cdot \left(\frac{\partial Y}{\partial Z}\right)_X\cdot
+\left(\frac{\partial Z}{\partial X}\right)_Y=-1 \rightarrow$$
+\begin{equation}\label{eq:P3}
+\left(\frac{\partial f(T,n)}{\partial V}\right)_{N,T} \cdot\left(\frac{\partial V}{\partial N}\right)_{f(T,n),T} \cdot\left(\frac{\partial N}{\partial f(T,n)}\right)_{V,T}=-1
+\end{equation}
+\sloppy But we can simplify the last partial since from eq.~\ref{eq:methodsMu2} we already know that $\left(\frac{\partial N}{\partial f(T,n)}\right)_{V,T}=\frac{V}{\mu}$. Further, we can simplify the middle partial by noting $f(T,n)=constant\Rightarrow$ $f(T,N/V)=constant \Rightarrow$ $N/V=constant \Rightarrow$ $\left(\frac{\partial V}{\partial N}\right)_{f(T,n),T}=\frac{V}{N}=1/n$. Putting this all together into \ref{eq:P3} we get:
+\begin{equation}\label{eq:P4}
+\left(\frac{\partial f(T,n)}{\partial V}\right)_{N,T} \cdot \frac{1}{n} \cdot \frac{V}{\mu}=-1
+\end{equation}
+Finally we can use eq.~\ref{eq:P4} inside eq.~\ref{eq:methodsP2} to achieve the following:
+\begin{equation}\label{eq:P5}
+P=f+V\cdot\left( \frac{n\cdot \mu}{V} \right)=f-n\cdot\mu
+\end{equation}
+Having a simplified result for pressure, we can now apply the coexistence constrait that $P_1=P_2 \Rightarrow$ $f1+n1\cdot\mu=f2+n2\cdot\mu$. To compare this result with eq.~\ref{eq:methodsMu2}, solve for $\mu$ to get the following results:
+\begin{equation}\label{eq:mu3p}
+\mu=\frac{f2-f1}{n2-n1}
+\end{equation}
+\begin{equation}\label{eq:mu3}
+\text{from eq.~\ref{eq:methodsMu2}: }\mu= \left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V1}\Bigr|n1=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}\Bigr|n2
+\end{equation}
+The above constraints indicate that coexistence only occurs when the average slope must be equal to the instantaneous slope. This is equivalent to plotting the free energy as a function of density and finding a common tangent.
 
 
 %\pagestyle{fancy}   % Reset all pages after this file to fnacy headers
