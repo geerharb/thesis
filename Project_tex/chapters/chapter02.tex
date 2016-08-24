@@ -9,36 +9,41 @@ The methods section is partitioned into theory, which define the equations used,
 \subsection{SAFT-VR EOS with square-well fluids}
 
 \begin{multicols}{2}
+let $n=\frac{N}{V}\newline\eta=packingFraction\newline\Lambda=$de Broglie wavlength
 
-
-%gil-villegas eq. 18
+%gil-villegas eq. 1+18
 \begin{equation}\label{eq:saftF18}
-\frac{F}{N\cdot k\cdot T}=a^{HS}+\beta\cdot a_1^{SW}+\beta^2\cdot a_2^{SW}
+\frac{F}{N\cdot k\cdot T}=a^{IDEAL}+a^{HS}+\beta\cdot a_1^{SW}+\beta^2\cdot a_2^{SW}
+\end{equation}
+
+%gil-villegas eq 1
+\begin{equation}\label{eq:saftF1a}
+a^{IDEAL}=ln\left(n\cdot \Lambda^3\right)-1
 \end{equation}
 
 %gil-villegas eq. 1
-\begin{equation}\label{eq:saftF1}
-a^{HS}=-ln(1-4\cdot n)
+\begin{equation}\label{eq:saftF1b}
+a^{HS}=-ln(1-4\cdot \eta)
 \end{equation}
 
 %gil-villegas eq 34
 \begin{equation}\label{eq:saftF34}
-a_1^{SW}=a_1^{VDW}\cdot g^{HS}(1;n_{eff})
+a_1^{SW}=a_1^{VDW}\cdot g^{HS}(1;\eta_{eff})
 \end{equation}
 
 %gil-villegas eq 35
 \begin{equation}\label{eq:saftF35}
-a_1^{VDW}=-4\cdot n\cdot \epsilon\cdot (\lambda^3-1)
+a_1^{VDW}=-4\cdot \eta\cdot \epsilon\cdot (\lambda^3-1)
 \end{equation}
 
 %gil-villegas eq 33
 \begin{equation}\label{eq:saftF33}
-g^{HS}(1;n_{eff})=\frac{1-n_{eff}/2}{(1-n_{eff})^3}
+g^{HS}(1;\eta_{eff})=\frac{1-\eta_{eff}/2}{(1-\eta_{eff})^3}
 \end{equation}
 
 %gil-villegas eq 36
 \begin{equation}\label{eq:saftF36}
-n_{eff}=c1\cdot n+c_2\cdot n^2+c_3\cdot n^3
+n_{eff}=c1\cdot \eta+c_2\cdot \eta^2+c_3\cdot \eta^3
 \end{equation}
 
 %gil-villegas eq 37
@@ -57,21 +62,21 @@ n_{eff}=c1\cdot n+c_2\cdot n^2+c_3\cdot n^3
 
 %gil-villegas eq 38
 \begin{equation}\label{eq:saft38}
-a_2^{SW}=\frac{1}{2}\cdot \epsilon K^{HS}n\cdot \frac{\partial a_1^{SW}}{\partial n}
+a_2^{SW}=\frac{1}{2}\cdot \epsilon K^{HS}\eta\cdot \frac{\partial a_1^{SW}}{\partial \eta}
 \end{equation}
 
 %gil-villegas eq 22
 \begin{equation}\label{eq:saft22}
-K^{HS}=\frac{(1-n)^4}{1+4\cdot n+4\cdot n^4}
+K^{HS}=\frac{(1-\eta)^4}{1+4\cdot \eta+4\cdot \eta^2}
 \end{equation}
 \end{multicols}
 
 \subsection{Monte Carlo Simulations}
 $$Z=Z_{ideal}\cdot Z_{HS}\cdot Z_{disp}$$
-$$Z_{ideal}=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}$$
-$$Z_{HS}=e^{-S_{exc.\infty}/k}$$
+$$Z_{ideal}=Z_{ideal}^{SAFTVR}$$
+$$Z_{HS}=e^{-S_{HS}/k}$$
 $$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}$$
-where $S_{exc.\infty}=k\cdot ln(P_{success})$ and $P_{success}$ is the probability of a successful attempt to scale an infinite box down to the size of the actual box of the simulation without hard sphere collisions; this shrinking can be done in small steps and the net sum in the change in entropy is then $S_{exc.\infty}$.
+where $S_{HS}$ is the hard sphere entropy. THe hard sphere entropy can be found by starting at $T=\infinity$ and with an infinitly large box. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps the big box down to the the smaller box, which means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Deta S_{HS}=k\cdot ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the infinetly large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
 
 \section{Partition Function Seperation}
 The partition function can be partitioned into high and low temperature regimes. At low temperatures the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three partitions:
