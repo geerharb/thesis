@@ -3,10 +3,10 @@
 					 %({plain} -> just page number, {empty} -> nothing)...
 					 % this will change all pages that come after this tex file...
 					 % so make sure to reset the pagestyle to {fancy} at the end of this file
-The methods section is partitioned into theory, which define the equations used, and the actual implementation through computational techniques. The main point of the theory is to estimate the free energy F from which any of the thermodynamic variables can be found. For example, the entropy, checmical potential, or pressure can be found by the differential $dF=-S\cdot dT -P\cdot dV+\mu\cdot dN$. Further, the internal energy can be found by $U=F+T\cdot S$. Once the free energy is found, the next goal is to fit the Monte Carlo simulations to SAFT by using a cost function that compares each thermodynamic variable from the Monte Carlo simulations to SAFT. The comparisons are constrained to a temperature range of $0.45<T/T_c<1.13$ where $T_c$ is the critical point using SAFT; the lower bound is chosen mostly to decrease the computation time of the simulations, while the upper limit is chosen to stay away from the well known hard sphere behavior. To decrease computation times even further, the comparisons are again constrained to filling fractions of [0.15,0.25,0.35,0.45]. Once the cost can be determined, a 'best' box size is chosen that decreases the overall cost. The final step is to compare this best box size to slightly larger and smaller box sizes by looking at the coexistence densities of the liquid and gas phases.
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+The methods section is partitioned into theory, which define the equations used, and the actual implementation through computational techniques. The main point of the theory is to estimate the free energy F from which any of the thermodynamic variables can be found. For example, the entropy, checmical potential, or pressure can be found by the differential $dF=-S\cdot dT -P\cdot dV+\mu\cdot dN$. Further, the internal energy can be found by $U=F+T\cdot S$. Once the free energy is found, the next goal is to fit the Monte Carlo simulations to SAFT by using a cost function that compares each thermodynamic variable from the Monte Carlo simulations to SAFT. The comparisons are constrained to a temperature range of $0.45<T/T_c<1.13$ where $T_c$ is the critical point using SAFT; the lower bound is chosen mostly to decrease the computation time of the simulations, while the upper limit is chosen to stay away from the well known hard sphere behavior. To decrease computation times even further, the comparisons are again constrained to filling fractions of [0.15,0.25,0.35,0.45]. Once the cost can be determined for a variety of box sizes, a 'best' box size is chosen that decreases the overall cost. The final step is to compare this best box size to slightly larger and smaller box sizes by looking at the coexistence densities of the liquid and gas phases.
 
-\section{Equation Summary}
-\subsection{SAFT-VR EOS with square-well fluids}
+\section{Equation Summary: SAFT-VR}
 
 \begin{multicols}{2}
 let $n=\frac{N}{V}\newline\eta=packingFraction\newline\Lambda=$de Broglie wavlength
@@ -71,101 +71,218 @@ K^{HS}=\frac{(1-\eta)^4}{1+4\cdot \eta+4\cdot \eta^2}
 \end{equation}
 \end{multicols}
 
-\subsection{Monte Carlo Simulations}
+\section{Equation Summary: Monte Carlo Simulations}
 $$Z=Z_{ideal}\cdot Z_{HS}\cdot Z_{disp}$$
 $$Z_{ideal}=Z_{ideal}^{SAFTVR}$$
 $$Z_{HS}=e^{-S_{HS}/k}$$
 $$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}$$
-where $S_{HS}$ is the hard sphere entropy. THe hard sphere entropy can be found by starting at $T=\infinity$ and with an infinitly large box. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps the big box down to the the smaller box, which means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Deta S_{HS}=k\cdot ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the infinetly large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
+Not that $S_{HS}$ is the hard sphere entropy. The hard sphere entropy can be found by starting at $T=\infty$ and with an infinitly large box. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps the big box down to the the smaller box, which means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the infinetly large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
 
 \section{Partition Function Seperation}
 The partition function can be partitioned into high and low temperature regimes. At low temperatures the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three partitions:
-$$\newline Z=\frac{1}{N!}\sum_i e^{-\beta\cdot E_i}
-\newline Z=\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [\{P_{1}^2/{2m}+P_{2}^2/{2m}+...\}+V(\vec{R_1},\vec{R_2},...)]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\cdot d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$$
-The momentum integrals are independent of the position integrals, so we seperate the momentum integrals which we then incorporate into an ideal gas term by multiplying by $V^N/V^N$.
-$$\newline Z=\boldsymbol{Z_{ideal} \cdot \frac{1}{V^N}}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$$
-where $$Z_{ideal}=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\newline$$
-After taking into account the ideal gas term, the remaining potential energy term is seperated into the low temperature and high temperature regime. At high temperatures, the atom energies are much higher than the potential well; this means the finite potential well can be considered zero. However; even at infinite temperature the atoms are assumed to be a hard sphere. This hard sphere behavior is incorporated into the partition function by multiplying by $Z_{HS}/Z_{HS}$.
-$\newline Z=Z_{ideal}\cdot \boldsymbol{Z_{HS}\cdot \frac{1}{Z_{HS}}}\cdot \frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
-where $Z_{HS}=\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V_{HS}(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
-After taking into account the high temperature hard sphere behavior, the last part is just the ratio between the interaction and the hard sphere partition function; we call this the dispersive term.
-$\newline Z=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{\frac{Z_{interaction}}{Z_{HS}}}=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{Z_{disp}}\newline$
-where $Z_{interaction}=\frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\newline$
-and $Z_{disp}= \frac{Z_{interaction}}{Z_{HS}}\newline$
 
-\subsection{Free Energy via Monte Carlo Simulations}
-[FIX INTRO]
-Given the separated partition function, the free energies are just the sum of the free energies due to the ideal term, the hard sphere term, and the dispersive term. The ideal term is ignored because it stays the same between theory and the Monte Carlo simulations. Due to the finite nature of the Monte Carlo simulations, the hard sphere term in the simulations aren't exactly the hard sphere terms in theory. Although we can make some corrections due to the finite nature, ultimately we have to enforce the boundary condition that at high temperature the atoms behave like hard spheres. Given this boundary condition, we are then able to define what the dispersion term should be based on estimation of the density of states.
-\subsection{ideal gas free energy}
-To find the ideal gas free energy we can use previous results based on knowing the entropy of the system which we can then use to find $F_{ideal}=U_{ideal}-T\cdot S_{ideal}$.
-$$U_{ideal}=3/2\cdot N\cdot k\cdot T$$
-$$S_{ideal^*}\approx k\cdot N \left ( ln\left [ \frac{V}{N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot \frac{U}{N} \right)^{3/2} \right]+\frac{5}{2}\right )$$
+
+\begin{align*}
+Z&=\frac{1}{N!}\sum_i e^{-\beta\cdot E_i}\numberthis\label{totalPartition}\\
+&=\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [\{P_{1}^2/{2m}+P_{2}^2/{2m}+...\}+V(\vec{R_1},\vec{R_2},...)]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\cdot d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}
+\end{align*}
+The momentum integrals are independent of the position integrals, so we seperate the momentum integrals which we then incorporate into an ideal gas term by multiplying by $V^N/V^N$.
+\begin{align*}
+\newline Z&=\boldsymbol{Z_{ideal} \cdot \frac{1}{V^N}}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\numberthis\label{zIdealSeperated}\\
+\text{where }Z_{ideal}&=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\numberthis\label{ZidealSeperatedFinal}
+\end{align*}
+After taking into account the ideal gas term, the remaining potential energy term is seperated into the low temperature and high temperature regime. At high temperatures, the atom energies are much higher than the potential well; this means the finite potential well can be considered zero. However; even at infinite temperature the atoms are assumed to be a hard sphere. The expected hard sphere behavior is seperated by multiplying by $Z_{HS}/Z_{HS}$.
+\begin{equation}\label{hardSphere1}
+Z=Z_{ideal}\cdot \boldsymbol{Z_{HS}\cdot \frac{1}{Z_{HS}}}\cdot \frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}
+\end{equation}
+\begin{equation}\label{hardSphere2}
+\text{where }Z_{HS}=\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V_{HS}(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\numberthis
+\end{equation}
+After taking into account the expected high temperature hard sphere behavior, the remaining term is just the ratio between the interaction and hard sphere partition functions; this term is called the dispersive partition function. I.e.
+
+
+\begin{equation}\label{eq:disp1}
+Z=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{\frac{Z_{interaction}}{Z_{HS}}}=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{Z_{disp}}
+\end{equation}
+
+\begin{equation}\label{eq:disp1}
+\text{where }Z_{interaction}=\frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}
+\end{equation}
+
+\begin{equation}\label{eq:disp1}
+\text{and }Z_{disp}= \frac{Z_{interaction}}{Z_{HS}}
+\end{equation}
+\section{Free Energy via Monte Carlo Simulations}
+Given the separated partition funciton, the free energy of the Monte Carlo simulations are just the sum of the ideal term, the hard sphere term, and the dispersive term. The ideal term is ignored because it stays the same between theory and the Monte Carlo simulations. Although the hard sphere energy can be determined by squeezing an infinitely large box down to the required box size, previous work by Brenden has already shown the hard sphere entropy follows the Carnahan-Starling entropy. This is fortunate since the hard sphere entropy computations take a relatively long time. Finally, the dispersion term is estimated using a *method* that finds the relative density of states; this density of states can then be used to find the dispersive free energy at temperatures higher than some constant $T_0$. The computatation time increases as $T_0$ is decreased, so $T0$ is set to roughly a half of the critical temperature of SAFT.
+\subsection{MC Ideal gas free energy}
+To find the ideal gas free energy we can use previous results based on knowing the entropy of the system which we can then use to find the free energy by $F_{ideal}=U_{ideal}-T\cdot S_{ideal}$.
+\begin{equation}\label{eq:idealInternalEnergy}
+U_{ideal}=3/2\cdot N\cdot k\cdot T
+\end{equation}
+\begin{equation}\label{eq:sackurTetrodeApprox}
+S_{ideal^*}\approx k\cdot N \left ( ln\left [ \frac{V}{N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot \frac{U}{N} \right)^{3/2} \right]+\frac{5}{2}\right )
+\end{equation}
+
 
 The Sackur-Tetrode equation with the Stirling approximation actually does not make physical sense as the entropy per particle at constant temperature only depends on density. A simple example can show why this doesn't make sense. Consider two atoms in boxes seperated by a partition, and compare the entropy per particle to when the partition in the box has been removed. Once the partition has been removed, the two atoms can explore many more configurations than previously, which means the entropy should have increased once the two atoms were allowed to mix. Unfortunately the Sackur-Tetrode equation with Stirlings approximation would predict the entropy per particle with or without the partition should be the same. This is a bit of a problem since every box in a Monte Carlo simulation will contain exactly N particles, which means the entropy is actually lower than a real ideal gas.
 
-The entropy problem can be fixed by using the Sackur-Tetrode equation without Stirling's approximation. Essentially use a constant density and compare the entropy per particle of a small box to the entropy per particle of a large box. The difference in entropy shows how the ideal gas entropy within a box will deviate from the expected ideal gas entropy.
+The entropy problem can be fixed by using the Sackur-Tetrode equation without Stirling's approximation. Essentially use a constant density and compare the entropy per particle of a small box to the entropy per particle of a very large box. The difference in entropy should show how the ideal gas entropy within a small box will deviate from the expected ideal gas entropy.
 
-$$S_{ideal}=k\cdot N \left ( ln\left [ V\cdot N!^{-1/N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot\frac{U}{N} \right)^{3/2}  \right]+\frac{3}{2}\right )$$
+\begin{equation}\label{eq:sackurTetrode}
+S_{ideal}=k\cdot N \left ( ln\left [ V\cdot N!^{-1/N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot\frac{U}{N} \right)^{3/2}  \right]+\frac{3}{2}\right )
+\end{equation}
 
-It would be natural to think we can just incorporate this deviation in entropy for the Monte Carlo simulations, unfortunately the simulations contain an intractable problem involving the periodic nature of the simulations. The atoms in the box are repeated in a periodic way to represent the atoms in the entire fluid, however by forcing a periodic boundary condition the entire state of a fluid is now defined by only the atoms within the small box. It is very unlikely that 100 atoms can fully define a system containing an Advogadro's number of atoms, so the entropy should be much less than a realistic system. Rather than incorporate such a change in entropy, we must instead recognize that bulk properties shouldn't dependend on the boundary conditions. By applying periodic boundary conditions we are considering the small box to be the bulk. 
 
-Although the small box does not represent the bulk, SAFT also contains the problem of using the small system to represent the bulk. Yet SAFT also enforces the boundary conditions that at high temperatures the fluid should behave like a hard sphere fluid. As such the Monte Carlo simulations are also assumed to behave like a hard sphere fluid at high temperatures, which includes both the ideal term and the hard sphere term.
 
-\subsection{hard sphere free energy}
-The hard sphere partition function can be found by calculating the excess entropy at $T\to\infty$. This can be seen as follows:
-$$Z_{exc}=Z_{HS}\cdot Z_{disp}\Rightarrow$$
-$$\newline F_{exc}=-k\cdot T\cdot ln(Z_{exc})=-k\cdot T\cdot ln(Z_{HS})-k\cdot T\cdot ln(Z_{disp})\Rightarrow $$
-$$\newline S_{exc.\infty}=\lim_{T\to\infty}-\left ( \frac{\partial F_{exc}}{\partial T} \right ) _{V,N} \text{ but }\lim_{T\to\infty}Z_{exc}=\text{constant}\Rightarrow$$
-$$\newline S_{exc.\infty}=-k\cdot ln(Z_{HS.\infty})-k\cdot ln(Z_{disp.\infty})$$
-$$\newline \text{but }Z_{HS}\text{ is constant and }Z_{disp.\infty}=Z_{interaction.\infty}/Z_{HS}=Z_{HS}/Z_{HS}=1 \Rightarrow$$
-$$S_{exc.\infty}=-k\cdot ln(Z_{HS})-k\cdot ln(1)=-k\cdot ln(Z_{HS}) \Rightarrow$$
-$$\newline Z_{HS}=e^{-S_{exc.\infty}/k}$$
+\subsection{MC Hard sphere free energy}
+As been said previously, the Carnahan-Starling equation of state was used to find the hard sphere partition function. Although if one wanted to calculate the partition function via simulations, the hard sphere partition function can be found by calculating the excess entropy at $T\to\infty$. This can be achieved by the following:
+\begin{equation}\label{eq:MCHS1}
+Z_{exc}=Z_{HS}\cdot Z_{disp}\Rightarrow
+\end{equation}
 
-To find the hard sphere partition function, we need to find the maximum excess entropy as $T\to\infty$. The method used to find the maximum excess entroy starts by considering N atoms in an extremely large box at a very large temperature. The atoms in the large box should behave like an ideal gas, so the entropy of this large box is a known starting point. Then all atom positions are scaled relative to a corner as the origin. Although each individual atom can now exist within a smaller box, it is not guaranteed an atom will not overlap with another atom after the positions are scaled down.
+\begin{equation}\label{eq:MCHS2}
+\newline F_{exc}=-k\cdot T\cdot ln(Z_{exc})=-k\cdot T\cdot ln(Z_{HS})-k\cdot T\cdot ln(Z_{disp})\Rightarrow 
+\end{equation}
+
+\begin{equation}\label{eq:MCHS3}
+\newline S_{exc.\infty}=\lim_{T\to\infty}-\left ( \frac{\partial F_{exc}}{\partial T} \right ) _{V,N} \text{ but }\lim_{T\to\infty}Z_{exc}=\text{constant}\Rightarrow
+\end{equation}
+
+\begin{equation}\label{eq:MCHS4}
+\newline S_{exc.\infty}=-k\cdot ln(Z_{HS.\infty})-k\cdot ln(Z_{disp.\infty})
+\end{equation}
+
+\begin{equation}\label{eq:MCHS5}
+\newline \text{but }Z_{HS}\text{ is also constant and }Z_{disp.\infty}=\frac{Z_{interaction.\infty}}{Z_{HS}}=Z_{HS}/Z_{HS}=1 \Rightarrow
+\end{equation}
+
+\begin{equation}\label{eq:MCHS6}
+S_{exc.\infty}=-k\cdot ln(Z_{HS})-k\cdot ln(1)=-k\cdot ln(Z_{HS}) \Rightarrow
+\end{equation}
+
+\begin{equation}\label{eq:MCHS7}
+\newline Z_{HS}=e^{-S_{exc.\infty}/k}
+\end{equation}
+
+To find the hard sphere partition function, we need to find the maximum excess entropy as $T\to\infty$. The method used to find the maximum excess entroy starts by considering N atoms in an extremely large box at a very large temperature. The atoms in the large box should behave like an ideal gas, so the entropy of this large box is a known starting point. Then all atom positions are scaled relative to a corner as the origin. Although each individual atom can now exist within a smaller box, it is not guaranteed an atom will not overlap with another atom after all positions are scaled to the smaller box.
 
 What we can observe is the probability that a particular scaling fails, and from this probability the change in entropy from the bigger box down to the smaller box can be calculated. The details are as follows:
-$$\newline F=U-T\cdot S \Rightarrow  S=(U-F)/T\approx -F/T=k\cdot ln(Z)$$
-$$\text{let }Z_{small}=\text{partition function of the smaller box}\newline$$
-$$\text{let }Z_{big}=\text{partition function of the bigger box}\newline$$
-$$\Delta S=S_{small}-S_{big}=k\cdot ln(Z_{small})-k\cdot ln(Z_{big})=k\cdot ln(Z_{small}/Z_{big})\newline$$
-From here note that although every configuration in the bigger box is not guaranteed to scale down into the smaller box, it is guaranteed that the smaller box can be expanded into the bigger box. This means there is a mapping from the partition function in the smaller box to the bigger box; as such we can break $Z_{big}$ into valid and invalid configurations where the valid configurations are guaranteed to shrink down into the smaller box and the invalid configurations are not. The $\Delta S$ can then be simplified by making a connection between $Z_{small}$ and $Z_{valid}$.
-$$\newline \text{let }Z_{big}=Z_{valid}+Z_{invalid}\newline$$
-$$\text{but }Z_{small}\text{ maps into }Z_{valid} \Rightarrow Z_{small}=\alpha\cdot z_{valid}\text{ for some constant } \alpha\newline$$
+\begin{equation}\label{eq:MCHS8}
+F=U-T\cdot S \Rightarrow  S=(U-F)/T\approx -F/T=k\cdot ln(Z)
+\end{equation}
+
+\begin{equation}\label{eq:MCHS9}
+\text{let }Z_{small}=\text{partition function of the smaller box}
+\end{equation}
+
+\begin{equation}\label{eq:MCHS10}
+\text{let }Z_{big}=\text{partition function of the bigger box}
+\end{equation}
+
+\begin{equation}\label{eq:MCHS11}
+\Delta S=S_{small}-S_{big}=k\cdot ln(Z_{small})-k\cdot ln(Z_{big})=k\cdot ln(Z_{small}/Z_{big})
+\end{equation}
+From here note that although every configuration in the bigger box is not guaranteed to scale down into the smaller box, it is guaranteed that the smaller box can be expanded into the bigger box. This means there is a mapping from the partition function of the smaller box to the bigger box; as such we can break $Z_{big}$ into valid and invalid configurations where the valid configurations are guaranteed to shrink down into the smaller box while the invalid configurations will not. The $\Delta S$ can then be simplified by making a connection between $Z_{small}$ and $Z_{valid}$.
+\begin{equation}\label{eq:MCHS12}
+\text{let }Z_{big}=Z_{valid}+Z_{invalid}
+\end{equation}
+
+\begin{equation}\label{eq:MCHS13}
+\text{note }Z_{small}\text{ maps into }Z_{valid} \Rightarrow Z_{small}=\alpha\cdot z_{valid}\text{ for some constant } \alpha
+\end{equation}
+
 This constant $\alpha$ can be found directly by looking at the partition function of both the big and small box. All configurations in the small box can be mapped into the valid regions of the large box which means to find $\alpha$ all we have to do is rewrite $Z_{small}$ in terms of $Z_{big}$.
-$$\newline Z_{small}=\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [\{P_{1}^2/{2m}+P_{2}^2/{2m}+...\}+V(\vec{R_1},\vec{R_2},...)]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\cdot d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}$$
-The momentum integrals are assumed independent of the spatial integrals, so we can leave them out of the comparison.
-$$\newline Z_{small}\propto\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [V(\vec{R_1},\vec{R_2},...)]} d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}$$
-From here make the change of variables for each spatial coordinate to remap the integral from the small partition funciton into the big partition function, and in the process the scaling term $\alpha$ is found.
-$$\newline Z_{small}\propto\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [V(\vec{R_1},\vec{R_2},...)]} d\vec{R_1}\cdot \left(\frac{L_{big}}{L_{small}}\right)^3 \cdot d\vec{R_2}\cdot \left(\frac{L_{big}}{L_{small}}\right)^3 \cdot\cdot\cdot d\vec{R_N}\cdot \left(\frac{L_{big}}{L_{small}}\right)^3 \cdot \boldsymbol{\left(\frac{L_{small}}{L_{big}}\right)^{3N}}$$
-$$\newline Z_{small}=\left(\frac{L_{small}}{L_{big}}\right)^{3N}\cdot Z_{big}=\left(\frac{V_{small}}{V_{big}}\right)^N\cdot Z_{big}\doteq\alpha\cdot Z_{big} \Rightarrow$$
-$$\alpha=(V_{small}/V_{big})^N$$
+
+\begin{equation}\label{eq:MCHS14}
+Z_{small}=Z_{ideal}\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R}_1^{small}\cdot d\vec{R}_2^{small}\cdot\cdot\cdot d\vec{R}_N^{small}
+\end{equation}
+
+From here make the change of variables for each spatial coordinate to remap the integral from the small partition funciton into the big partition function.
+\begin{equation}\label{eq:MCHS15}
+\text{note }d\vec{R}_1^{small}=d\vec{R}_1^{big}\cdot \frac{L_{small}}{L_{big}}\Rightarrow
+\end{equation}
+\begin{equation}\label{eq:MCHS16}
+Z_{small}=Z_{ideal}\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R}_1^{small}\cdot \frac{L_{small}^3}{L_{big}^3}\cdot d\vec{R}_2^{small}\cdot \frac{L_{small}^3}{L_{big}^3}\cdot\cdot\cdot d\vec{R}_N^{small}\cdot \frac{L_{small}^3}{L_{big}^3}\Rightarrow
+\end{equation}
+
+\begin{equation}\label{eq:MCHS17}
+\newline Z_{small}=\left(\frac{L_{small}}{L_{big}}\right)^{3N}\cdot Z_{big}=\left(\frac{V_{small}}{V_{big}}\right)^N\cdot Z_{big}\doteq\alpha\cdot Z_{big} \Rightarrow
+\end{equation}
+
+\begin{equation}\label{eq:MCHS18}
+\alpha=(V_{small}/V_{big})^N
+\end{equation}
+
 Now that $\alpha$ is known, we can get back to finding the entropy.
-$$\Delta S=k\cdot ln(Z_{small}/Z_{big})=k\cdot ln(\alpha\cdot Z_{valid}/Z_{big})\newline$$
-$$\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot Z_{valid}/Z_{big})\newline$$
-$$\text{but }Z_{valid}/Z_{big}=\text{probability of success when scaling}=P_{success}\Rightarrow\newline$$
-$$\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success}
-)\newline$$
+
+\begin{equation}\label{eq:MCHS19}
+\Delta S=k\cdot ln(Z_{small}/Z_{big})=k\cdot ln(\alpha\cdot Z_{valid}/Z_{big})
+\end{equation}
+
+\begin{equation}\label{eq:MCHS20}
+\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot Z_{valid}/Z_{big})
+\end{equation}
+
+\begin{equation}\label{eq:MCHS21}
+\text{but }Z_{valid}/Z_{big}=\text{probability of success when scaling}=P_{success}\Rightarrow
+\end{equation}
+
+\begin{equation}\label{eq:MCHS22}
+\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success}
+)
+\end{equation}
+
 At this point this $\Delta S$ represents the total change in entropy from squeezing the box. However; only the change in excess free entropy was wanted. To compensate, simpy subrtract the change in entropy due to the ideal gas using constant temperature and constant number of atoms.
-$$\Delta S_{exc.\infty}=\Delta S_{\infty}-\Delta S_{ideal.\infty}$$
-$$\text{but }\Delta S_{ideal.\infty}=k\cdot N\cdot ln(V_{small}/V_{big})\Rightarrow$$
-$$\Delta S_{exc.\infty}=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success})-k\cdot N\cdot ln(V_{small}/V_{big})$$
-$$\Delta S_{exc.\infty}=k\cdot ln(P_{success})$$
 
+\begin{equation}\label{eq:MCHS23}
+\Delta S_{exc.\infty}=\Delta S_{\infty}-\Delta S_{ideal.\infty}
+\end{equation}
 
-\subsection{dispersive free energy}
+\begin{equation}\label{eq:MCHS24}
+\text{but from eq~\ref{eq:sackurTetrodeApprox} }\Delta S_{ideal.\infty}=k\cdot N\cdot ln(V_{small}/V_{big})\Rightarrow
+\end{equation}
+
+\begin{equation}\label{eq:MCHS25}
+\Delta S_{exc.\infty}=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success})-k\cdot N\cdot ln(V_{small}/V_{big})
+\end{equation}
+
+\begin{equation}\label{eq:MCHS26}
+\Delta S_{exc.\infty}=k\cdot ln(P_{success})
+\end{equation}
+
+\subsection{MC Dispersive free energy}
 The dispersive term is found by estimating the density of states using a * method. The main problem is the density of states is found by sampling the energy levels, but the relative distribution of energy levels is not unique to a single density of states. In other words, the partition function can be changed by an arbitrary factor without actually changing the total energy. This can be seen as follows:
 
-Suppose $$Z=\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}$$
+\begin{equation}\label{eq:MCDISP1}
+\text{Suppose }Z=\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}
+\end{equation}
 
-then $$U=\sum_i E_i\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/Z\newline$$
+\begin{equation}\label{eq:MCDISP1}
+\text{then }U=\sum_i E_i\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/Z
+\end{equation}
 
-Now suppose we let $$D_2(E_i)=\alpha\cdot D(E_i)$$
+\begin{equation}\label{eq:MCDISP1}
+\text{Now suppose we let }D_2(E_i)=\alpha\cdot D(E_i)
+\end{equation}
 
-then $$Z_2=\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}=\alpha\cdot Z\Rightarrow\newline$$
-$$U_2=\sum_i E_i\cdot D_2(E_i)\cdot e^{-\beta\cdot E_i}/Z_2$$
-$$\newline U_2=\sum_i E_i\cdot \boldsymbol{\alpha}\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/(\boldsymbol{\alpha}\cdot Z)$$
-$$\newline U_2=\sum_i E_i\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/Z$$
-$$\newline U_2=U\newline$$
+\begin{equation}\label{eq:MCDISP1}
+\text{then }Z_2=\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}=\alpha\cdot Z\Rightarrow
+\end{equation}
+
+\begin{equation}\label{eq:MCDISP1}
+U_2=\sum_i E_i\cdot D_2(E_i)\cdot e^{-\beta\cdot E_i}/Z_2
+\end{equation}
+
+
+\begin{equation}\label{eq:MCDISP1}
+U_2=\sum_i E_i\cdot \boldsymbol{\alpha}\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/(\boldsymbol{\alpha}\cdot Z)
+\end{equation}
+
+
+\begin{equation}\label{eq:MCDISP1}
+U_2=\sum_i E_i\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/Z=U
+\end{equation}
+
 Basically the partition function will define the total energy at all temperatures, but knowing the total energy at all temperatures will not define a unique partition function. Specifically, the partition function up to some arbitrary factor will give the same total energy. This is a bit problematic considering the method to find the density of states makes observations of the total energy to estimate the density of states, which then results in a density of states that is only defined up to some unknown factor.
 
 To get around this problem of an unknown factor in the density of states, note that the dispersive partition function will go towards one as T approaches infinity. This happens because $Z_{disp}$ is the ratio of the interaction term to the hard sphere term, and the interaction term approaches the hard sphere term as the temperature increases. Essentially we can leave the unkown $\alpha$ term alone, and it will show up in both the interaction and hard sphere partition function.
