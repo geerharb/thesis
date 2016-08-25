@@ -18,18 +18,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.3}MC Dispersive free energy}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Computation}{14}
+\contentsline {section}{\numberline {2.5}Finding Coexistence}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Results}{17}
+\contentsline {section}{\numberline {2.6}Computation}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Trends in U,F}{17}
+\contentsline {chapter}{\numberline {3}Results}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Trends in S,Cv}{18}
+\contentsline {section}{\numberline {3.1}Trends in U,F}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Using Cost to Estimate Best Box Size}{19}
+\contentsline {section}{\numberline {3.2}Trends in S,Cv}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Coexistence: T vs Density}{19}
+\contentsline {section}{\numberline {3.3}Using Cost to Estimate Best Box Size}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Conclusion}{20}
+\contentsline {section}{\numberline {3.4}Coexistence: T vs Density}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Conclusion}{20}
+\contentsline {chapter}{\numberline {4}Conclusion}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Conclusion}{21}

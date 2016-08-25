@@ -76,10 +76,10 @@ $$Z=Z_{ideal}\cdot Z_{HS}\cdot Z_{disp}$$
 $$Z_{ideal}=Z_{ideal}^{SAFTVR}$$
 $$Z_{HS}=e^{-S_{HS}/k}$$
 $$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}$$
-Not that $S_{HS}$ is the hard sphere entropy. The hard sphere entropy can be found by starting at $T=\infty$ and with an infinitly large box. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps the big box down to the the smaller box, which means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the infinetly large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
+Note that $S_{HS}$ is the hard sphere entropy. Past work by Brenden has shown the hard sphere entropy of the simulations can be modeled by the Carnahan-Starling equation of state, so all simulations used in this project use the entropy found via the Carnahan-Starling equation of state. Given this, if one wanted to find the hard sphere entropy using computaiton we can use a known starting point of a very large box at $T=\infty$. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps actually maps every atom within the larger box down into the smaller box while preserving angular orientation. This means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the very large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
 
 \section{Partition Function Seperation}
-The partition function can be partitioned into high and low temperature regimes. At low temperatures the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three partitions:
+The partition function can be partitioned into high and low temperature regimes. At low temperatures the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three parts:
 
 
 \begin{align*}
@@ -113,7 +113,7 @@ Z=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{\frac{Z_{interaction}}{Z_{HS}}}=Z_{idea
 \text{and }Z_{disp}= \frac{Z_{interaction}}{Z_{HS}}
 \end{equation}
 \section{Free Energy via Monte Carlo Simulations}
-Given the separated partition funciton, the free energy of the Monte Carlo simulations are just the sum of the ideal term, the hard sphere term, and the dispersive term. The ideal term is ignored because it stays the same between theory and the Monte Carlo simulations. Although the hard sphere energy can be determined by squeezing an infinitely large box down to the required box size, previous work by Brenden has already shown the hard sphere entropy follows the Carnahan-Starling entropy. This is fortunate since the hard sphere entropy computations take a relatively long time. Finally, the dispersion term is estimated using a *method* that finds the relative density of states; this density of states can then be used to find the dispersive free energy at temperatures higher than some constant $T_0$. The computatation time increases as $T_0$ is decreased, so $T0$ is set to roughly a half of the critical temperature of SAFT.
+Given the separated partition funciton, the free energy of the Monte Carlo simulations are just the sum of the ideal term, the hard sphere term, and the dispersive term. The ideal term is ignored because it stays the same between theory and the Monte Carlo simulations. Although the hard sphere energy can be determined by squeezing an infinitely large box down to the required box size, previous work by Brenden has already shown the hard sphere entropy follows the Carnahan-Starling entropy. This is fortunate since the hard sphere entropy computations take a relatively long time. Finally, the dispersion term is estimated using a *method* that finds the relative density of states; this density of states can then be used to find the dispersive free energy at temperatures higher than some constant $T_0$. The computatation time increases as $T_0$ is decreased, so $T_0$ is set to roughly a half of the critical temperature of SAFT.
 \subsection{MC Ideal gas free energy}
 To find the ideal gas free energy we can use previous results based on knowing the entropy of the system which we can then use to find the free energy by $F_{ideal}=U_{ideal}-T\cdot S_{ideal}$.
 \begin{equation}\label{eq:idealInternalEnergy}
@@ -126,12 +126,13 @@ S_{ideal^*}\approx k\cdot N \left ( ln\left [ \frac{V}{N}\left ( \frac{4\cdot \p
 
 The Sackur-Tetrode equation with the Stirling approximation actually does not make physical sense as the entropy per particle at constant temperature only depends on density. A simple example can show why this doesn't make sense. Consider two atoms in boxes seperated by a partition, and compare the entropy per particle to when the partition in the box has been removed. Once the partition has been removed, the two atoms can explore many more configurations than previously, which means the entropy should have increased once the two atoms were allowed to mix. Unfortunately the Sackur-Tetrode equation with Stirlings approximation would predict the entropy per particle with or without the partition should be the same. This is a bit of a problem since every box in a Monte Carlo simulation will contain exactly N particles, which means the entropy is actually lower than a real ideal gas.
 
-The entropy problem can be fixed by using the Sackur-Tetrode equation without Stirling's approximation. Essentially use a constant density and compare the entropy per particle of a small box to the entropy per particle of a very large box. The difference in entropy should show how the ideal gas entropy within a small box will deviate from the expected ideal gas entropy.
+The entropy problem can be fixed by using the Sackur-Tetrode equation without Stirling's approximation(eq~\ref{eq:sackurTetrode}). All we have eto do is use a constant density and compare the entropy per particle of a small box to the entropy per particle of a very large box. The difference in entropy should show how the ideal gas entropy within a small box will deviate from the expected ideal gas entropy.
 
 \begin{equation}\label{eq:sackurTetrode}
 S_{ideal}=k\cdot N \left ( ln\left [ V\cdot N!^{-1/N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot\frac{U}{N} \right)^{3/2}  \right]+\frac{3}{2}\right )
 \end{equation}
 
+The entropy problem was not taken into account since the simulations should really just be a tool to explore the region that we don't know. At high temperatures we already know the system will act like an ideal gas in terms of the momentum integrals and a hard sphere system in terms of collisions. Basically keeping track of every entropy change will affect the boundary conditions at high temperature; for this reason the entropy problem is ignored for this project.
 
 
 \subsection{MC Hard sphere free energy}
@@ -164,7 +165,7 @@ S_{exc.\infty}=-k\cdot ln(Z_{HS})-k\cdot ln(1)=-k\cdot ln(Z_{HS}) \Rightarrow
 \newline Z_{HS}=e^{-S_{exc.\infty}/k}
 \end{equation}
 
-To find the hard sphere partition function, we need to find the maximum excess entropy as $T\to\infty$. The method used to find the maximum excess entroy starts by considering N atoms in an extremely large box at a very large temperature. The atoms in the large box should behave like an ideal gas, so the entropy of this large box is a known starting point. Then all atom positions are scaled relative to a corner as the origin. Although each individual atom can now exist within a smaller box, it is not guaranteed an atom will not overlap with another atom after all positions are scaled to the smaller box.
+To find the hard sphere partition function, we need to find the maximum excess entropy as $T\to\infty$. The method used to find the maximum excess entropy starts by considering N atoms in an extremely large box at a very large temperature. The atoms in the large box should behave like an ideal gas, so the entropy of this large box is a known starting point. Then all atom positions are scaled relative to a corner as the origin. Although each individual atom can now exist within a smaller box, it is not guaranteed an atom will not overlap with another atom after all positions are scaled to the smaller box.
 
 What we can observe is the probability that a particular scaling fails, and from this probability the change in entropy from the bigger box down to the smaller box can be calculated. The details are as follows:
 \begin{equation}\label{eq:MCHS8}
@@ -199,7 +200,7 @@ Z_{small}=Z_{ideal}\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_
 
 From here make the change of variables for each spatial coordinate to remap the integral from the small partition funciton into the big partition function.
 \begin{equation}\label{eq:MCHS15}
-\text{note }d\vec{R}_1^{small}=d\vec{R}_1^{big}\cdot \frac{L_{small}}{L_{big}}\Rightarrow
+\text{note }d\vec{R}_1^{small}=d\vec{R}_1^{big}\cdot \frac{L_{small}^3}{L_{big}^3}\Rightarrow
 \end{equation}
 \begin{equation}\label{eq:MCHS16}
 Z_{small}=Z_{ideal}\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R}_1^{small}\cdot \frac{L_{small}^3}{L_{big}^3}\cdot d\vec{R}_2^{small}\cdot \frac{L_{small}^3}{L_{big}^3}\cdot\cdot\cdot d\vec{R}_N^{small}\cdot \frac{L_{small}^3}{L_{big}^3}\Rightarrow
@@ -290,26 +291,8 @@ To get around this problem of an unknown factor in the density of states, note t
 That is: $$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}$$
 %\pagebreak
 \newpage
-\section{Computation}
-\begin{figure}[h]
-\vspace*{-7mm}
-\hspace*{-6mm}
-	\centering
-	\includegraphics[scale=.9]{FdispVsff-scrunched-ww1.50-L10.00-i0.pdf}
-	\caption{Caption for this image.}
-	\label{fig:FdispVsff}
-\end{figure}
-
-\begin{figure}[h]
-\vspace*{-7mm}
-\hspace*{-6mm}
-	\centering
-	\includegraphics[scale=.9]{commonTangent.pdf}
-	\caption{\scriptsize Here the common tangent method is demonstrated. The free energy at a particular temperature is plotted as a funciton of density. The two points highlighted by red and blue X's on the curve share a common tangent; this means both points will have the same pressure and chemical potential. The left and right set of plots shows how the signal to noise ratio changes as the temperature increases. Far from the critical point the signal is relatively strong, while the near the critical point the noise becomes significant. To prevent the loss of the signal, first start at a low temperature where the signal is strong. Then gradually increase the temperature while finding common tangents. As the temperature and noise increases, the previous solutions at a slightly lower temperature can be used as a guess for the new higher temperature.}
-	\label{fig:FdispVsff}
-\end{figure}
-
-which  At phase coexistence we want $\mu_{liquid}=\mu_{gas}$ and $P_{liquid}=P_{gas}$, so provided we know free energy we can simply find coexistence by setting the following:
+\section{Finding Coexistence}
+At phase coexistence we want $\mu_{liquid}=\mu_{gas}$ and $P_{liquid}=P_{gas}$, so provided we know free energy we can simply find coexistence by the following constraints:
 
 \begin{equation}\label{eq:methodsMu}
 \mu=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigr|_{N1}=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigr|_{N2}
@@ -333,7 +316,7 @@ $$\left(\frac{\partial X}{\partial Y}\right)_Z\cdot \left(\frac{\partial Y}{\par
 \begin{equation}\label{eq:P3}
 \left(\frac{\partial f(T,n)}{\partial V}\right)_{N,T} \cdot\left(\frac{\partial V}{\partial N}\right)_{f(T,n),T} \cdot\left(\frac{\partial N}{\partial f(T,n)}\right)_{V,T}=-1
 \end{equation}
-\sloppy But we can simplify the last partial since from eq.~\ref{eq:methodsMu2} we already know that $\left(\frac{\partial N}{\partial f(T,n)}\right)_{V,T}=\frac{V}{\mu}$. Further, we can simplify the middle partial by noting $f(T,n)=constant\Rightarrow$ $f(T,N/V)=constant \Rightarrow$ $N/V=constant \Rightarrow$ $\left(\frac{\partial V}{\partial N}\right)_{f(T,n),T}=\frac{V}{N}=1/n$. Putting this all together into \ref{eq:P3} we get:
+\sloppy But we can simplify the last partial since from eq.~\ref{eq:methodsMu2} we already know that $\left(\frac{\partial N}{\partial f(T,n)}\right)_{V,T}=\frac{V}{\mu}$. Further, we can simplify the middle partial by noting $f(T,n)=constant\Rightarrow$ $f(T,N/V)=constant \Rightarrow$ $N/V=n=constant \Rightarrow$ $\left(\frac{\partial V}{\partial N}\right)_{f(T,n),T}=1/n$. Putting this all together into \ref{eq:P3} we get:
 \begin{equation}\label{eq:P4}
 \left(\frac{\partial f(T,n)}{\partial V}\right)_{N,T} \cdot \frac{1}{n} \cdot \frac{V}{\mu}=-1
 \end{equation}
@@ -349,6 +332,27 @@ Having a simplified result for pressure, we can now apply the coexistence constr
 \text{from eq.~\ref{eq:methodsMu2}: }\mu= \left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V1}\Bigr|n1=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}\Bigr|n2
 \end{equation}
 The above constraints indicate that coexistence only occurs when the average slope must be equal to the instantaneous slope. This is equivalent to plotting the free energy as a function of density and finding a common tangent.
+
+\section{Computation}
+\begin{figure}[h]
+\vspace*{-7mm}
+\hspace*{-6mm}
+	\centering
+	\includegraphics[scale=.9]{FdispVsff-scrunched-ww1.50-L10.00-i0.pdf}
+	\caption{Caption for this image.}
+	\label{fig:FdispVsff}
+\end{figure}
+
+\begin{figure}[h]
+\vspace*{-7mm}
+\hspace*{-6mm}
+	\centering
+	\includegraphics[scale=.9]{commonTangent.pdf}
+	\caption{\scriptsize Here the common tangent method is demonstrated. The free energy at a particular temperature is plotted as a funciton of density. The two points highlighted by red and blue X's on the curve share a common tangent; this means both points will have the same pressure and chemical potential. The left and right set of plots shows how the signal to noise ratio changes as the temperature increases. Far from the critical point the signal is relatively strong, while the near the critical point the noise becomes significant. To prevent the loss of the signal, first start at a low temperature where the signal is strong. Then gradually increase the temperature while finding common tangents. As the temperature and noise increases, the previous solutions at a slightly lower temperature can be used as a guess for the new higher temperature.}
+	\label{fig:FdispVsff}
+\end{figure}
+
+
 
 
 %\pagestyle{fancy}   % Reset all pages after this file to fnacy headers

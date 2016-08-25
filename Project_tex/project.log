@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  24 AUG 2016 02:17
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  24 AUG 2016 17:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -646,27 +646,29 @@ Overfull \hbox (10.43303pt too wide) in paragraph at lines 88--88
  []
 
 [8] [9] [10]
-Overfull \hbox (19.79663pt too wide) detected at line 206
+Overfull \hbox (19.79663pt too wide) detected at line 207
 \OML/cmm/m/it/12 Z[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Z[][] [] \OMS/cmsy/m/n/
 12 ^^A ^^A ^^A [] \OML/cmm/m/it/12 e[]d[] \OMS/cmsy/m/n/12 ^^A [] ^^A \OML/cmm/
 m/it/12 d[] \OMS/cmsy/m/n/12 ^^A [] ^^A ^^A ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/
 m/n/12 ^^A [] )
  []
 
-[11] [12] [13]
+[11] [12] [13] [14]
 File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
  <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
-File: images/commonTangent.pdf Graphic file (type QTm)
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: images/commonTangent.pdf Graphic file (type QTm)
 <use  "images/commonTangent.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 305--308
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 348--351
  []|  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14]) [15] [16]
+) [15] [16] [17]
 Chapter 3.
 (./chapters/chapter03.tex
 File: images/UFtrends-ww1.50.pdf Graphic file (type QTm)
@@ -678,7 +680,7 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 6--12
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17
+ [18
 
 ]
 File: images/STCvtrends-ww1.50.pdf Graphic file (type QTm)
@@ -691,7 +693,7 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 23--27
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
+ [19]
 File: images/Costsmall-ww1.50.pdf Graphic file (type QTm)
 
 <use  "images/Costsmall-ww1.50.pdf" >
@@ -705,9 +707,9 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 47--51
  []|  [] 
  []
 
-) [19]
+) [20]
 Chapter 4.
-(./chapters/chapter05.tex) [20
+(./chapters/chapter05.tex) [21
 
 ] (./project.aux)
 
@@ -727,4 +729,4 @@ Here is how much of TeX's memory you used:
  36 hyphenation exceptions out of 8191
  36i,12n,43p,1404b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (20 pages).
+Output written on project.pdf (21 pages).
