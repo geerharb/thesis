@@ -1,41 +1,41 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{5}
+\contentsline {chapter}{\numberline {1}Introduction}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Methods}{7}
+\contentsline {chapter}{\numberline {2}Methods}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Equation Summary: SAFT-VR}{7}
+\contentsline {section}{\numberline {2.1}Equation Summary: SAFT-VR}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Equation Summary: Monte Carlo Simulations}{7}
+\contentsline {section}{\numberline {2.2}Equation Summary: Monte Carlo Simulations}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Partition Function Seperation}{8}
+\contentsline {section}{\numberline {2.3}Partition Function Seperation}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Free Energy via Monte Carlo Simulations}{9}
+\contentsline {section}{\numberline {2.4}Free Energy via Monte Carlo Simulations}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}MC Ideal gas free energy}{9}
+\contentsline {subsection}{\numberline {2.4.1}MC Ideal gas free energy}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}MC Hard sphere free energy}{10}
+\contentsline {subsection}{\numberline {2.4.2}MC Hard sphere free energy}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}MC Dispersive free energy}{12}
+\contentsline {subsection}{\numberline {2.4.3}MC Dispersive free energy}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Finding Coexistence}{14}
+\contentsline {section}{\numberline {2.5}Finding Coexistence}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Computation}{16}
+\contentsline {section}{\numberline {2.6}Computation}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.1}Resolution reduction}{16}
+\contentsline {subsection}{\numberline {2.6.1}Resolution reduction}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.2}Coexistence points}{17}
+\contentsline {subsection}{\numberline {2.6.2}Coexistence points}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Results}{18}
+\contentsline {chapter}{\numberline {3}Results}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Trends in U,F}{18}
+\contentsline {section}{\numberline {3.1}Trends in U,F}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Trends in S,Cv}{19}
+\contentsline {section}{\numberline {3.2}Trends in S,Cv}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Using Cost to Estimate Best Box Size}{20}
+\contentsline {section}{\numberline {3.3}Using Cost to Estimate Best Box Size}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Coexistence: T vs Density}{20}
+\contentsline {section}{\numberline {3.4}Coexistence: T vs Density}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Conclusion}{21}
+\contentsline {chapter}{\numberline {4}Conclusion}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Conclusion}{21}
+\contentsline {section}{\numberline {4.1}Conclusion}{22}
