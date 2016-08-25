@@ -258,29 +258,29 @@ The dispersive term is found by estimating the density of states using a * metho
 \text{Suppose }Z=\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}
 \end{equation}
 
-\begin{equation}\label{eq:MCDISP1}
+\begin{equation}\label{eq:MCDISP2}
 \text{then }U=\sum_i E_i\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/Z
 \end{equation}
 
-\begin{equation}\label{eq:MCDISP1}
+\begin{equation}\label{eq:MCDISP3}
 \text{Now suppose we let }D_2(E_i)=\alpha\cdot D(E_i)
 \end{equation}
 
-\begin{equation}\label{eq:MCDISP1}
+\begin{equation}\label{eq:MCDISP4}
 \text{then }Z_2=\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}=\alpha\cdot Z\Rightarrow
 \end{equation}
 
-\begin{equation}\label{eq:MCDISP1}
+\begin{equation}\label{eq:MCDISP5}
 U_2=\sum_i E_i\cdot D_2(E_i)\cdot e^{-\beta\cdot E_i}/Z_2
 \end{equation}
 
 
-\begin{equation}\label{eq:MCDISP1}
+\begin{equation}\label{eq:MCDISP6}
 U_2=\sum_i E_i\cdot \boldsymbol{\alpha}\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/(\boldsymbol{\alpha}\cdot Z)
 \end{equation}
 
 
-\begin{equation}\label{eq:MCDISP1}
+\begin{equation}\label{eq:MCDISP7}
 U_2=\sum_i E_i\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/Z=U
 \end{equation}
 
@@ -288,7 +288,11 @@ Basically the partition function will define the total energy at all temperature
 
 To get around this problem of an unknown factor in the density of states, note that the dispersive partition function will go towards one as T approaches infinity. This happens because $Z_{disp}$ is the ratio of the interaction term to the hard sphere term, and the interaction term approaches the hard sphere term as the temperature increases. Essentially we can leave the unkown $\alpha$ term alone, and it will show up in both the interaction and hard sphere partition function.
 
-That is: $$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}$$
+That is:
+
+\begin{equation}\label{eq:MCDISP8}
+Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}
+\end{equation}
 %\pagebreak
 \newpage
 \section{Finding Coexistence}
@@ -324,7 +328,7 @@ Finally we can use eq.~\ref{eq:P4} inside eq.~\ref{eq:methodsP2} to achieve the 
 \begin{equation}\label{eq:P5}
 P=f+V\cdot\left( \frac{n\cdot \mu}{V} \right)=f-n\cdot\mu
 \end{equation}
-Having a simplified result for pressure, we can now apply the coexistence constrait that $P_1=P_2 \Rightarrow$ $f1+n1\cdot\mu=f2+n2\cdot\mu$. To compare this result with eq.~\ref{eq:methodsMu2}, solve for $\mu$ to get the following results:
+Having a simplified result for pressure, we can now apply the coexistence constraint that $P_1=P_2 \Rightarrow$ $f1+n1\cdot\mu=f2+n2\cdot\mu$. To compare this result with eq.~\ref{eq:methodsMu2}, solve for $\mu$ to get the following results:
 \begin{equation}\label{eq:mu3p}
 \mu=\frac{f2-f1}{n2-n1}
 \end{equation}
@@ -333,18 +337,24 @@ Having a simplified result for pressure, we can now apply the coexistence constr
 \end{equation}
 The above constraints indicate that coexistence only occurs when the average slope must be equal to the instantaneous slope. This is equivalent to plotting the free energy as a function of density and finding a common tangent.
 
+\newpage
 \section{Computation}
+\subsection{Resolution reduction}
 \begin{figure}[h]
 \vspace*{-7mm}
 \hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{FdispVsff-scrunched-ww1.50-L10.00-i0.pdf}
-	\caption{Caption for this image.}
-	\label{fig:FdispVsff}
+	\caption{\label{fig:FdispVsff}
+	\scriptsize Here resolution reduction of the data is demonstrated. The data must be generated from a range of box sizes, and for each box size it is possible to run simulations From 2 atoms in a box all the way up to the desired filling fraction of 0.5; depending on the box size, a filling fraction of 0.5 can correspond to only 40 atoms or it could be as much as 100 atoms. Running simulations with every possible filling fraction will indeed produce a nice data set, but this will come at the cost of a lengthy computation time. Instead, pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45]; the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions.}
+	
 \end{figure}
-
-\begin{figure}[h]
+\newpage
+\vspace*{-17mm}
+\subsection{Coexistence points}
 \vspace*{-7mm}
+\begin{figure}[!h]
+
 \hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{commonTangent.pdf}

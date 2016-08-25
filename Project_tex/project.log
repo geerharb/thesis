@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  24 AUG 2016 17:24
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  25 AUG 2016 02:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -491,24 +491,6 @@ LaTeX Warning: Label `eq:disp1' multiply defined.
 LaTeX Warning: Label `eq:disp1' multiply defined.
 
 
-LaTeX Warning: Label `eq:MCDISP1' multiply defined.
-
-
-LaTeX Warning: Label `eq:MCDISP1' multiply defined.
-
-
-LaTeX Warning: Label `eq:MCDISP1' multiply defined.
-
-
-LaTeX Warning: Label `eq:MCDISP1' multiply defined.
-
-
-LaTeX Warning: Label `eq:MCDISP1' multiply defined.
-
-
-LaTeX Warning: Label `eq:MCDISP1' multiply defined.
-
-
 LaTeX Warning: Label `fig:FdispVsff' multiply defined.
 
 )
@@ -653,22 +635,18 @@ m/it/12 d[] \OMS/cmsy/m/n/12 ^^A [] ^^A ^^A ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/
 m/n/12 ^^A [] )
  []
 
-[11] [12] [13] [14]
+[11] [12] [13] [14] [15]
 File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
- <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+<use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" > [16]
 File: images/commonTangent.pdf Graphic file (type QTm)
+
 <use  "images/commonTangent.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 348--351
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 358--361
  []|  [] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [15] [16] [17]
+) [17]
 Chapter 3.
 (./chapters/chapter03.tex
 File: images/UFtrends-ww1.50.pdf Graphic file (type QTm)
@@ -721,10 +699,10 @@ Package logreq Info: Writing requests to 'project.run.xml'.
  )
 (\end occurred when \iftrue on line 85 was incomplete) 
 Here is how much of TeX's memory you used:
- 8731 strings out of 495536
- 139694 string characters out of 6186181
+ 8738 strings out of 495536
+ 139778 string characters out of 6186181
  314891 words of memory out of 5000000
- 11879 multiletter control sequences out of 15000+600000
+ 11886 multiletter control sequences out of 15000+600000
  13308 words of font info for 47 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,12n,43p,1404b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
