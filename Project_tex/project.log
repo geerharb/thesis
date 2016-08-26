@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  25 AUG 2016 17:15
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  26 AUG 2016 01:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,10 +636,14 @@ m/n/12 ^^A [] )
 [12] [13] [14] [15] [16]
 File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
 
-<use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" > [17]
-File: images/commonTangent.pdf Graphic file (type QTm)
+<use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 345--349
+ []|  [] 
+ []
 
-<use  "images/commonTangent.pdf" >
+[17]
+File: images/commonTangent.pdf Graphic file (type QTm)
+ <use  "images/commonTangent.pdf" >
 Overfull \hbox (14.0449pt too wide) in paragraph at lines 358--361
  []|  [] 
  []
