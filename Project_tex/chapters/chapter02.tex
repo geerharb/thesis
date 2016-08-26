@@ -5,8 +5,28 @@
 					 % so make sure to reset the pagestyle to {fancy} at the end of this file
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 The methods section is partitioned into theory, which define the equations used, and the actual implementation through computational techniques. The main point of the theory is to estimate the free energy F from which any of the thermodynamic variables can be found. For example, the entropy, checmical potential, or pressure can be found by the differential $dF=-S\cdot dT -P\cdot dV+\mu\cdot dN$. Further, the internal energy can be found by $U=F+T\cdot S$. Once the free energy is found, the next goal is to fit the Monte Carlo simulations to SAFT by using a cost function that compares each thermodynamic variable from the Monte Carlo simulations to SAFT. The comparisons are constrained to a temperature range of $0.45<T/T_c<1.13$ where $T_c$ is the critical point using SAFT; the lower bound is chosen mostly to decrease the computation time of the simulations, while the upper limit is chosen to stay away from the well known hard sphere behavior. To decrease computation times even further, the comparisons are again constrained to filling fractions of [0.15,0.25,0.35,0.45]. Once the cost can be determined for a variety of box sizes, a 'best' box size is chosen that decreases the overall cost. The final step is to compare this best box size to slightly larger and smaller box sizes by looking at the coexistence densities of the liquid and gas phases.
+\section{Fluid Model}
+\begin{multicols}{2}
+Molecular Dynamics
+\begin{equation}
+V_{Lennard-Jones}=4\epsilon\left[\left(\frac{\sigma}{4}\right)^{12}-\left(\frac{\sigma}{r}\right)^6\right]
+\end{equation}
+\\
+Statistical Mechanics
+\begin{equation}
+V_{HardSphere}(r) =  
+\begin{cases} 
+ \infty &\text{if }r<sigma\\
+ -\epsilon &\text{if }\sigma\leq r \leq \lambda\cdot\sigma \\
+ 0 & \text{otherwise}
+\end{cases}
+\end{equation}
+\end{multicols}
+Molecular dynamics usually simulates a fluid using a continuous potential that is used in combination with Newtonian mechanics. One common potential used is the Lennard-Jones potential; a potential which simulates hard sphere impacts at roughly $r=\sigma$, contains a finite well, and then tapers off to zero interaction as $r\rightarrow\infty$. On the other hand, Statistical Mechanics can even use the simpler hard sphere potential which also has a hard sphere impact at $r=\sigma$, has a finite well, and tapers off to zero interaction. The similarities between both methods is the actual dynamics of a real system is replaced with a computational fluid model that only attempts to match the boundary conditions of the actual fluids potential. Despite such a crude approximation, useful predictions can be made by empirically determining the parameters and using the model to extrapolate beyond the original experiments.
 
-\section{Equation Summary: SAFT-VR}
+This project uses the hard sphere fluid in combination with statistical mechanics. The parameters used are $\sigma=2$ and $\lambda=1.5$.
+\pagebreak
+\section{Equation Summary: SAFT}
 
 \begin{multicols}{2}
 let $n=\frac{N}{V}\newline\eta=packingFraction\newline\Lambda=$de Broglie wavlength
@@ -72,11 +92,22 @@ K^{HS}=\frac{(1-\eta)^4}{1+4\cdot \eta+4\cdot \eta^2}
 \end{multicols}
 
 \section{Equation Summary: Monte Carlo Simulations}
-$$Z=Z_{ideal}\cdot Z_{HS}\cdot Z_{disp}$$
-$$Z_{ideal}=Z_{ideal}^{SAFTVR}$$
-$$Z_{HS}=e^{-S_{HS}/k}$$
-$$Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}$$
-Note that $S_{HS}$ is the hard sphere entropy. Past work by Brenden has shown the hard sphere entropy of the simulations can be modeled by the Carnahan-Starling equation of state, so all simulations used in this project use the entropy found via the Carnahan-Starling equation of state. Given this, if one wanted to find the hard sphere entropy using computaiton we can use a known starting point of a very large box at $T=\infty$. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps actually maps every atom within the larger box down into the smaller box while preserving angular orientation. This means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the very large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
+\begin{equation}\label{eq:MC1}
+Z=Z_{ideal}\cdot Z_{HS}\cdot Z_{disp}
+\end{equation}
+
+\begin{equation}\label{eq:MC2}
+Z_{ideal}=Z_{ideal}^{SAFT}
+\end{equation}
+
+\begin{equation}\label{eq:MC3}
+Z_{HS}=e^{-S_{HS}/k}
+\end{equation}
+
+\begin{equation}\label{eq:MC4}
+Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}
+\end{equation}
+Note that $S_{HS}$ is the hard sphere entropy. Past work by Brenden has shown the hard sphere entropy of the simulations can be modeled by the Carnahan-Starling equation of state, so all simulations used in this project use the entropy found via the Carnahan-Starling equation of state which is the same hard sphere entropy in SAFT. Despite this, if one wanted to find the hard sphere entropy using computaiton we can use a known starting point of a very large box at $T=\infty$. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps actually maps every atom within the larger box down into the smaller box while preserving angular orientation. This means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the very large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
 
 \section{Partition Function Seperation}
 The partition function can be partitioned into high and low temperature regimes. At low temperatures the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three parts:
@@ -136,7 +167,7 @@ The entropy problem was not taken into account since the simulations should real
 
 
 \subsection{MC Hard sphere free energy}
-As been said previously, the Carnahan-Starling equation of state was used to find the hard sphere partition function. Although if one wanted to calculate the partition function via simulations, the hard sphere partition function can be found by calculating the excess entropy at $T\to\infty$. This can be achieved by the following:
+As been said previously, the Carnahan-Starling equation of state was used to find the hard sphere partition function; this hard sphere entropy is the same as used by SAFT. Although if one wanted to calculate the partition function via simulations, the hard sphere partition function can be found by calculating the excess entropy at $T\to\infty$. This can be achieved by the following:
 \begin{equation}\label{eq:MCHS1}
 Z_{exc}=Z_{HS}\cdot Z_{disp}\Rightarrow
 \end{equation}
@@ -233,7 +264,7 @@ Now that $\alpha$ is known, we can get back to finding the entropy.
 )
 \end{equation}
 
-At this point this $\Delta S$ represents the total change in entropy from squeezing the box. However; only the change in excess free entropy was wanted. To compensate, simpy subrtract the change in entropy due to the ideal gas using constant temperature and constant number of atoms.
+At this point this $\Delta S$ represents the total change in entropy from squeezing the box. However; only the change in excess free entropy was wanted. To compensate, simpy subrtract the change in entropy due to the ideal gas with $(T\rightarrow\infty)$ and $N=$constant.
 
 \begin{equation}\label{eq:MCHS23}
 \Delta S_{exc.\infty}=\Delta S_{\infty}-\Delta S_{ideal.\infty}
@@ -252,7 +283,7 @@ At this point this $\Delta S$ represents the total change in entropy from squeez
 \end{equation}
 
 \subsection{MC Dispersive free energy}
-The dispersive term is found by estimating the density of states using a * method. The main problem is the density of states is found by sampling the energy levels, but the relative distribution of energy levels is not unique to a single density of states. In other words, the partition function can be changed by an arbitrary factor without actually changing the total energy. This can be seen as follows:
+The dispersive term is found by estimating the density of states using a method that samples configuration space while keeping track of energy transitions. The main problem is the sample of energy states is not unique to a single density of states. In other words, the partition function can be changed by an arbitrary factor without actually changing the total energy. This can be seen as follows:
 
 \begin{equation}\label{eq:MCDISP1}
 \text{Suppose }Z=\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}
@@ -294,12 +325,12 @@ That is:
 Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}
 \end{equation}
 %\pagebreak
-\newpage
+%\newpage
 \section{Finding Coexistence}
 At phase coexistence we want $\mu_{liquid}=\mu_{gas}$ and $P_{liquid}=P_{gas}$, so provided we know free energy we can simply find coexistence by the following constraints:
 
 \begin{equation}\label{eq:methodsMu}
-\mu=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigr|_{N1}=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigr|_{N2}
+\mu=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigg|_{N1}=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigg|_{N2}
 \end{equation}
 
 \begin{equation}\label{eq:methodsP}
@@ -333,12 +364,13 @@ Having a simplified result for pressure, we can now apply the coexistence constr
 \mu=\frac{f2-f1}{n2-n1}
 \end{equation}
 \begin{equation}\label{eq:mu3}
-\text{from eq.~\ref{eq:methodsMu2}: }\mu= \left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V1}\Bigr|n1=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}\Bigr|n2
+\text{from eq.~\ref{eq:methodsMu2}: }\mu= \left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V1}\Bigg|_{n1}=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}\Bigg|_{n2}
 \end{equation}
 The above constraints indicate that coexistence only occurs when the average slope must be equal to the instantaneous slope. This is equivalent to plotting the free energy as a function of density and finding a common tangent.
 
 \newpage
 \section{Computation}
+\vspace*{-5mm}
 \subsection{Resolution reduction}
 \begin{figure}[h]
 \vspace*{-7mm}
@@ -346,11 +378,23 @@ The above constraints indicate that coexistence only occurs when the average slo
 	\centering
 	\includegraphics[scale=.9]{FdispVsff-scrunched-ww1.50-L10.00-i0.pdf}
 	\caption{\label{fig:FdispVsff}
-	\scriptsize Here resolution reduction of the data is demonstrated. The data must be generated from a range of box sizes, and for each box size it is possible to run simulations From 2 atoms in a box all the way up to the desired filling fraction of 0.5; depending on the box size, a filling fraction of 0.5 can correspond to only 40 atoms or it could be as much as 100 atoms. Running simulations with every possible filling fraction will indeed produce a nice data set, but this will come at the cost of a lengthy computation time. Instead, pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45]; the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions.}
+	\scriptsize \textbf{Here resolution reduction of the data is demonstrated. The data must be generated from a range of box sizes, and for each box size it is possible to run simulations From 2 atoms in a box all the way up to the desired filling fraction of 0.5; depending on the box size, a filling fraction of 0.5 can correspond to only 40 atoms or it could be as much as 100 atoms. Running simulations with every possible filling fraction will indeed produce a nice data set, but this will come at the cost of a lengthy computation time. Instead, pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45]; the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions.}}
+	
+\end{figure}
+\vspace*{-10mm}
+\subsection{Common Tangent Method}
+%\vspace*{-1cm}
+\begin{figure}[h!]
+\vspace*{-7mm}
+\hspace*{-6mm}
+	\centering
+	\includegraphics[scale=.9]{pivotMethod.pdf}
+	\caption{\label{fig:pivotMethod}
+	\scriptsize \textbf{Here the common tangent method is demonstrated. An initial guess value is supplied by the user in plot A as red and blue circles. In plot B all vertical coordinates are taken relative to the red line in plot A; further two new guess values marked as X's are found by taking the minimum on each side of the vertical dashed line in plot B. The dashed line is half way between the guess values in plot A; this vertical line is used to help prevent guess values from jumping across the central bump. The new guess values in plot B are again used to define the vertical coordinates in plot C; the process essentially repeats until the desired accuracy is achieved.}}
 	
 \end{figure}
 \newpage
-\vspace*{-17mm}
+\vspace*{-7mm}
 \subsection{Coexistence points}
 \vspace*{-7mm}
 \begin{figure}[!h]
@@ -358,7 +402,7 @@ The above constraints indicate that coexistence only occurs when the average slo
 \hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{commonTangent.pdf}
-	\caption{\scriptsize Here the common tangent method is demonstrated. The free energy at a particular temperature is plotted as a funciton of density. The two points highlighted by red and blue X's on the curve share a common tangent; this means both points will have the same pressure and chemical potential. The left and right set of plots shows how the signal to noise ratio changes as the temperature increases. Far from the critical point the signal is relatively strong, while the near the critical point the noise becomes significant. To prevent the loss of the signal, first start at a low temperature where the signal is strong. Then gradually increase the temperature while finding common tangents. As the temperature and noise increases, the previous solutions at a slightly lower temperature can be used as a guess for the new higher temperature.}
+	\caption{\scriptsize \textbf{Here the common tangent method is applied. The free energy at a particular temperature is plotted as a funciton of density. The two points highlighted by red and blue X's on the curve share a common tangent; this means both points will have the same pressure and chemical potential. The left and right set of plots shows how the signal to noise ratio changes as the temperature increases. Far from the critical point the signal is relatively strong, while the near the critical point the noise becomes significant. To prevent the loss of the signal, first start at a low temperature where the signal is strong. Then gradually increase the temperature while finding common tangents. As the temperature and noise increases, the previous solutions at a slightly lower temperature can be used as a guess for the new higher temperature.}}
 	\label{fig:FdispVsff}
 \end{figure}
 

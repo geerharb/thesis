@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  26 AUG 2016 01:37
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  26 AUG 2016 05:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -579,13 +579,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [4
 
 ]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 19.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 19.
+LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <8> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 21.
 )
 \tf@lof=\write5
 \openout5 = `project.lof'.
@@ -606,7 +606,12 @@ File: images/renorm.png Graphic file (type QTm)
 ]) [7]
 Chapter 2.
 (./chapters/chapter02.tex
-Overfull \hbox (6.13368pt too wide) detected at line 17
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8
+
+]
+Overfull \hbox (6.13368pt too wide) detected at line 37
 [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[
 ] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 
 a[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L[] \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it
@@ -614,37 +619,40 @@ a[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L[] \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it
  []
 
 
-Overfull \hbox (35.71266pt too wide) detected at line 61
+Overfull \hbox (35.71266pt too wide) detected at line 81
 []\OT1/cmr/m/n/6 =[]\OMS/cmsy/m/n/6 ^^B[]
  []
 
-[8
-
-]
-Overfull \hbox (10.43303pt too wide) in paragraph at lines 88--88
+[9]
+Overfull \hbox (10.43303pt too wide) in paragraph at lines 119--119
 [] 
  []
 
-[9] [10] [11]
-Overfull \hbox (19.79663pt too wide) detected at line 207
+[10] [11] [12]
+Overfull \hbox (19.79663pt too wide) detected at line 238
 \OML/cmm/m/it/12 Z[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Z[][] [] \OMS/cmsy/m/n/
 12 ^^A ^^A ^^A [] \OML/cmm/m/it/12 e[]d[] \OMS/cmsy/m/n/12 ^^A [] ^^A \OML/cmm/
 m/it/12 d[] \OMS/cmsy/m/n/12 ^^A [] ^^A ^^A ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/
 m/n/12 ^^A [] )
  []
 
-[12] [13] [14] [15] [16]
+[13] [14] [15] [16]
 File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
+ <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 377--381
+ []|  [] 
+ []
 
-<use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 345--349
+File: images/pivotMethod.pdf Graphic file (type QTm)
+<use  "images/pivotMethod.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 389--393
  []|  [] 
  []
 
 [17]
 File: images/commonTangent.pdf Graphic file (type QTm)
  <use  "images/commonTangent.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 358--361
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 402--405
  []|  [] 
  []
 
@@ -687,7 +695,8 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 47--51
  []|  [] 
  []
 
-) [21]
+File: images/coexistence-ww1.50BAR.png Graphic file (type QTm)
+<use  "images/coexistence-ww1.50BAR.png" >) [21]
 Chapter 4.
 (./chapters/chapter05.tex) [22
 
@@ -701,12 +710,12 @@ Package logreq Info: Writing requests to 'project.run.xml'.
  )
 (\end occurred when \iftrue on line 85 was incomplete) 
 Here is how much of TeX's memory you used:
- 8739 strings out of 495536
- 139784 string characters out of 6186181
- 314891 words of memory out of 5000000
- 11887 multiletter control sequences out of 15000+600000
+ 8749 strings out of 495536
+ 139947 string characters out of 6186181
+ 312891 words of memory out of 5000000
+ 11895 multiletter control sequences out of 15000+600000
  13308 words of font info for 47 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,12n,43p,1502b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,43p,1513b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on project.pdf (22 pages).

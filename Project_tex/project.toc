@@ -4,27 +4,31 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Methods}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Equation Summary: SAFT-VR}{8}
+\contentsline {section}{\numberline {2.1}Fluid Model}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Equation Summary: Monte Carlo Simulations}{8}
+\contentsline {section}{\numberline {2.2}Equation Summary: SAFT}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Partition Function Seperation}{9}
+\contentsline {section}{\numberline {2.3}Equation Summary: Monte Carlo Simulations}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Free Energy via Monte Carlo Simulations}{10}
+\contentsline {section}{\numberline {2.4}Partition Function Seperation}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}MC Ideal gas free energy}{10}
+\contentsline {section}{\numberline {2.5}Free Energy via Monte Carlo Simulations}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}MC Hard sphere free energy}{11}
+\contentsline {subsection}{\numberline {2.5.1}MC Ideal gas free energy}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}MC Dispersive free energy}{13}
+\contentsline {subsection}{\numberline {2.5.2}MC Hard sphere free energy}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Finding Coexistence}{15}
+\contentsline {subsection}{\numberline {2.5.3}MC Dispersive free energy}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Computation}{17}
+\contentsline {section}{\numberline {2.6}Finding Coexistence}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.1}Resolution reduction}{17}
+\contentsline {section}{\numberline {2.7}Computation}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.2}Coexistence points}{18}
+\contentsline {subsection}{\numberline {2.7.1}Resolution reduction}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.7.2}Common Tangent Method}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.7.3}Coexistence points}{18}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Results}{19}
 \defcounter {refsection}{0}\relax 
