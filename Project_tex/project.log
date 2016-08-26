@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  25 AUG 2016 15:56
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  25 AUG 2016 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -574,6 +574,11 @@ File: images/osu2.png Graphic file (type QTm)
  [3
 
 ] (./project.lof
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4
+
+]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
@@ -581,12 +586,7 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 19.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4
-
-])
+)
 \tf@lof=\write5
 \openout5 = `project.lof'.
 
@@ -703,6 +703,6 @@ Here is how much of TeX's memory you used:
  11887 multiletter control sequences out of 15000+600000
  13308 words of font info for 47 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,12n,43p,1404b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,43p,1502b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on project.pdf (22 pages).
