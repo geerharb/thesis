@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex version 2.5 $
+% $ biblatex version 2.6 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -59,21 +59,11 @@
   \field{year}{2011}
 \endentry
 
-\entry{Forte2013}{article}{}
-  \name{author}{4}{}{%
+\entry{gil1997statistical}{article}{}
+  \name{author}{6}{}{%
     {{}%
-     {Forte}{F.}%
-     {Esther}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Llovell}{L.}%
-     {Felix}{F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Trusler}{T.}%
-     {J.P.~Martin}{J.~M.}%
+     {Gil-Villegas}{G.-V.}%
+     {Alejandro}{A.}%
      {}{}%
      {}{}}%
     {{}%
@@ -81,55 +71,58 @@
      {Amparo}{A.}%
      {}{}%
      {}{}}%
+    {{}%
+     {Whitehead}{W.}%
+     {Paul~J}{P.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mills}{M.}%
+     {Stuart~J}{S.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jackson}{J.}%
+     {George}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Burgess}{B.}%
+     {Andrew~N}{A.~N.}%
+     {}{}%
+     {}{}}%
   }
-  \keyw{SAFT-VR}
-  \strng{namehash}{FELFTJMGA1}
-  \strng{fullhash}{FELFTJMGA1}
-  \field{abstract}{%
-  In earlier work, a methodology to couple SAFT-VR with an \{RG\} treatment
-  (SAFT-VR + RG) for square-well chain and associating fluids was presented [E.
-  Forte, F. Llovell, L.F. Vega, J.P.M. Trusler, A. Galindo, J. Chem. Phys. 134
-  (15) (2011) 154102]. The approach is based on a recursive procedure which
-  begins with an initial free energy incorporating only contributions from
-  short-wavelength density fluctuations, which are treated locally. The
-  contribution from long-wavelength fluctuations is incorporated through the
-  iterative procedure based on attractive interactions that incorporate the
-  structure of the fluid following the ideas of perturbation theories and using
-  a mapping that allows integration of the radial distribution function. The
-  resulting SAFT-VR + \{RG\} theory provides an equation of state based on the
-  classical SAFT-VR equation and yields the correct critical behaviour without
-  the need for additional adjustable parameters. In this work, the application
-  of this equation to real fluids is presented. The ability of the methodology
-  to reproduce the phase behaviour close to and far from criticality solely
-  through the standard SAFT-VR molecular parameters is demonstrated here.
-  Molecular model parameters for a range of fluids, both non-associating and
-  associating are presented, including the homologous series of n-alkanes,
-  benzene, carbon dioxide, water, light alcohols, ammonia, hydrogen fluoride
-  and hydrogen sulphide. These were determined by comparison with experimental
-  data for vapour pressure and saturated liquid density. Furthermore, the
-  models presented are used to predict second derivative properties for these
-  compounds. Deviations compared with the original SAFT-VR equation are
-  discussed in order to assess further the improvements introduced by the
-  coupled theory to predict these properties. The critical exponents ?, ?, ?
-  and ? have also been obtained for a number of these fluids and found to be in
-  good agreement with the universal values of the three-dimensional Ising
-  model.%
+  \list{publisher}{1}{%
+    {AIP Publishing}%
   }
-  \verb{doi}
-  \verb http://dx.doi.org/10.1016/j.fluid.2012.09.022
-  \endverb
-  \field{issn}{0378-3812}
-  \field{pages}{274 \bibrangedash  287}
-  \field{title}{Application of the statistical associating fluid theory for
-  potentials of variable range (SAFT-VR) coupled with renormalisation-group
-  (RG) theory to model the phase equilibria and second-derivative properties of
-  pure fluids}
-  \verb{url}
-  \verb http://www.sciencedirect.com/science/article/pii/S0378381212004414
-  \endverb
-  \field{volume}{337}
-  \field{journaltitle}{Fluid Phase Equilibria}
-  \field{year}{2013}
+  \strng{namehash}{GVAGAWPJMSJJGBAN1}
+  \strng{fullhash}{GVAGAWPJMSJJGBAN1}
+  \field{number}{10}
+  \field{pages}{4168\bibrangedash 4186}
+  \field{title}{Statistical associating fluid theory for chain molecules with
+  attractive potentials of variable range}
+  \field{volume}{106}
+  \field{journaltitle}{The Journal of chemical physics}
+  \field{year}{1997}
+\endentry
+
+\entry{sackurTetrode}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {?}{.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {?}%
+  }
+  \field{number}{?}
+  \field{pages}{?}
+  \field{title}{needSource}
+  \field{volume}{?}
+  \field{journaltitle}{?}
+  \field{year}{?}
 \endentry
 
 \lossort

@@ -6,7 +6,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Fluid Model}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Equation Summary: SAFT}{9}
+\contentsline {section}{\numberline {2.2}Equation Summary: SAFT\cite {gil1997statistical} }{9}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Equation Summary: Monte Carlo Simulations}{9}
 \defcounter {refsection}{0}\relax 

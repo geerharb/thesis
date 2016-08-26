@@ -26,7 +26,8 @@ Molecular dynamics usually simulates a fluid using a continuous potential that i
 
 This project uses the hard sphere fluid in combination with statistical mechanics. The parameters used are $\sigma=2$ and $\lambda=1.5$.
 \pagebreak
-\section{Equation Summary: SAFT}
+\section{Equation Summary: SAFT\cite{gil1997statistical}  }
+
 
 \begin{multicols}{2}
 let $n=\frac{N}{V}\newline\eta=packingFraction\newline\Lambda=$de Broglie wavlength
@@ -150,14 +151,14 @@ To find the ideal gas free energy we can use previous results based on knowing t
 \begin{equation}\label{eq:idealInternalEnergy}
 U_{ideal}=3/2\cdot N\cdot k\cdot T
 \end{equation}
-\begin{equation}\label{eq:sackurTetrodeApprox}
+ \begin{equation}\label{eq:sackurTetrodeApprox} 
 S_{ideal^*}\approx k\cdot N \left ( ln\left [ \frac{V}{N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot \frac{U}{N} \right)^{3/2} \right]+\frac{5}{2}\right )
 \end{equation}
 
 
-The Sackur-Tetrode equation with the Stirling approximation actually does not make physical sense as the entropy per particle at constant temperature only depends on density. A simple example can show why this doesn't make sense. Consider two atoms in boxes seperated by a partition, and compare the entropy per particle to when the partition in the box has been removed. Once the partition has been removed, the two atoms can explore many more configurations than previously, which means the entropy should have increased once the two atoms were allowed to mix. Unfortunately the Sackur-Tetrode equation with Stirlings approximation would predict the entropy per particle with or without the partition should be the same. This is a bit of a problem since every box in a Monte Carlo simulation will contain exactly N particles, which means the entropy is actually lower than a real ideal gas.
+The Sackur-Tetrode\cite{sackurTetrode} equation with the Stirling approximation actually does not make physical sense as the entropy per particle at constant temperature only depends on density. A simple example can show why this doesn't make sense. Consider two atoms in boxes seperated by a partition, and compare the entropy per particle to when the partition in the box has been removed. Once the partition has been removed, the two atoms can explore many more configurations than previously, which means the entropy should have increased once the two atoms were allowed to mix. Unfortunately the Sackur-Tetrode equation with Stirlings approximation would predict the entropy per particle with or without the partition should be the same. This is a bit of a problem since every box in a Monte Carlo simulation will contain exactly N particles, which means the entropy is actually lower than a real ideal gas.
 
-The entropy problem can be fixed by using the Sackur-Tetrode equation without Stirling's approximation(eq~\ref{eq:sackurTetrode}). All we have eto do is use a constant density and compare the entropy per particle of a small box to the entropy per particle of a very large box. The difference in entropy should show how the ideal gas entropy within a small box will deviate from the expected ideal gas entropy.
+The entropy problem can be fixed by using the Sackur-Tetrode\cite{sackurTetrode} equation without Stirling's approximation(eq~\ref{eq:sackurTetrode}). All we have eto do is use a constant density and compare the entropy per particle of a small box to the entropy per particle of a very large box. The difference in entropy should show how the ideal gas entropy within a small box will deviate from the expected ideal gas entropy.
 
 \begin{equation}\label{eq:sackurTetrode}
 S_{ideal}=k\cdot N \left ( ln\left [ V\cdot N!^{-1/N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot\frac{U}{N} \right)^{3/2}  \right]+\frac{3}{2}\right )
@@ -378,7 +379,7 @@ The above constraints indicate that coexistence only occurs when the average slo
 	\centering
 	\includegraphics[scale=.9]{FdispVsff-scrunched-ww1.50-L10.00-i0.pdf}
 	\caption{\label{fig:FdispVsff}
-	\scriptsize \textbf{Here resolution reduction of the data is demonstrated. The data must be generated from a range of box sizes, and for each box size it is possible to run simulations From 2 atoms in a box all the way up to the desired filling fraction of 0.5; depending on the box size, a filling fraction of 0.5 can correspond to only 40 atoms or it could be as much as 100 atoms. Running simulations with every possible filling fraction will indeed produce a nice data set, but this will come at the cost of a lengthy computation time. Instead, pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45]; the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions.}}
+	\scriptsize \textbf{Here resolution reduction of the data is demonstrated. The data must be generated from a range of box sizes, and for each box size it is possible to run simulations From 2 atoms in a box all the way up to the desired filling fraction of 0.5; depending on the box size, a filling fraction of 0.5 can correspond to only 40 atoms or it could be as much as 100 atoms. Running simulations with every possible filling fraction will indeed produce a nice data set(see figure A), but this will come at the cost of a lengthy computation time. Instead, pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45] (see figure B); the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions. The comparisons to SAFT are only applied at the selected filling fractions.}}
 	
 \end{figure}
 \vspace*{-10mm}

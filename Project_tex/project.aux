@@ -11,11 +11,13 @@
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces  \relax \fontsize  {8}{9.5}\selectfont  \textbf  {Here a simulation of a 2d fluid near the critical point is presented. The three images are the same fluid seperated in time. The interface between liquid and gas evolves in time as each globule will interact with neighboring globules. If the temperature is increased past the critical point, the globules shrink in size to the point the plots appear as white noise. Two opposing forces are at work near the critical point: entropy and energy. The universe prefers a lower energy state, and so the surface area of the liquid prefers to be minimized. Unfortunately as the temperature is increased the density of the liquid goes down while the density of the vapor goes up; which means the surface tension decreases as the temperature reaches the critical point. Near the critical point the surface tension is no longer sufficient to keep the liquid seperate from the gas, as such the liquid and gas start to mix and in the process entropy increases. Another way to think about the mixing is through density fluctuations. Both the liquid and gas will have density fluctuations, and as the critical point is reached the density of the gas approaches the density of the liquid, which means the density fluctuations of the gas will be enough to convert some regions into a liquid and vice versa.}\relax }}{6}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:renorm}{{1.1}{6}}
+\citation{Forte2011}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {2}Methods}{8}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.1}Fluid Model}{8}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.2}Equation Summary: SAFT}{9}}
+\citation{gil1997statistical}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.2}Equation Summary: SAFT\cite {gil1997statistical} }{9}}
 \newlabel{eq:saftF18}{{2.3}{9}}
 \newlabel{eq:saftF1a}{{2.4}{9}}
 \newlabel{eq:saftF1b}{{2.5}{9}}
@@ -40,6 +42,8 @@
 \newlabel{eq:disp1}{{2.22}{10}}
 \newlabel{eq:disp1}{{2.23}{10}}
 \newlabel{eq:disp1}{{2.24}{10}}
+\citation{sackurTetrode}
+\citation{sackurTetrode}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.5}Free Energy via Monte Carlo Simulations}{11}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}MC Ideal gas free energy}{11}}
 \newlabel{eq:idealInternalEnergy}{{2.25}{11}}
@@ -93,7 +97,7 @@
 \newlabel{eq:mu3}{{2.70}{16}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {2.7}Computation}{17}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.1}Resolution reduction}{17}}
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces  \relax \fontsize  {8}{9.5}\selectfont  \textbf  {Here resolution reduction of the data is demonstrated. The data must be generated from a range of box sizes, and for each box size it is possible to run simulations From 2 atoms in a box all the way up to the desired filling fraction of 0.5; depending on the box size, a filling fraction of 0.5 can correspond to only 40 atoms or it could be as much as 100 atoms. Running simulations with every possible filling fraction will indeed produce a nice data set, but this will come at the cost of a lengthy computation time. Instead, pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45]; the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions.}\relax }}{17}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces  \relax \fontsize  {8}{9.5}\selectfont  \textbf  {Here resolution reduction of the data is demonstrated. The data must be generated from a range of box sizes, and for each box size it is possible to run simulations From 2 atoms in a box all the way up to the desired filling fraction of 0.5; depending on the box size, a filling fraction of 0.5 can correspond to only 40 atoms or it could be as much as 100 atoms. Running simulations with every possible filling fraction will indeed produce a nice data set(see figure A), but this will come at the cost of a lengthy computation time. Instead, pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45] (see figure B); the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions. The comparisons to SAFT are only applied at the selected filling fractions.}\relax }}{17}}
 \newlabel{fig:FdispVsff}{{2.1}{17}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.2}Common Tangent Method}{17}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces  \relax \fontsize  {8}{9.5}\selectfont  \textbf  {Here the common tangent method is demonstrated. An initial guess value is supplied by the user in plot A as red and blue circles. In plot B all vertical coordinates are taken relative to the red line in plot A; further two new guess values marked as X's are found by taking the minimum on each side of the vertical dashed line in plot B. The dashed line is half way between the guess values in plot A; this vertical line is used to help prevent guess values from jumping across the central bump. The new guess values in plot B are again used to define the vertical coordinates in plot C; the process essentially repeats until the desired accuracy is achieved.}\relax }}{17}}
