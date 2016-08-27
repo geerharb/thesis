@@ -4,7 +4,13 @@
 					 % this will change all pages that come after this tex file...
 					 % so make sure to reset the pagestyle to {fancy} at the end of this file
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-The methods section is partitioned into theory, which define the equations used, and the actual implementation through computational techniques. The main point of the theory is to estimate the free energy F from which any of the thermodynamic variables can be found. For example, the entropy, checmical potential, or pressure can be found by the differential $dF=-S\cdot dT -P\cdot dV+\mu\cdot dN$. Further, the internal energy can be found by $U=F+T\cdot S$. Once the free energy is found, the next goal is to fit the Monte Carlo simulations to SAFT by using a cost function that compares each thermodynamic variable from the Monte Carlo simulations to SAFT. The comparisons are constrained to a temperature range of $0.45<T/T_c<1.13$ where $T_c$ is the critical point using SAFT; the lower bound is chosen mostly to decrease the computation time of the simulations, while the upper limit is chosen to stay away from the well known hard sphere behavior. To decrease computation times even further, the comparisons are again constrained to filling fractions of [0.15,0.25,0.35,0.45]. Once the cost can be determined for a variety of box sizes, a 'best' box size is chosen that decreases the overall cost. The final step is to compare this best box size to slightly larger and smaller box sizes by looking at the coexistence densities of the liquid and gas phases.
+The methods section is partitioned into theory, which define the equations used, and the actual implementation through computational techniques. The main point of the theory is to estimate the free energy F from which any of the thermodynamic variables can be found. For example, the entropy, checmical potential, pressure, or internal energy can be found by the following:
+\begin{equation}
+dF=-S\cdot dT -P\cdot dV+\mu\cdot dN
+\end{equation}
+\begin{equation}U=F+T\cdot S 
+\end{equation} 
+Once the free energy is found, the next goal is to fit the Monte Carlo simulations to SAFT by using a cost function that compares each thermodynamic variable from the Monte Carlo simulations to SAFT. The comparisons are constrained to a temperature range of $0.45<T/T_c<1.13$ where $T_c$ is the critical point using SAFT; the lower bound is chosen mostly to decrease the computation time of the simulations, while the upper limit is chosen to stay away from the well known hard sphere behavior. To decrease computation times even further, the comparisons are again constrained to filling fractions of [0.15,0.25,0.35,0.45]. Once the cost can be determined for a variety of box sizes, a 'best' box size is chosen that decreases the overall cost. The final step is to compare this best box size to slightly larger and smaller box sizes by looking at the coexistence densities of the liquid and gas phases.
 \section{Fluid Model}
 \begin{multicols}{2}
 Molecular Dynamics
@@ -22,12 +28,12 @@ V_{HardSphere}(r) =
 \end{cases}
 \end{equation}
 \end{multicols}
-Molecular dynamics usually simulates a fluid using a continuous potential that is used in combination with Newtonian mechanics. One common potential used is the Lennard-Jones potential; a potential which simulates hard sphere impacts at roughly $r=\sigma$, contains a finite well, and then tapers off to zero interaction as $r\rightarrow\infty$. On the other hand, Statistical Mechanics can even use the simpler hard sphere potential which also has a hard sphere impact at $r=\sigma$, has a finite well, and tapers off to zero interaction. The similarities between both methods is the actual dynamics of a real system is replaced with a computational fluid model that only attempts to match the boundary conditions of the actual fluids potential. Despite such a crude approximation, useful predictions can be made by empirically determining the parameters and using the model to extrapolate beyond the original experiments.
+Molecular dynamics usually simulates a fluid using a continuous potential that is used in combination with Newtonian mechanics. One common potential used is the Lennard-Jones potential; a potential which simulates a very strong repulsion at roughly $r=\sigma$, contains a finite well, and then tapers off to zero interaction as $r\rightarrow\infty$. On the other hand, Statistical Mechanics can even use the simpler hard sphere potential which also has a very strong repulsion at $r=\sigma$, has a finite well, and has zero interaction for very large $r$. The similarities between both methods is the actual dynamics of a real system is replaced with a computational fluid model that only attempts to match the boundary conditions of the actual fluids potential. Despite such a crude approximation, useful predictions can be made by empirically determining the parameters and using the model to extrapolate beyond the original experiments.
 
 This project uses the hard sphere fluid in combination with statistical mechanics. The parameters used are $\sigma=2$ and $\lambda=1.5$.
 \pagebreak
-\section{Equation Summary: SAFT\cite{gil1997statistical}  }
-
+\section{Equation Summary: SAFT  }
+Statistical Associating Fluid theory (SAFT) is a perturbation which attempts to model monomer interactions, directional interactions such as monomers binding into chains, and even chains interacting with themselves\cite{gil1997statistical}. The following equations are the square-well fluid results obtained by Gil-Villegas et al. \cite{gil1997statistical}:
 
 \begin{multicols}{2}
 let $n=\frac{N}{V}\newline\eta=packingFraction\newline\Lambda=$de Broglie wavlength
@@ -39,12 +45,12 @@ let $n=\frac{N}{V}\newline\eta=packingFraction\newline\Lambda=$de Broglie wavlen
 
 %gil-villegas eq 1
 \begin{equation}\label{eq:saftF1a}
-a^{IDEAL}=ln\left(n\cdot \Lambda^3\right)-1
+a^{IDEAL}=\ln\left(n\cdot \Lambda^3\right)-1
 \end{equation}
 
 %gil-villegas eq. 1
 \begin{equation}\label{eq:saftF1b}
-a^{HS}=-ln(1-4\cdot \eta)
+a^{HS}=-\ln(1-4\cdot \eta)
 \end{equation}
 
 %gil-villegas eq 34
@@ -98,7 +104,7 @@ Z=Z_{ideal}\cdot Z_{HS}\cdot Z_{disp}
 \end{equation}
 
 \begin{equation}\label{eq:MC2}
-Z_{ideal}=Z_{ideal}^{SAFT}
+Z_{ideal}=Z_{ideal}^{SAFT}=N\cdot(1-\\ln(n\cdot \Lambda^3))
 \end{equation}
 
 \begin{equation}\label{eq:MC3}
@@ -108,7 +114,7 @@ Z_{HS}=e^{-S_{HS}/k}
 \begin{equation}\label{eq:MC4}
 Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}
 \end{equation}
-Note that $S_{HS}$ is the hard sphere entropy. Past work by Brenden has shown the hard sphere entropy of the simulations can be modeled by the Carnahan-Starling equation of state, so all simulations used in this project use the entropy found via the Carnahan-Starling equation of state which is the same hard sphere entropy in SAFT. Despite this, if one wanted to find the hard sphere entropy using computaiton we can use a known starting point of a very large box at $T=\infty$. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps actually maps every atom within the larger box down into the smaller box while preserving angular orientation. This means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the very large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
+Note that $S_{HS}$ is the hard sphere entropy. Past work by Brenden Visher\cite{Brenden} has shown the hard sphere entropy of the simulations can be modeled by the Carnahan-Starling equation of state, so all simulations used in this project use the entropy found via the Carnahan-Starling equation of state which is the same hard sphere entropy in SAFT. Despite this, if one wanted to find the hard sphere entropy using computaiton we can use a known starting point of a very large box at $T=\infty$. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps actually maps every atom within the larger box down into the smaller box while preserving angular orientation. This means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot \ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the very large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
 
 \section{Partition Function Seperation}
 The partition function can be partitioned into high and low temperature regimes. At low temperatures the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three parts:
@@ -152,16 +158,16 @@ To find the ideal gas free energy we can use previous results based on knowing t
 U_{ideal}=3/2\cdot N\cdot k\cdot T
 \end{equation}
  \begin{equation}\label{eq:sackurTetrodeApprox} 
-S_{ideal^*}\approx k\cdot N \left ( ln\left [ \frac{V}{N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot \frac{U}{N} \right)^{3/2} \right]+\frac{5}{2}\right )
+S_{ideal^*}\approx k\cdot N \left ( \ln\left [ \frac{V}{N}\left ( \frac{4 \pi m U}{3 h^2 N} \right)^{3/2} \right]+\frac{5}{2}\right )
 \end{equation}
 
 
-The Sackur-Tetrode\cite{sackurTetrode} equation with the Stirling approximation actually does not make physical sense as the entropy per particle at constant temperature only depends on density. A simple example can show why this doesn't make sense. Consider two atoms in boxes seperated by a partition, and compare the entropy per particle to when the partition in the box has been removed. Once the partition has been removed, the two atoms can explore many more configurations than previously, which means the entropy should have increased once the two atoms were allowed to mix. Unfortunately the Sackur-Tetrode equation with Stirlings approximation would predict the entropy per particle with or without the partition should be the same. This is a bit of a problem since every box in a Monte Carlo simulation will contain exactly N particles, which means the entropy is actually lower than a real ideal gas.
+Equation~\ref{eq:sackurTetrodeApprox} is the Sackur-Tetrode\cite{sackurTetrode} equation with the Stirling's approximation; it actually does not make physical sense as the entropy per particle at constant temperature only depends on density. A simple example can show why this doesn't make sense. Consider two atoms in boxes seperated by a partition, and compare the entropy per particle to when the partition in the box has been removed. Once the partition has been removed, the two atoms can explore many more configurations than previously, which means the entropy should have increased once the two atoms were allowed to mix. Unfortunately the Sackur-Tetrode equation with Stirlings approximation would predict the entropy per particle with or without the partition should be the same. This is a bit of a problem since every box in a Monte Carlo simulation will contain exactly N particles, which means the entropy is actually lower than a real ideal gas.
 
-The entropy problem can be fixed by using the Sackur-Tetrode\cite{sackurTetrode} equation without Stirling's approximation(eq~\ref{eq:sackurTetrode}). All we have eto do is use a constant density and compare the entropy per particle of a small box to the entropy per particle of a very large box. The difference in entropy should show how the ideal gas entropy within a small box will deviate from the expected ideal gas entropy.
+The entropy problem can be fixed by using the Sackur-Tetrode\cite{sackurTetrode} equation without Stirling's approximation(eq~\ref{eq:sackurTetrode}). All we have to do is use a constant density and compare the entropy per particle of a small box to the entropy per particle of a very large box. The difference in entropy should show how the ideal gas entropy within a small box will deviate from the expected ideal gas entropy.
 
 \begin{equation}\label{eq:sackurTetrode}
-S_{ideal}=k\cdot N \left ( ln\left [ V\cdot N!^{-1/N}\left ( \frac{4\cdot \pi\cdot m}{3\cdot h^2}\cdot\frac{U}{N} \right)^{3/2}  \right]+\frac{3}{2}\right )
+S_{ideal}=k\cdot N \left ( \ln\left [ V\cdot N!^{-1/N}\left ( \frac{4 \pi mU}{3 h^2N}\right)^{3/2}  \right]+\frac{3}{2}\right )
 \end{equation}
 
 The entropy problem was not taken into account since the simulations should really just be a tool to explore the region that we don't know. At high temperatures we already know the system will act like an ideal gas in terms of the momentum integrals and a hard sphere system in terms of collisions. Basically keeping track of every entropy change will affect the boundary conditions at high temperature; for this reason the entropy problem is ignored for this project.
@@ -174,7 +180,7 @@ Z_{exc}=Z_{HS}\cdot Z_{disp}\Rightarrow
 \end{equation}
 
 \begin{equation}\label{eq:MCHS2}
-\newline F_{exc}=-k\cdot T\cdot ln(Z_{exc})=-k\cdot T\cdot ln(Z_{HS})-k\cdot T\cdot ln(Z_{disp})\Rightarrow 
+\newline F_{exc}=-k\cdot T\cdot \ln(Z_{exc})=-k\cdot T\cdot \ln(Z_{HS})-k\cdot T\cdot \ln(Z_{disp})\Rightarrow 
 \end{equation}
 
 \begin{equation}\label{eq:MCHS3}
@@ -182,7 +188,7 @@ Z_{exc}=Z_{HS}\cdot Z_{disp}\Rightarrow
 \end{equation}
 
 \begin{equation}\label{eq:MCHS4}
-\newline S_{exc.\infty}=-k\cdot ln(Z_{HS.\infty})-k\cdot ln(Z_{disp.\infty})
+\newline S_{exc.\infty}=-k\cdot \ln(Z_{HS.\infty})-k\cdot \ln(Z_{disp.\infty})
 \end{equation}
 
 \begin{equation}\label{eq:MCHS5}
@@ -190,7 +196,7 @@ Z_{exc}=Z_{HS}\cdot Z_{disp}\Rightarrow
 \end{equation}
 
 \begin{equation}\label{eq:MCHS6}
-S_{exc.\infty}=-k\cdot ln(Z_{HS})-k\cdot ln(1)=-k\cdot ln(Z_{HS}) \Rightarrow
+S_{exc.\infty}=-k\cdot \ln(Z_{HS})-k\cdot \ln(1)=-k\cdot \ln(Z_{HS}) \Rightarrow
 \end{equation}
 
 \begin{equation}\label{eq:MCHS7}
@@ -201,7 +207,7 @@ To find the hard sphere partition function, we need to find the maximum excess e
 
 What we can observe is the probability that a particular scaling fails, and from this probability the change in entropy from the bigger box down to the smaller box can be calculated. The details are as follows:
 \begin{equation}\label{eq:MCHS8}
-F=U-T\cdot S \Rightarrow  S=(U-F)/T\approx -F/T=k\cdot ln(Z)
+F=U-T\cdot S \Rightarrow  S=(U-F)/T\approx -F/T=k\cdot \ln(Z)
 \end{equation}
 
 \begin{equation}\label{eq:MCHS9}
@@ -213,7 +219,7 @@ F=U-T\cdot S \Rightarrow  S=(U-F)/T\approx -F/T=k\cdot ln(Z)
 \end{equation}
 
 \begin{equation}\label{eq:MCHS11}
-\Delta S=S_{small}-S_{big}=k\cdot ln(Z_{small})-k\cdot ln(Z_{big})=k\cdot ln(Z_{small}/Z_{big})
+\Delta S=S_{small}-S_{big}=k\cdot \ln(Z_{small})-k\cdot \ln(Z_{big})=k\cdot \ln(Z_{small}/Z_{big})
 \end{equation}
 From here note that although every configuration in the bigger box is not guaranteed to scale down into the smaller box, it is guaranteed that the smaller box can be expanded into the bigger box. This means there is a mapping from the partition function of the smaller box to the bigger box; as such we can break $Z_{big}$ into valid and invalid configurations where the valid configurations are guaranteed to shrink down into the smaller box while the invalid configurations will not. The $\Delta S$ can then be simplified by making a connection between $Z_{small}$ and $Z_{valid}$.
 \begin{equation}\label{eq:MCHS12}
@@ -249,11 +255,11 @@ Z_{small}=Z_{ideal}\frac{1}{V^N}\int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_
 Now that $\alpha$ is known, we can get back to finding the entropy.
 
 \begin{equation}\label{eq:MCHS19}
-\Delta S=k\cdot ln(Z_{small}/Z_{big})=k\cdot ln(\alpha\cdot Z_{valid}/Z_{big})
+\Delta S=k\cdot \ln(Z_{small}/Z_{big})=k\cdot \ln(\alpha\cdot Z_{valid}/Z_{big})
 \end{equation}
 
 \begin{equation}\label{eq:MCHS20}
-\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot Z_{valid}/Z_{big})
+\Delta S=k\cdot \ln(\frac{V_{small}^N}{V_{big}^N}\cdot Z_{valid}/Z_{big})
 \end{equation}
 
 \begin{equation}\label{eq:MCHS21}
@@ -261,7 +267,7 @@ Now that $\alpha$ is known, we can get back to finding the entropy.
 \end{equation}
 
 \begin{equation}\label{eq:MCHS22}
-\Delta S=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success}
+\Delta S=k\cdot \ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success}
 )
 \end{equation}
 
@@ -272,19 +278,19 @@ At this point this $\Delta S$ represents the total change in entropy from squeez
 \end{equation}
 
 \begin{equation}\label{eq:MCHS24}
-\text{but from eq~\ref{eq:sackurTetrodeApprox} }\Delta S_{ideal.\infty}=k\cdot N\cdot ln(V_{small}/V_{big})\Rightarrow
+\text{but from eq~\ref{eq:sackurTetrodeApprox} }\Delta S_{ideal.\infty}=k\cdot N\cdot \ln(V_{small}/V_{big})\Rightarrow
 \end{equation}
 
 \begin{equation}\label{eq:MCHS25}
-\Delta S_{exc.\infty}=k\cdot ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success})-k\cdot N\cdot ln(V_{small}/V_{big})
+\Delta S_{exc.\infty}=k\cdot \ln(\frac{V_{small}^N}{V_{big}^N}\cdot P_{success})-k\cdot N\cdot \ln(V_{small}/V_{big})
 \end{equation}
 
 \begin{equation}\label{eq:MCHS26}
-\Delta S_{exc.\infty}=k\cdot ln(P_{success})
+\Delta S_{exc.\infty}=k\cdot \ln(P_{success})
 \end{equation}
 
 \subsection{MC Dispersive free energy}
-The dispersive term is found by estimating the density of states using a method that samples configuration space while keeping track of energy transitions. The main problem is the sample of energy states is not unique to a single density of states. In other words, the partition function can be changed by an arbitrary factor without actually changing the total energy. This can be seen as follows:
+The dispersive term is found by estimating the density of states using a method that samples configuration space while keeping track of energy transitions. The main problem is the sample of energy states is not unique to a single density of states. In other words, the partition function can be changed by an arbitrary factor without actually changing the internal energy. This can be seen as follows:
 
 \begin{equation}\label{eq:MCDISP1}
 \text{Suppose }Z=\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}
@@ -316,7 +322,7 @@ U_2=\sum_i E_i\cdot \boldsymbol{\alpha}\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/(\b
 U_2=\sum_i E_i\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/Z=U
 \end{equation}
 
-Basically the partition function will define the total energy at all temperatures, but knowing the total energy at all temperatures will not define a unique partition function. Specifically, the partition function up to some arbitrary factor will give the same total energy. This is a bit problematic considering the method to find the density of states makes observations of the total energy to estimate the density of states, which then results in a density of states that is only defined up to some unknown factor.
+Basically the partition function will define the internal energy at all temperatures, but knowing the internal energy at all temperatures will not define a unique partition function. Specifically, the partition function up to some arbitrary factor will give the same internal energy. This is a bit problematic considering the method to find the density of states makes observations of the internal energy to estimate the density of states, which then results in a density of states that is only defined up to some unknown factor.
 
 To get around this problem of an unknown factor in the density of states, note that the dispersive partition function will go towards one as T approaches infinity. This happens because $Z_{disp}$ is the ratio of the interaction term to the hard sphere term, and the interaction term approaches the hard sphere term as the temperature increases. Essentially we can leave the unkown $\alpha$ term alone, and it will show up in both the interaction and hard sphere partition function.
 
@@ -331,11 +337,11 @@ Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{
 At phase coexistence we want $\mu_{liquid}=\mu_{gas}$ and $P_{liquid}=P_{gas}$, so provided we know free energy we can simply find coexistence by the following constraints:
 
 \begin{equation}\label{eq:methodsMu}
-\mu=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigg|_{N1}=\left(\frac{\partial F(T,V1,N)}{\partial N}\right)_{T,V1}\Bigg|_{N2}
+\mu=\left(\frac{\partial F(T,V_1,N)}{\partial N}\right)_{T,V_1}\Bigg|_{N_1}=\left(\frac{\partial F(T,V_1,N)}{\partial N}\right)_{T,V_1}\Bigg|_{N_2}
 \end{equation}
 
 \begin{equation}\label{eq:methodsP}
-P=\left(\frac{\partial F(T,V,N1)}{\partial V}\right)_{T,N1}\Bigr|_{V1}=\left(\frac{\partial F(T,V,N2)}{\partial V}\right)_{T,N2}\Bigr|_{V2}
+P=\left(\frac{\partial F(T,V,N_1)}{\partial V}\right)_{T,N_1}\Bigr|_{V_1}=\left(\frac{\partial F(T,V,N_2)}{\partial V}\right)_{T,N_2}\Bigr|_{V_2}
 \end{equation}
 
 Notice that one set of derivatives are at constant V while the other set of derivatives are at constant N. Luckily this means we can simplify the derivatives by instead considering the free energy per volume; the reason this helps is both the free energy and volume are extensive quantities, which means the ratio F/V must be an intensive quantity which further means $F/V=f$ must only depend on intensive parameters. I.e. $F(T,N,V)/V=f(T,N/v)=f(T,n)$. First start simplifying eq.~\ref{eq:methodsMu} by:
@@ -360,12 +366,12 @@ Finally we can use eq.~\ref{eq:P4} inside eq.~\ref{eq:methodsP2} to achieve the 
 \begin{equation}\label{eq:P5}
 P=f+V\cdot\left( \frac{n\cdot \mu}{V} \right)=f-n\cdot\mu
 \end{equation}
-Having a simplified result for pressure, we can now apply the coexistence constraint that $P_1=P_2 \Rightarrow$ $f1+n1\cdot\mu=f2+n2\cdot\mu$. To compare this result with eq.~\ref{eq:methodsMu2}, solve for $\mu$ to get the following results:
+Having a simplified result for pressure, we can now apply the coexistence constraint that $P_1=P_2 \Rightarrow$ $f_1+n_1\cdot\mu=f_2+n_2\cdot\mu$. To compare this result with eq.~\ref{eq:methodsMu2}, solve for $\mu$ to get the following results:
 \begin{equation}\label{eq:mu3p}
-\mu=\frac{f2-f1}{n2-n1}
+\mu=\frac{f_2-f_1}{n_2-n_1}
 \end{equation}
 \begin{equation}\label{eq:mu3}
-\text{from eq.~\ref{eq:methodsMu2}: }\mu= \left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V1}\Bigg|_{n1}=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}\Bigg|_{n2}
+\text{from eq.~\ref{eq:methodsMu2}: }\mu= \left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V_1}\Bigg|_{n_1}=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}\Bigg|_{n_2}
 \end{equation}
 The above constraints indicate that coexistence only occurs when the average slope must be equal to the instantaneous slope. This is equivalent to plotting the free energy as a function of density and finding a common tangent.
 

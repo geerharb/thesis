@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  26 AUG 2016 06:12
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  27 AUG 2016 06:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -571,7 +571,7 @@ File: images/osu2.png Graphic file (type QTm)
  [3
 
 ] (./project.lof
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4441) has occurred while \output is active []
 
  [4
 
@@ -600,15 +600,12 @@ Chapter 1.
 File: images/renorm.png Graphic file (type QTm)
  <use  "images/renorm.png" > [6
 
-]) [7]
+]) [7] [8]
 Chapter 2.
-(./chapters/chapter02.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8
+(./chapters/chapter02.tex [9
 
 ]
-Overfull \hbox (6.13368pt too wide) detected at line 38
+Overfull \hbox (6.13368pt too wide) detected at line 44
 [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[
 ] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 
 a[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L[] \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it
@@ -616,44 +613,44 @@ a[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L[] \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it
  []
 
 
-Overfull \hbox (35.71266pt too wide) detected at line 82
+Overfull \hbox (35.71266pt too wide) detected at line 88
 []\OT1/cmr/m/n/6 =[]\OMS/cmsy/m/n/6 ^^B[]
  []
 
-[9]
-Overfull \hbox (10.43303pt too wide) in paragraph at lines 120--120
+[10]
+Overfull \hbox (10.43303pt too wide) in paragraph at lines 126--126
 [] 
  []
 
-[10] [11] [12]
-Overfull \hbox (19.79663pt too wide) detected at line 239
+[11] [12] [13]
+Overfull \hbox (19.79663pt too wide) detected at line 245
 \OML/cmm/m/it/12 Z[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Z[][] [] \OMS/cmsy/m/n/
 12 ^^A ^^A ^^A [] \OML/cmm/m/it/12 e[]d[] \OMS/cmsy/m/n/12 ^^A [] ^^A \OML/cmm/
 m/it/12 d[] \OMS/cmsy/m/n/12 ^^A [] ^^A ^^A ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/
 m/n/12 ^^A [] )
  []
 
-[13] [14] [15] [16]
+[14] [15] [16] [17]
 File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
  <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 378--382
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 384--388
  []|  [] 
  []
 
 File: images/pivotMethod.pdf Graphic file (type QTm)
 <use  "images/pivotMethod.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 390--394
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 396--400
  []|  [] 
  []
 
-[17]
+[18]
 File: images/commonTangent.pdf Graphic file (type QTm)
  <use  "images/commonTangent.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 403--406
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 409--412
  []|  [] 
  []
 
-) [18]
+) [19]
 Chapter 3.
 (./chapters/chapter03.tex
 File: images/UFtrends-ww1.50.pdf Graphic file (type QTm)
@@ -665,7 +662,7 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 6--12
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19
+ [20
 
 ]
 File: images/STCvtrends-ww1.50.pdf Graphic file (type QTm)
@@ -678,7 +675,7 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 23--27
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
+ [21]
 File: images/Costsmall-ww1.50.pdf Graphic file (type QTm)
 
 <use  "images/Costsmall-ww1.50.pdf" >
@@ -693,11 +690,11 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 47--51
  []
 
 File: images/coexistence-ww1.50BAR.png Graphic file (type QTm)
-<use  "images/coexistence-ww1.50BAR.png" >) [21]
+<use  "images/coexistence-ww1.50BAR.png" >) [22]
 Chapter 4.
-(./chapters/chapter05.tex) [22
+(./chapters/chapter05.tex) [23
 
-] [23
+] [24
 
 ] (./project.aux)
 
@@ -709,12 +706,12 @@ Package logreq Info: Writing requests to 'project.run.xml'.
  )
 (\end occurred when \iftrue on line 85 was incomplete) 
 Here is how much of TeX's memory you used:
- 8847 strings out of 495536
- 141743 string characters out of 6186181
- 312891 words of memory out of 5000000
- 11992 multiletter control sequences out of 15000+600000
- 13655 words of font info for 48 fonts, out of 8000000 for 9000
+ 8844 strings out of 495536
+ 141696 string characters out of 6186181
+ 313891 words of memory out of 5000000
+ 11989 multiletter control sequences out of 15000+600000
+ 12589 words of font info for 44 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,12n,48p,1513b,849s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (23 pages).
+Output written on project.pdf (24 pages).

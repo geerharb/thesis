@@ -106,6 +106,25 @@
   \field{year}{1997}
 \endentry
 
+\entry{Brenden}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {?}{.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {?}%
+  }
+  \field{number}{?}
+  \field{pages}{?}
+  \field{title}{needSource}
+  \field{volume}{?}
+  \field{journaltitle}{?}
+  \field{year}{?}
+\endentry
+
 \entry{sackurTetrode}{article}{}
   \name{author}{1}{}{%
     {{}%
