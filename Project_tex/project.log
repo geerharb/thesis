@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  28 AUG 2016 01:12
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  28 AUG 2016 03:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -578,26 +578,29 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <8> not available
 (Font)              Font shape `OML/cmm/b/it' tried instead on input line 21.
-)
-\tf@lof=\write5
-\openout5 = `project.lof'.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4
 
-]
-Chapter 1.
-(./chapters/chapter01.tex
-File: images/renorm.png Graphic file (type QTm)
- <use  "images/renorm.png" > [5
-
 ])
+\tf@lof=\write5
+\openout5 = `project.lof'.
+
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 27.18335pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] [7]
+[5]
+Chapter 1.
+(./chapters/chapter01.tex
+File: images/renorm.png Graphic file (type QTm)
+ <use  "images/renorm.png" > [6
+
+]) [7]
 Chapter 2.
 (./chapters/chapter02.tex [8
 
@@ -619,7 +622,9 @@ Overfull \hbox (10.43303pt too wide) in paragraph at lines 126--126
 [] 
  []
 
-[10] [11] [12]
+[10]
+Missing character: There is no ’ in font cmr12!
+ [11] [12]
 Overfull \hbox (19.79663pt too wide) detected at line 245
 \OML/cmm/m/it/12 Z[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Z[][] [] \OMS/cmsy/m/n/
 12 ^^A ^^A ^^A [] \OML/cmm/m/it/12 e[]d[] \OMS/cmsy/m/n/12 ^^A [] ^^A \OML/cmm/
@@ -661,7 +666,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/UFtrends-ww1.50.pdf Graphic file (type QTm)
 
 <use  "images/UFtrends-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 11--17
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 17--23
  []|  [] 
  []
 
@@ -672,7 +677,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/STCvtrends-ww1.50.pdf Graphic file (type QTm)
 
 <use  "images/STCvtrends-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 28--32
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 34--38
  []|  [] 
  []
 
@@ -683,13 +688,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/Costsmall-ww1.50.pdf Graphic file (type QTm)
 
 <use  "images/Costsmall-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 41--45
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 47--51
  []|  [] 
  []
 
 File: images/coexistence-ww1.50.pdf Graphic file (type QTm)
 <use  "images/coexistence-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 52--56
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 58--62
  []|  [] 
  []
 
@@ -710,11 +715,11 @@ Package logreq Info: Writing requests to 'project.run.xml'.
  )
 (\end occurred when \iftrue on line 85 was incomplete) 
 Here is how much of TeX's memory you used:
- 8844 strings out of 495536
- 141696 string characters out of 6186181
- 313891 words of memory out of 5000000
- 11989 multiletter control sequences out of 15000+600000
- 12589 words of font info for 44 fonts, out of 8000000 for 9000
+ 8845 strings out of 495536
+ 141710 string characters out of 6186181
+ 313893 words of memory out of 5000000
+ 11990 multiletter control sequences out of 15000+600000
+ 12816 words of font info for 45 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,12n,48p,1513b,849s stack positions out of 5000i,500n,10000p,200000b,80000s
 

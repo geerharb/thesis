@@ -1,10 +1,14 @@
-%\stepcounter{subsection}
+﻿%\stepcounter{subsection}
 %\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}<Monte Carlo Energy trends>}
-The graphs in fig.~\ref{fig:UFtrends} show the Monte Carlo simulation results in terms of dispersive free energy and internal energy relative to SAFT at three different box sizes. Both sets of graphs show that a small box size has a higher energy than SAFT, while a larger box will have a lower energy than SAFT. This makes sense because as the box size increases longer wavelength fluctuations are allowed, and these longer wavelengths actually lower the allowed energy due to the decreased interactions in the low density regions being more than compensated by the increase in interactions in the high density regions. Given a constant box size, the high filling fraction simulations cannot fluctuate as much as the low filling fraction simulations, which explains the bulge in the two lower plots. The main point of the U,F trends plot is to show there is a transition where the simulations are over estimating the energy to under estimating the energy. This indicates the best box size should be somewhere between $L=5.66$ and $L=10.00"$.
+The graphs in fig.~\ref{fig:UFtrends} show the Monte Carlo simulation results in terms of dispersive free energy and internal energy relative to SAFT at three different box sizes. Both sets of graphs show that a small box size has a higher energy than SAFT, while a larger box will have a lower energy than SAFT. This makes sense because as the box size increases longer wavelength fluctuations are allowed, and these longer wavelengths actually lower the allowed energy due to the decreased interactions in the low density regions being more than compensated by the increase in interactions in the high density regions. Given a constant box size, the high filling fraction simulations cannot fluctuate as much as the low filling fraction simulations, which explains the bulge in the two lower plots. The main point of the U,F trends plot is to show there is a transition where the simulations are over estimating the energy to under estimating the energy. This indicates the best box size should be somewhere between $L=5.66$ and $L=10.00$.
 
-These graphs inf fig.~\ref{fig:STCvtrends} show the Monte Carlo simulations results in terms of dispersive entropy and heat capacity per particle relative to SAFT at three different box sizes. It is interesting to see the entropy trends are nearly the inverse of the heat capacity trends. Both entropy and heat capacity require a derivative with respect to temperature, it is just that entropy is the negative derivative of Free energy while heat capacity is the positive derivative of internal energy. Given fig. \ref{fig:UFtrends} showed the internal and free energy spread out in a similar fashion as the temperature was increased, it isn't surprising entropy and heat capacity have inverse trends. Regarding the trend itself, the graphs suggest entropy of a small box will have more entropy than SAFT, while a large box will have a lower entropy than SAFT. This trend can be explained by the particles binding together in ways that SAFT could not take into account, and this extra binding will decrease the entropy simply because some configurations are now favored over other configurations. Just like the U,F trends, there is a transition between over and under estimating the entropy and heat capacity. This again indicates the best box size should be somewhere between $L=5.66$ and $L=10.00$.
+The graphs in fig.~\ref{fig:STCvtrends} show the Monte Carlo simulations results in terms of dispersive entropy and heat capacity per particle relative to SAFT at three different box sizes. It is interesting to see the entropy trends are nearly the inverse of the heat capacity trends. Both the entropy and heat capacity require a derivative with respect to temperature, it just happens that entropy is the negative derivative of Free energy while heat capacity is the positive derivative of internal energy. Given fig. \ref{fig:UFtrends} showed the internal and free energy spread out in a similar fashion as the temperature was increased, it isn't surprising entropy and heat capacity have inverse trends. Regarding the trend itself, the graphs suggest entropy of a small box will have more entropy than SAFT, while a large box will have a lower entropy than SAFT. This trend can be explained by the particles binding together in ways that SAFT could not take into account, and this extra binding will decrease the entropy simply because some configurations are now favored over other configurations. Just like the U,F trends, there is a transition between over and under estimating the entropy and heat capacity. This again indicates the best box size should be somewhere between $L=5.66$ and $L=10.00$.
 
-Having verified the results from the simulations are as expected, the cost relative to SAFT is plotted in fig.~\ref{fig:Cost}. 
+Having verified the results from the simulations are as expected, the cost relative to SAFT is plotted in fig.~\ref{fig:Cost}. It is a bit interesting to see how each cost graph shows a different best fit region. For instance, the dispersive entropy and heat capacity cost seem to indicate $L<8$ will work just fine. On the other hand, the dispersive free energy cost indicate box sizes in the range $7.3<L<10$ might actually work just fine. Finally, the dispersive internal energy cost seems to take off after $L=7.61$. Taken all cost functions together, a box size of $L=7.61$ was chosen as the best box size.
+
+The final comparison is made in fig.~\ref{fig:Coexistence} by plotting the coexistence temperature as a function of density for three Monte Carlo simulations and SAFT. Trying to find the coexistence conditions of the Monte Carlo simulations near the critical point was difficult due to the small signal near the critical point (see fig.~\ref{fig:FdispVsff}). I used plots like fig.~\ref{fig:FdispVsff} to determine when the signal was lost. Despite the limited data near the critical point, it should be clear that the Monte Carlo simulation with $L=10.00$ has a critical point below SAFT, the Monte Carlo simulation with $L=6.61$ has a critical point above SAFT, and the Monte Carlo simulation using the best fit $L=7.61$ has a critical point near SAFT. The cost function was evaluated for many temperatures and densities, so it is interesting the best fit box size also corresponding with roughly the same critical temperature as SAFT.
+
+
 \pagebreak
 
 \section{Trends in U,F}
@@ -15,7 +19,7 @@ Having verified the results from the simulations are as expected, the cost relat
 	\includegraphics[scale=.9]{UFtrends-ww1.50.pdf}
 	\caption{
 	%\tiny	
-	\scriptsize\textbf{
+	\scriptsize\textbf{Here the dispersive free entropy and heat capacity are plotted vs the filling fraction for three different box sizes. Just like the U,F trends, these plots show there is a clear transition between over and under estimating the energy. This again indicates the best fit box size should be less than $L=10.00$ but larger than $L=5.66$.
 	}}
 	\label{fig:UFtrends}
 \end{figure}
@@ -30,7 +34,7 @@ Having verified the results from the simulations are as expected, the cost relat
 \hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{STCvtrends-ww1.50.pdf}
-	\caption{\scriptsize\textbf{
+	\caption{\scriptsize\textbf{Here the dispersive free energy and internal energy are plotted vs the filling fraction for three different box sizes. These plots show there is a clear transition between over and under estimating the energy. Given the goal is to fit the Monte Carlo simulations to SAFT, the best fit box size should be less than $L=10.00$ but larger than $L=5.66$.
 	}}
 	\label{fig:STCvtrends}
 \end{figure}
@@ -44,7 +48,7 @@ Having verified the results from the simulations are as expected, the cost relat
 	\centering
 	\includegraphics[scale=.9]{Costsmall-ww1.50.pdf}
 	\caption{\scriptsize\textbf{
-	These graphs show the cost function as a function of the box size for the dispersive free energy, internal energy, entropy, and heat capacity. The cost function is defiend as the mean square difference between the Monte Carlo simultions and SAFT evaulated at a filling fraction of [0.15,0.25,0.35,0.45] and evaluated for 0.6\textless T\textless 1.5. The dispersive free energy and internal energy show a minimum near L=7.6, while any box size less than L=8.0 seems to be just fine for the dispersive entropy and heat capacity.}}
+	These graphs show the cost function as a function of the box size for the dispersive free energy, internal energy, entropy, and heat capacity. The cost function is defined as the mean square difference between the Monte Carlo simulations and SAFT evaluated at a filling fraction of [0.15,0.25,0.35,0.45] and evaluated for 0.6\textless T\textless 1.5. The dispersive free energy and internal energy show a minimum near L=7.6, while any box size less than L=8.0 seems to be just fine for the dispersive entropy and heat capacity. Given this data, the best fit box size was chosen as $L=7.61$.}}
 	\label{fig:Cost}
 \end{figure}
 %\vspace*{-10mm}
@@ -55,7 +59,7 @@ Having verified the results from the simulations are as expected, the cost relat
 	\centering
 	\includegraphics[scale=0.9]{coexistence-ww1.50.pdf}
 	\caption{\scriptsize\textbf{
-	Here the gas-liquid coexistence temperature as a function of filling fraction for three different Monte Carlo simulations are compared to SAFT. The box size L=6.61 clearly has a higher critical temperature than SAFT, while the box size L=10.0 clearly has a lower critical temperature than SAFT.}}
+	Here the gas-liquid coexistence temperature as a function of filling fraction for three different Monte Carlo simulations are compared to SAFT. The box size L=6.61 clearly has a higher critical temperature than SAFT, while the box size L=10.0 clearly has a lower critical temperature than SAFT. The best fit box size of $L=7.6$ has a similar critical temperature as SAFT which is interesting given the cost function in fig.~\ref{fig:Cost} is evaluated for many temperatures and densities.}}
 	\label{fig:Coexistence}
 \end{figure}
 

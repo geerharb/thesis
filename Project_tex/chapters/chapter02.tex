@@ -1,10 +1,10 @@
-%\section{}
+﻿%\section{}
 %\pagestyle{plain}   %Use if you do not want the fancy headers and footers... 
 					 %({plain} -> just page number, {empty} -> nothing)...
 					 % this will change all pages that come after this tex file...
 					 % so make sure to reset the pagestyle to {fancy} at the end of this file
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-The methods section is partitioned into theory, which define the equations used, and the actual implementation through computational techniques. The main point of the theory is to estimate the free energy F from which any of the thermodynamic variables can be found. For example, the entropy, checmical potential, pressure, or internal energy can be found by the following:
+The methods section is partitioned into theory, which define the equations used, and the actual implementation through computational techniques. The main point of the theory is to estimate the free energy F from which any of the thermodynamic variables can be found. For example, the entropy, chemical potential, pressure, or internal energy can be found by the following:
 \begin{equation}
 dF=-S\cdot dT -P\cdot dV+\mu\cdot dN
 \end{equation}
@@ -114,10 +114,10 @@ Z_{HS}=e^{-S_{HS}/k}
 \begin{equation}\label{eq:MC4}
 Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}
 \end{equation}
-Note that $S_{HS}$ is the hard sphere entropy. Past work by Brenden Visher\cite{Brenden} has shown the hard sphere entropy of the simulations can be modeled by the Carnahan-Starling equation of state, so all simulations used in this project use the entropy found via the Carnahan-Starling equation of state which is the same hard sphere entropy used in SAFT. Despite this, if one wanted to find the hard sphere entropy using computaiton we can use a known starting point of a very large box at $T=\infty$. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps actually maps every atom within the larger box down into the smaller box while preserving angular orientation. This means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot \ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the very large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
+Note that $S_{HS}$ is the hard sphere entropy. Past work by Brenden Vischer\cite{Brenden} has shown the hard sphere entropy of the simulations can be modeled by the Carnahan-Starling equation of state, so all simulations used in this project use the entropy found via the Carnahan-Starling equation of state which is the same hard sphere entropy used in SAFT. Despite this, if one wanted to find the hard sphere entropy using computation we can use a known starting point of a very large box at $T=\infty$. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps actually maps every atom within the larger box down into the smaller box while preserving angular orientation. This means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot \ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the very large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
 
-\section{Partition Function Seperation}
-The partition function can be partitioned into high and low temperature regimes. At low temperatures the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three parts:
+\section{Partition Function Separation}
+The partition function can be partitioned into high and low temperature regimes. At low temperatures the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by separating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and separate the summation into the three parts:
 
 
 \begin{align*}
@@ -129,7 +129,7 @@ The momentum integrals are independent of the position integrals, so we seperate
 \newline Z&=\boldsymbol{Z_{ideal} \cdot \frac{1}{V^N}}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}\numberthis\label{zIdealSeperated}\\
 \text{where }Z_{ideal}&=V^N\cdot\frac{1}{N!}\int\cdot\cdot\cdot\int e^{-\beta\cdot [P_{1}^2/{2m}+P_{2}^2/{2m}+...]}d\vec{P_1}\cdot d\vec{P_2}\cdot\cdot\cdot d\vec{P_N}\numberthis\label{ZidealSeperatedFinal}
 \end{align*}
-After taking into account the ideal gas term, the remaining potential energy term is seperated into the low temperature and high temperature regime. At high temperatures, the atom energies are much higher than the potential well; this means the finite potential well can be considered zero. However; even at infinite temperature the atoms are assumed to be a hard sphere. The expected hard sphere behavior is seperated by multiplying by $Z_{HS}/Z_{HS}$.
+After taking into account the ideal gas term, the remaining potential energy term is separated into the low temperature and high temperature regime. At high temperatures, the atom energies are much higher than the potential well; this means the finite potential well can be considered zero. However; even at infinite temperature the atoms are assumed to be a hard sphere. The expected hard sphere behavior is separated by multiplying by $Z_{HS}/Z_{HS}$.
 \begin{equation}\label{hardSphere1}
 Z=Z_{ideal}\cdot \boldsymbol{Z_{HS}\cdot \frac{1}{Z_{HS}}}\cdot \frac{1}{V^N}\cdot \int\cdot\cdot\cdot\int e^{-\beta\cdot V(\vec{R_1},\vec{R_2},...)}d\vec{R_1}\cdot d\vec{R_2}\cdot\cdot\cdot d\vec{R_N}
 \end{equation}
@@ -151,7 +151,7 @@ Z=Z_{ideal}\cdot Z_{HS}\cdot \boldsymbol{\frac{Z_{interaction}}{Z_{HS}}}=Z_{idea
 \text{and }Z_{disp}= \frac{Z_{interaction}}{Z_{HS}}
 \end{equation}
 \section{Free Energy via Monte Carlo Simulations}
-Given the separated partition funciton, the free energy of the Monte Carlo simulations are just the sum of the ideal term, the hard sphere term, and the dispersive term. The ideal term is ignored because it stays the same between theory and the Monte Carlo simulations. Although the hard sphere energy can be determined by squeezing an infinitely large box down to the required box size, previous work by Brenden has already shown the hard sphere entropy follows the Carnahan-Starling entropy. This is fortunate since the hard sphere entropy computations take a relatively long time. Finally, the dispersion term is estimated using a *method* that finds the relative density of states; this density of states can then be used to find the dispersive free energy at temperatures higher than some constant $T_0$. The computatation time increases as $T_0$ is decreased, so $T_0$ is set to roughly a half of the critical temperature of SAFT.
+Given the separated partition function, the free energy of the Monte Carlo simulations are just the sum of the ideal term, the hard sphere term, and the dispersive term. The ideal term is ignored because it stays the same between theory and the Monte Carlo simulations. Although the hard sphere energy can be determined by squeezing an infinitely large box down to the required box size, previous work by Brenden has already shown the hard sphere entropy follows the Carnahan-Starling entropy. This is fortunate since the hard sphere entropy computations take a relatively long time. Finally, the dispersion term is estimated using a *method* that finds the relative density of states; this density of states can then be used to find the dispersive free energy at temperatures higher than some constant $T_0$. The computation time increases as $T_0$ is decreased, so $T_0$ is set to roughly a half of the critical temperature of SAFT.
 \subsection{MC Ideal gas free energy}
 To find the ideal gas free energy we can use previous results based on knowing the entropy of the system which we can then use to find the free energy by $F_{ideal}=U_{ideal}-T\cdot S_{ideal}$.
 \begin{equation}\label{eq:idealInternalEnergy}
@@ -162,7 +162,7 @@ S_{ideal^*}\approx k\cdot N \left ( \ln\left [ \frac{V}{N}\left ( \frac{4 \pi m 
 \end{equation}
 
 
-Equation~\ref{eq:sackurTetrodeApprox} is the Sackur-Tetrode\cite{sackurTetrode} equation with the Stirling's approximation; it actually does not make physical sense as the entropy per particle at constant temperature only depends on density. A simple example can show why this doesn't make sense. Consider two atoms in boxes seperated by a partition, and compare the entropy per particle to when the partition in the box has been removed. Once the partition has been removed, the two atoms can explore many more configurations than previously, which means the entropy should have increased once the two atoms were allowed to mix. Unfortunately the Sackur-Tetrode equation with Stirlings approximation would predict the entropy per particle with or without the partition should be the same. This is a bit of a problem since every box in a Monte Carlo simulation will contain exactly N particles, which means the entropy is actually lower than a real ideal gas.
+Equation~\ref{eq:sackurTetrodeApprox} is the Sackur-Tetrode\cite{sackurTetrode} equation with the Stirling's approximation; it actually does not make physical sense as the entropy per particle at constant temperature only depends on density. A simple example can show why this doesn't make sense. Consider two atoms in boxes separated by a partition, and compare the entropy per particle to when the partition in the box has been removed. Once the partition has been removed, the two atoms can explore many more configurations than previously, which means the entropy should have increased once the two atoms were allowed to mix. Unfortunately the Sackur-Tetrode equation with Stirling’s approximation would predict the entropy per particle with or without the partition should be the same. This is a bit of a problem since every box in a Monte Carlo simulation will contain exactly N particles, which means the entropy is actually lower than a real ideal gas.
 
 The entropy problem can be fixed by using the Sackur-Tetrode\cite{sackurTetrode} equation without Stirling's approximation(eq~\ref{eq:sackurTetrode}). All we have to do is use a constant density and compare the entropy per particle of a small box to the entropy per particle of a very large box. The difference in entropy should show how the ideal gas entropy within a small box will deviate from the expected ideal gas entropy.
 
@@ -271,7 +271,7 @@ Now that $\alpha$ is known, we can get back to finding the entropy.
 )
 \end{equation}
 
-At this point this $\Delta S$ represents the total change in entropy from squeezing the box. However; only the change in excess free entropy was wanted. To compensate, simpy subrtract the change in entropy due to the ideal gas with $(T\rightarrow\infty)$ and $N=$constant.
+At this point this $\Delta S$ represents the total change in entropy from squeezing the box. However; only the change in excess free entropy was wanted. To compensate, simply subtract the change in entropy due to the ideal gas with $(T\rightarrow\infty)$ and $N=$constant.
 
 \begin{equation}\label{eq:MCHS23}
 \Delta S_{exc.\infty}=\Delta S_{\infty}-\Delta S_{ideal.\infty}
@@ -324,7 +324,7 @@ U_2=\sum_i E_i\cdot D(E_i)\cdot e^{-\beta\cdot E_i}/Z=U
 
 Basically the partition function will define the internal energy at all temperatures, but knowing the internal energy at all temperatures will not define a unique partition function. Specifically, the partition function up to some arbitrary factor will give the same internal energy. This is a bit problematic considering the method to find the density of states makes observations of the internal energy to estimate the density of states, which then results in a density of states that is only defined up to some unknown factor.
 
-To get around this problem of an unknown factor in the density of states, note that the dispersive partition function will go towards one as T approaches infinity. This happens because $Z_{disp}$ is the ratio of the interaction term to the hard sphere term, and the interaction term approaches the hard sphere term as the temperature increases. Essentially we can leave the unkown $\alpha$ term alone, and it will show up in both the interaction and hard sphere partition function.
+To get around this problem of an unknown factor in the density of states, note that the dispersive partition function will go towards one as T approaches infinity. This happens because $Z_{disp}$ is the ratio of the interaction term to the hard sphere term, and the interaction term approaches the hard sphere term as the temperature increases. Essentially we can leave the unknown $\alpha$ term alone, and it will show up in both the interaction and hard sphere partition function.
 
 That is:
 
@@ -379,23 +379,23 @@ The above constraints indicate that coexistence only occurs when the average slo
 \section{Computation}
 \vspace*{-5mm}
 \subsection{Resolution reduction}
-When I first started the project, I attempted to run every possible density for a particular box size. This involved running simulations with anywwhere from two atoms in a box all the way up to about a hundred atoms in a box. As you can see in fig.~\ref{fig:FdispVsff} running simulation at all possible densities does produce a nice set of data, unfortuantely this comes at the cost of computation time. To create the data necessary to compute the cost relative to SAFT in a timely manner, only pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45] (see fig.~\ref{fig:FdispVsff}-B); the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions. The comparisons to SAFT are only applied at the selected filling fractions.
+When I first started the project, I attempted to run every possible density for a particular box size. This involved running simulations with anywhere from two atoms in a box all the way up to about a hundred atoms in a box. As you can see in fig.~\ref{fig:FdispVsff} running simulation at all possible densities does produce a nice set of data, unfortunately this comes at the cost of computation time. To create the data necessary to compute the cost relative to SAFT in a timely manner, only pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45] (see fig.~\ref{fig:FdispVsff}-B); the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions. The comparisons to SAFT are only applied at the selected filling fractions.
 \begin{figure}[h]
 %\vspace*{-7mm}
 %\hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{FdispVsff-scrunched-ww1.50-L10.00-i0.pdf}
 	\caption{\label{fig:FdispVsff}
-	\scriptsize \textbf{Here resolution reduction of the data is demonstrated. Figure A contains data at every possible density, but such a dense set of data comes at the cost of comptation time. Instead, simulations are only run at a sparse set of densities as indicated in figure B.}}
+	\scriptsize \textbf{Here resolution reduction of the data is demonstrated. Figure A contains data at every possible density, but such a dense set of data comes at the cost of computation time. Instead, simulations are only run at a sparse set of densities as indicated in figure B.}}
 	
 \end{figure}
 \vspace*{-10mm}
 \subsection{Finding common tangents using pivots}
-To find common tangents, a pivot method was used (see fig.~\ref{fig:pivotMethod}). An initial guess value is supplied by the user in plot A as red and blue circles. In plot B all vertical coordinates are taken relative to the red line in plot A; further two new guess values marked as X's are found by taking the minimum on each side of the vertical dashed line in plot B. The dashed line is half way between the guess values in plot A; this vertical line is used to help prevent guess values from jumping across the central bump. The new guess values in plot B are again used as a refernce for the vertical coordinates in plot C; the process essentially repeats until the desired accuracy is achieved.
+To find common tangents, a pivot method was used (see fig.~\ref{fig:pivotMethod}). An initial guess value is supplied by the user in plot A as red and blue circles. In plot B all vertical coordinates are taken relative to the red line in plot A; further two new guess values marked as X's are found by taking the minimum on each side of the vertical dashed line in plot B. The dashed line is half way between the guess values in plot A; this vertical line is used to help prevent guess values from jumping across the central bump. The new guess values in plot B are again used as a reference for the vertical coordinates in plot C; the process essentially repeats until the desired accuracy is achieved.
 
 One benefit of the pivot method is it uses only average slopes in combination with finding minimums to find a common tangent; compare this with the actual constraints of using both an average and instantaneous slope to find a common tangent. Given the limited resolution of the data, instantaneous slopes can be relatively noisy. For this reason, the pivot method using raw data is applied first to find roughly where the solution should be, then data near each solution is used to find a quadratic fit which is then used to find a better solution that will hopefully compensate for noise.
 
-One potential disadvantage of the pivot method is it requires a decent inital guess to actually converge to a solution. To get around this problem the pivot method should be applied at a relatively low temperature where a strong signal seperates the two solutions (see fig.~\ref{fig:FdispVsff}). Once a solution is found at this low temperature, then the temperature can be increased slightly and the old solution at the lower temperature can be used as a guess value for the new higher temperature. Given the noise near the critical temperature (see fig.~\ref{fig:FdispVsff}) this ratcheting of the temperature is basically required to prevent losing the signal.
+One potential disadvantage of the pivot method is it requires a decent initial guess to actually converge to a solution. To get around this problem the pivot method should be applied at a relatively low temperature where a strong signal separates the two solutions (see fig.~\ref{fig:FdispVsff}). Once a solution is found at this low temperature, then the temperature can be increased slightly and the old solution at the lower temperature can be used as a guess value for the new higher temperature. Given the noise near the critical temperature (see fig.~\ref{fig:FdispVsff}) this ratcheting of the temperature is basically required to prevent losing the signal.
 
 %\vspace*{-1cm}
 \begin{figure}[h!]
@@ -404,7 +404,7 @@ One potential disadvantage of the pivot method is it requires a decent inital gu
 	\centering
 	\includegraphics[scale=.9]{pivotMethod.pdf}
 	\caption{\label{fig:pivotMethod}
-	\scriptsize \textbf{Here the pivot method is demonstrated. Fiure A uses an initial guess to define the zero point for figure B. The local minimums in figure B is used to determine the zero point for figure C. With enough iterations, the pivot method finds a common tangent. The pivot method only requires the use of local minimums and average slopes; this makes the pivot method relatively easy to implement since the typical method requires solving two sets of equations.}}
+	\scriptsize \textbf{Here the pivot method is demonstrated. Figure A uses an initial guess to define the zero point for figure B. The local minimums in figure B is used to determine the zero point for figure C. With enough iterations, the pivot method finds a common tangent. The pivot method only requires the use of local minimums and average slopes; this makes the pivot method relatively easy to implement since the typical method requires solving two sets of equations.}}
 	
 \end{figure}
 %\newpage
@@ -416,7 +416,7 @@ One potential disadvantage of the pivot method is it requires a decent inital gu
 \hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{commonTangent.pdf}
-	\caption{\scriptsize \textbf{Here the pivot method is applied to actual data. Far from the critical point the pivot method works just fine as the signal is relatively strong. Unfortunately near the critical point the signal becomes increadibly weak. To prevent losing the signal, solutions at a slightly lower temperature should be used as guess values at a slightly higher temperature.}}
+	\caption{\scriptsize \textbf{Here the pivot method is applied to actual data. Far from the critical point the pivot method works just fine as the signal is relatively strong. Unfortunately near the critical point the signal becomes incredibly weak. To prevent losing the signal, solutions at a slightly lower temperature should be used as guess values at a slightly higher temperature.}}
 	\label{fig:FdispVsff}
 \end{figure}
 
