@@ -109,39 +109,31 @@
 \entry{Brenden}{article}{}
   \name{author}{1}{}{%
     {{}%
-     {?}{.}%
-     {}{}%
+     {Vischer}{V.}%
+     {Brenden}{B.}%
      {}{}%
      {}{}}%
   }
-  \list{publisher}{1}{%
-    {?}%
-  }
-  \field{number}{?}
-  \field{pages}{?}
-  \field{title}{needSource}
-  \field{volume}{?}
-  \field{journaltitle}{?}
-  \field{year}{?}
+  \strng{namehash}{VB1}
+  \strng{fullhash}{VB1}
 \endentry
 
 \entry{sackurTetrode}{article}{}
   \name{author}{1}{}{%
     {{}%
-     {?}{.}%
-     {}{}%
+     {Grimus}{G.}%
+     {W.}{W.}%
      {}{}%
      {}{}}%
   }
   \list{publisher}{1}{%
-    {?}%
+    {Cornell University Library}%
   }
-  \field{number}{?}
-  \field{pages}{?}
-  \field{title}{needSource}
-  \field{volume}{?}
-  \field{journaltitle}{?}
-  \field{year}{?}
+  \strng{namehash}{GW1}
+  \strng{fullhash}{GW1}
+  \field{title}{On the 100th anniversary of the Sackur-Tetrode equation}
+  \field{journaltitle}{arXiv:1112.3748v2}
+  \field{year}{2013}
 \endentry
 
 \lossort

@@ -114,7 +114,7 @@ Z_{HS}=e^{-S_{HS}/k}
 \begin{equation}\label{eq:MC4}
 Z_{disp}=\frac{Z_{interaction}}{Z_{HS}}=\frac{\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}{\lim_{T\to\infty}\sum_i \alpha\cdot D(E_i)\cdot e^{-\beta\cdot E_i}}=\frac{\sum_i D(E_i)\cdot e^{-\beta\cdot E_i}}{\sum_i D(E_i)}
 \end{equation}
-Note that $S_{HS}$ is the hard sphere entropy. Past work by Brenden Visher\cite{Brenden} has shown the hard sphere entropy of the simulations can be modeled by the Carnahan-Starling equation of state, so all simulations used in this project use the entropy found via the Carnahan-Starling equation of state which is the same hard sphere entropy in SAFT. Despite this, if one wanted to find the hard sphere entropy using computaiton we can use a known starting point of a very large box at $T=\infty$. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps actually maps every atom within the larger box down into the smaller box while preserving angular orientation. This means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot \ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the very large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
+Note that $S_{HS}$ is the hard sphere entropy. Past work by Brenden Visher\cite{Brenden} has shown the hard sphere entropy of the simulations can be modeled by the Carnahan-Starling equation of state, so all simulations used in this project use the entropy found via the Carnahan-Starling equation of state which is the same hard sphere entropy used in SAFT. Despite this, if one wanted to find the hard sphere entropy using computaiton we can use a known starting point of a very large box at $T=\infty$. This very large box acts like an ideal gas, which means the hard sphere entropy is zero. Next this very large box is randomly scaled down to a smaller box. The scaling maps actually maps every atom within the larger box down into the smaller box while preserving angular orientation. This means a random squeeze can actually fail due hard sphere collisions between atoms when the box everything is scaled to the smaller box. Given the probability to succeed in scaling the box down as $P_{success}$, the change in hard sphere entropy is just $\Delta S_{HS}=k\cdot \ln(P_{success})$. This scaling can be done in as many small steps as necessary to scale the very large box down to the actual box size; and the net sum in the change in entropy is then $S_{HS}$.
 
 \section{Partition Function Seperation}
 The partition function can be partitioned into high and low temperature regimes. At low temperatures the interactions dominate, while at high temperatures the system acts like a hard sphere system in which the entropy dominates. Both regimes can be partitioned yet again by seperating the kinetic energies into an ideal gas term. In terms of equations, we start with the partition function and seperate the summation into the three parts:
@@ -371,7 +371,7 @@ Having a simplified result for pressure, we can now apply the coexistence constr
 \mu=\frac{f_2-f_1}{n_2-n_1}
 \end{equation}
 \begin{equation}\label{eq:mu3}
-\text{from eq.~\ref{eq:methodsMu2}: }\mu= \left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V_1}\Bigg|_{n_1}=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}\Bigg|_{n_2}
+\text{from eq.~\ref{eq:methodsMu2}: }\mu= \left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}\Bigg|_{n_1}=\left(\frac{\partial f(T,n)}{\partial n}\right)_{T,V}\Bigg|_{n_2}
 \end{equation}
 The above constraints indicate that coexistence only occurs when the average slope must be equal to the instantaneous slope. This is equivalent to plotting the free energy as a function of density and finding a common tangent.
 
@@ -379,37 +379,44 @@ The above constraints indicate that coexistence only occurs when the average slo
 \section{Computation}
 \vspace*{-5mm}
 \subsection{Resolution reduction}
+When I first started the project, I attempted to run every possible density for a particular box size. This involved running simulations with anywwhere from two atoms in a box all the way up to about a hundred atoms in a box. As you can see in fig.~\ref{fig:FdispVsff} running simulation at all possible densities does produce a nice set of data, unfortuantely this comes at the cost of computation time. To create the data necessary to compute the cost relative to SAFT in a timely manner, only pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45] (see fig.~\ref{fig:FdispVsff}-B); the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions. The comparisons to SAFT are only applied at the selected filling fractions.
 \begin{figure}[h]
-\vspace*{-7mm}
-\hspace*{-6mm}
+%\vspace*{-7mm}
+%\hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{FdispVsff-scrunched-ww1.50-L10.00-i0.pdf}
 	\caption{\label{fig:FdispVsff}
-	\scriptsize \textbf{Here resolution reduction of the data is demonstrated. The data must be generated from a range of box sizes, and for each box size it is possible to run simulations From 2 atoms in a box all the way up to the desired filling fraction of 0.5; depending on the box size, a filling fraction of 0.5 can correspond to only 40 atoms or it could be as much as 100 atoms. Running simulations with every possible filling fraction will indeed produce a nice data set(see figure A), but this will come at the cost of a lengthy computation time. Instead, pairs of simulations are run around filling fractions of [0.5,0.15,0.25,0.35,0.45] (see figure B); the idea is each pair of simulations can be used to interpolate the thermodynamic observables to the selected filling fractions. The comparisons to SAFT are only applied at the selected filling fractions.}}
+	\scriptsize \textbf{Here resolution reduction of the data is demonstrated. Figure A contains data at every possible density, but such a dense set of data comes at the cost of comptation time. Instead, simulations are only run at a sparse set of densities as indicated in figure B.}}
 	
 \end{figure}
 \vspace*{-10mm}
 \subsection{Common Tangent Method}
+To find common tangents, a pivot method was used (see fig.~\ref{fig:pivotMethod}). An initial guess value is supplied by the user in plot A as red and blue circles. In plot B all vertical coordinates are taken relative to the red line in plot A; further two new guess values marked as X's are found by taking the minimum on each side of the vertical dashed line in plot B. The dashed line is half way between the guess values in plot A; this vertical line is used to help prevent guess values from jumping across the central bump. The new guess values in plot B are again used as a refernce for the vertical coordinates in plot C; the process essentially repeats until the desired accuracy is achieved.
+
+One benefit of the pivot method is it uses only average slopes in combination with finding minimums to find a common tangent; compare this with the actual constraints of using both an average and instantaneous slope to find a common tangent. Given the limited resolution of the data, instantaneous slopes can be relatively noisy. For this reason, the pivot method using raw data is applied first to find roughly where the solution should be, then data near each solution is used to find a quadratic fit which is then used to find a better solution that will hopefully compensate for noise.
+
+One potential disadvantage of the pivot method is it requires a decent inital guess to actually converge to a solution. To get around this problem the pivot method should be applied at a relatively low temperature where a strong signal seperates the two solutions (see fig.~\ref{fig:FdispVsff}). Once a solution is found at this low temperature, then the temperature can be increased slightly and the old solution at the lower temperature can be used as a guess value for the new higher temperature. Given the noise near the critical temperature (see fig.~\ref{fig:FdispVsff}) this ratcheting of the temperature is basically required to prevent losing the signal.
+
 %\vspace*{-1cm}
 \begin{figure}[h!]
-\vspace*{-7mm}
+%\vspace*{-7mm}
 \hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{pivotMethod.pdf}
 	\caption{\label{fig:pivotMethod}
-	\scriptsize \textbf{Here the common tangent method is demonstrated. An initial guess value is supplied by the user in plot A as red and blue circles. In plot B all vertical coordinates are taken relative to the red line in plot A; further two new guess values marked as X's are found by taking the minimum on each side of the vertical dashed line in plot B. The dashed line is half way between the guess values in plot A; this vertical line is used to help prevent guess values from jumping across the central bump. The new guess values in plot B are again used to define the vertical coordinates in plot C; the process essentially repeats until the desired accuracy is achieved.}}
+	\scriptsize \textbf{Here the pivot method is demonstrated. Fiure A uses an initial guess to define the zero point for figure B. The local minimums in figure B is used to determine the zero point for figure C. With enough iterations, the pivot method finds a common tangent. The pivot method only requires the use of local minimums and average slopes; this makes the pivot method relatively easy to implement since the typical method requires solving two sets of equations.}}
 	
 \end{figure}
-\newpage
-\vspace*{-7mm}
-\subsection{Coexistence points}
-\vspace*{-7mm}
+%\newpage
+%\vspace*{-7mm}
+%\subsection{Coexistence points}
+%\vspace*{-7mm}
 \begin{figure}[!h]
 
 \hspace*{-6mm}
 	\centering
 	\includegraphics[scale=.9]{commonTangent.pdf}
-	\caption{\scriptsize \textbf{Here the common tangent method is applied. The free energy at a particular temperature is plotted as a funciton of density. The two points highlighted by red and blue X's on the curve share a common tangent; this means both points will have the same pressure and chemical potential. The left and right set of plots shows how the signal to noise ratio changes as the temperature increases. Far from the critical point the signal is relatively strong, while the near the critical point the noise becomes significant. To prevent the loss of the signal, first start at a low temperature where the signal is strong. Then gradually increase the temperature while finding common tangents. As the temperature and noise increases, the previous solutions at a slightly lower temperature can be used as a guess for the new higher temperature.}}
+	\caption{\scriptsize \textbf{Here the pivot method is applied to actual data. Far from the critical point the pivot method works just fine as the signal is relatively strong. Unfortunately near the critical point the signal becomes increadibly weak. To prevent losing the signal, solutions at a slightly lower temperature should be used as guess values at a slightly higher temperature.}}
 	\label{fig:FdispVsff}
 \end{figure}
 

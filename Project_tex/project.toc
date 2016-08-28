@@ -28,18 +28,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.7.2}Common Tangent Method}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.7.3}Coexistence points}{19}
+\contentsline {chapter}{\numberline {3}Results}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Results}{20}
+\contentsline {section}{\numberline {3.1}Trends in U,F}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Trends in U,F}{20}
+\contentsline {section}{\numberline {3.2}Trends in S,Cv}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Trends in S,Cv}{21}
+\contentsline {section}{\numberline {3.3}Using Cost to Estimate Best Box Size}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Using Cost to Estimate Best Box Size}{22}
+\contentsline {section}{\numberline {3.4}Coexistence: T vs Density}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Coexistence: T vs Density}{22}
+\contentsline {chapter}{\numberline {4}Conclusion}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Conclusion}{23}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Conclusion}{23}
+\contentsline {section}{\numberline {4.1}Conclusion}{24}

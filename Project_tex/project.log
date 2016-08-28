@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  27 AUG 2016 06:47
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  28 AUG 2016 00:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -571,7 +571,7 @@ File: images/osu2.png Graphic file (type QTm)
  [3
 
 ] (./project.lof
-Underfull \vbox (badness 4441) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4
 
@@ -633,24 +633,27 @@ m/n/12 ^^A [] )
 [14] [15] [16] [17]
 File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
  <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 384--388
- []|  [] 
- []
-
-File: images/pivotMethod.pdf Graphic file (type QTm)
-<use  "images/pivotMethod.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 396--400
- []|  [] 
+Overfull \hbox (28.50546pt too wide) in paragraph at lines 387--389
+ [][] 
  []
 
 [18]
-File: images/commonTangent.pdf Graphic file (type QTm)
- <use  "images/commonTangent.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 409--412
+File: images/pivotMethod.pdf Graphic file (type QTm)
+ <use  "images/pivotMethod.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 403--407
  []|  [] 
  []
 
-) [19]
+File: images/commonTangent.pdf Graphic file (type QTm)
+<use  "images/commonTangent.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 416--419
+ []|  [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [19] [20]
 Chapter 3.
 (./chapters/chapter03.tex
 File: images/UFtrends-ww1.50.pdf Graphic file (type QTm)
@@ -662,7 +665,7 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 6--12
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20
+ [21
 
 ]
 File: images/STCvtrends-ww1.50.pdf Graphic file (type QTm)
@@ -675,7 +678,7 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 23--27
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
+ [22]
 File: images/Costsmall-ww1.50.pdf Graphic file (type QTm)
 
 <use  "images/Costsmall-ww1.50.pdf" >
@@ -690,11 +693,11 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 47--51
  []
 
 File: images/coexistence-ww1.50BAR.png Graphic file (type QTm)
-<use  "images/coexistence-ww1.50BAR.png" >) [22]
+<use  "images/coexistence-ww1.50BAR.png" >) [23]
 Chapter 4.
-(./chapters/chapter05.tex) [23
+(./chapters/chapter05.tex) [24
 
-] [24
+] [25
 
 ] (./project.aux)
 
@@ -714,4 +717,4 @@ Here is how much of TeX's memory you used:
  36 hyphenation exceptions out of 8191
  36i,12n,48p,1513b,849s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on project.pdf (24 pages).
+Output written on project.pdf (25 pages).
