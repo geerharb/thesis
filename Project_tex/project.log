@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  28 AUG 2016 00:09
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.23)  28 AUG 2016 01:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -571,11 +571,6 @@ File: images/osu2.png Graphic file (type QTm)
  [3
 
 ] (./project.lof
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4
-
-]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
@@ -587,22 +582,24 @@ LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <8> not available
 \tf@lof=\write5
 \openout5 = `project.lof'.
 
+ [4
 
+]
+Chapter 1.
+(./chapters/chapter01.tex
+File: images/renorm.png Graphic file (type QTm)
+ <use  "images/renorm.png" > [5
+
+])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 27.18335pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5]
-Chapter 1.
-(./chapters/chapter01.tex
-File: images/renorm.png Graphic file (type QTm)
- <use  "images/renorm.png" > [6
-
-]) [7] [8]
+[6] [7]
 Chapter 2.
-(./chapters/chapter02.tex [9
+(./chapters/chapter02.tex [8
 
 ]
 Overfull \hbox (6.13368pt too wide) detected at line 44
@@ -617,12 +614,12 @@ Overfull \hbox (35.71266pt too wide) detected at line 88
 []\OT1/cmr/m/n/6 =[]\OMS/cmsy/m/n/6 ^^B[]
  []
 
-[10]
+[9]
 Overfull \hbox (10.43303pt too wide) in paragraph at lines 126--126
 [] 
  []
 
-[11] [12] [13]
+[10] [11] [12]
 Overfull \hbox (19.79663pt too wide) detected at line 245
 \OML/cmm/m/it/12 Z[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Z[][] [] \OMS/cmsy/m/n/
 12 ^^A ^^A ^^A [] \OML/cmm/m/it/12 e[]d[] \OMS/cmsy/m/n/12 ^^A [] ^^A \OML/cmm/
@@ -630,14 +627,14 @@ m/it/12 d[] \OMS/cmsy/m/n/12 ^^A [] ^^A ^^A ^^A \OML/cmm/m/it/12 d[] \OMS/cmsy/
 m/n/12 ^^A [] )
  []
 
-[14] [15] [16] [17]
+[13] [14] [15] [16]
 File: images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf Graphic file (type QTm)
  <use  "images/FdispVsff-scrunched-ww1.50-L10.00-i0.pdf" >
 Overfull \hbox (28.50546pt too wide) in paragraph at lines 387--389
  [][] 
  []
 
-[18]
+[17]
 File: images/pivotMethod.pdf Graphic file (type QTm)
  <use  "images/pivotMethod.pdf" >
 Overfull \hbox (14.0449pt too wide) in paragraph at lines 403--407
@@ -653,25 +650,29 @@ Overfull \hbox (14.0449pt too wide) in paragraph at lines 416--419
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [19] [20]
+) [18] [19]
 Chapter 3.
 (./chapters/chapter03.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20
+
+]
 File: images/UFtrends-ww1.50.pdf Graphic file (type QTm)
- <use  "images/UFtrends-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 6--12
+
+<use  "images/UFtrends-ww1.50.pdf" >
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 11--17
  []|  [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21
-
-]
+ [21]
 File: images/STCvtrends-ww1.50.pdf Graphic file (type QTm)
 
 <use  "images/STCvtrends-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 23--27
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 28--32
  []|  [] 
  []
 
@@ -682,13 +683,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/Costsmall-ww1.50.pdf Graphic file (type QTm)
 
 <use  "images/Costsmall-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 36--40
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 41--45
  []|  [] 
  []
 
 File: images/coexistence-ww1.50.pdf Graphic file (type QTm)
 <use  "images/coexistence-ww1.50.pdf" >
-Overfull \hbox (14.0449pt too wide) in paragraph at lines 47--51
+Overfull \hbox (14.0449pt too wide) in paragraph at lines 52--56
  []|  [] 
  []
 

@@ -390,7 +390,7 @@ When I first started the project, I attempted to run every possible density for 
 	
 \end{figure}
 \vspace*{-10mm}
-\subsection{Common Tangent Method}
+\subsection{Finding common tangents using pivots}
 To find common tangents, a pivot method was used (see fig.~\ref{fig:pivotMethod}). An initial guess value is supplied by the user in plot A as red and blue circles. In plot B all vertical coordinates are taken relative to the red line in plot A; further two new guess values marked as X's are found by taking the minimum on each side of the vertical dashed line in plot B. The dashed line is half way between the guess values in plot A; this vertical line is used to help prevent guess values from jumping across the central bump. The new guess values in plot B are again used as a refernce for the vertical coordinates in plot C; the process essentially repeats until the desired accuracy is achieved.
 
 One benefit of the pivot method is it uses only average slopes in combination with finding minimums to find a common tangent; compare this with the actual constraints of using both an average and instantaneous slope to find a common tangent. Given the limited resolution of the data, instantaneous slopes can be relatively noisy. For this reason, the pivot method using raw data is applied first to find roughly where the solution should be, then data near each solution is used to find a quadratic fit which is then used to find a better solution that will hopefully compensate for noise.
